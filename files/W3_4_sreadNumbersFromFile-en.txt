@@ -1,0 +1,170 @@
+PETRA: So far, whenever one of our programs
+needed a user input, such as a temperature
+to be converted from Celsius to Fahrenheit or a student's grade,
+we have the user enter this input at program execution time in the terminal
+window.
+Now imagine you have a lot of data to be entered,
+be it to compute the average grade in a class for lots of students or something
+else.
+In this case, it may be more efficient and easier
+to read this data in automatically from a file you created previously.
+And I will now show you how to do so.
+There are three steps when reading from a file.
+The first one is you need to open the file.
+In the second step, you read from the file.
+And when you're done with all this, you need to close the file.
+I have created the first file for this purpose.
+Let me show it to you.
+I called it my_first_file.txt
+It's very important that there are no spaces in your file names.
+So I used an underscore where I wanted a space.
+So my particular file contains integers.
+On one line it contains just the number 9, and on the next line
+it contains nine integers.
+I'm using this structure for now, because it'll
+be more complicated to find out how to read from a file
+until we reached the end of the file.
+So for now, the files that we're going to read from will
+have as their first entry the number of entries that follow.
+So this 9 indicates that I have nine integers on the next line following.
+One, two, three, four, five, six, seven, eight, nine.
+Now, let me show you how to read this first number, the 9, from the file.
+Here's a short program, as always I include a <stdio.h>
+And then there is a new data type that you can observe here.
+It's called a FILE data type.
+In fact, we're declaring a pointer to a data type of FILE.
+And that's my so-called file pointer.
+A file pointer is a pointer that is used to handle and keep
+track of the file being accessed.
+The data type FILE is defined in stdio.h. This file pointer will
+then help us in reading from the file.
+And I'll show you how.
+The first step is to open the file and the command
+to do so is the fopen command.
+The fopen function is used to open a file
+and return a file pointer that then can be used in subsequent input/output
+operations.
+Inside the parentheses of the fopen command,
+the first parameter is the name of the file in quotation marks.
+My file is located in the same directory as my program.
+I can demonstrate that to you over here on that command prompt side.
+I have my program that's seen sitting there, also my_first_file.txt.
+And so I did not have to include a path.
+You could include a path in front of the file name,
+however, if your file was located elsewhere.
+The second parameter here is an r, also in quotation marks.
+And that "r" stands for reading.
+Later on we will learn how to write to files.
+And we will use a "w" for that purpose.
+I sometimes append to files, we use an "a" for that purpose.
+But for now we'll focus on reading from files.
+It's very important to use double quotes, not single quotes here.
+These are all double quotes.
+Once the file is open, we can use this file pointer,
+ifile, to access the file.
+And in order to read a number from the file, we use the fscanf command.
+It's just like scanf, but it has an extra f in front of it,
+as in file scanf. And the only difference between scanf and fscanf
+is that fscanf has an extra argument.
+We pass the file pointer to it, so fscanf knows which file to read from.
+You can imagine having multiple files open at the same time.
+And then you would pass the name of the file pointer
+to the particular file from which you were hoping
+to read into the fscanf function.
+So the second argument here is a %d, meaning we want to read an integer.
+And we want to store the integer in a variable, N.
+I need to declare that variable.
+It's an integer, and here it is.
+So we're going to read the first number, and then we just print it out.
+Print "There are %d numbers in the file."
+The %d will be replaced with that N.
+And finally, we always need to close a file when we're done reading from it
+or writing to it.
+That's very important.
+If you forget to close a file, you might lose some data.
+So you always want to be sure to close your files properly.
+One last comment.
+This variable name ifile that I chose here,
+I chose that, because it sounds like input file.
+But you could name it anything else.
+It doesn't have to be called ifile.
+You could call it apple, or my_file, or I_am_reading_here.
+You can call it whatever you want to.
+It's a regular variable name.
+Let me demonstrate how this program works.
+We're saving it.
+And then running it.
+And indeed program execution shows that there are nine numbers in the file.
+So we just read that very first number from the file, the 9.
+And now know that there are nine numbers in the file.
+Next, we can write a for loop and read the remaining numbers from the file,
+and print them out.
+So let's do that now.
+The value that's stored in N tells us how many times
+we want to read from the file.
+So we can use a for loop for i from 0 while i<N, i++.
+And what we want to do inside the loop is read the next number from the file.
+So begin at fscanf, we want to begin
+read from ifile, which is still open.
+You want to read another integer.
+But we don't want to lose what's stored in N, because we need that for loop.
+So let's use a different variable.
+Let's call it number.
+So we need to declare our variables.
+We have an i for our loop counter.
+And a number to hold the value that was just read from the file.
+And now we probably want to print out what we just read.
+So printf "I read %d from the file."
+And then we can plug in number for the %d.
+Well, let's see if that works.
+And here we go.
+There are nine numbers in the file.
+And then I'm reading all these numbers from the file.
+Let's take a quick look at the file to make sure we read the correct numbers.
+And indeed, 56, 3, 8, -11, and so forth, all the way through 78.
+You could do the same thing with doubles, of course,
+it doesn't have to be integers that you're reading from a file.
+So for that purpose, let me show you how to create a second file with doubles
+stored, and then how to read those.
+That's right touch my_second_file.txt to create a second file
+that we can now edit from our file browser.
+Here it is.
+And let's say we put six numbers in there.
+And these numbers are going to be doubles.
+4.5, 6.2, 8.3, -7.3.
+One, two, three, four, two more.
+0.0 and 1.0.
+Let's save this.
+Let's return to our program.
+And the first thing we need to do is we need to change the name of our file.
+We called in my_second_file.
+We still want to open it for reading, so that's the only thing
+that needs to be changed.
+The file name right there.
+We're still reading how many numbers are stored in the file.
+That's the first entry in the file.
+And we're going to print that out.
+But then our loop, then, we're going to read doubles.
+So we're going to use lf. And we need to make number
+into a variable of type double, rather than an integer.
+And that's all we need to do.
+Let's save and run.
+Uh-oh.
+I forgot to adjust my printing.
+So this is also an lf here when we print out the number, of course.
+And I seem to have forgotten the semicolon up here.
+So let's try that again.
+And everything seems to be good now.
+There are six numbers in the file.
+And I'm printing them all out.
+I'm printing them with a standard precision of six decimal places.
+You could have changed that by changing the %lf here.
+Again, the rather strange structure of our files
+where we have to start the file with the number of elements that are to follow
+is just right now for beginning purposes.
+We will learn shortly how to get rid of that requirement.
+But for now that's our file.
+We're going have a look.
+So now it's your turn.
+Now, you know how to open, read from, and close a file.
+You're turn to practice.

@@ -1,0 +1,73 @@
+REMI : Let's see how to manage the memory -- not management
+to see how much memory is used for all the programs running on the Linux
+system.
+So first command to see that is free.
+Let's see the help with dash dash help, and free
+indeed displays the amount of free and used system memory.
+And you can use it with some options minus b, k, m, or g.
+b for byte, and then k for kilobyte, megabyte, and gigabyte.
+So let's try it with free minus megabyte. (free -m)
+Here you have a table with the total memory that you have, the used and the free.
+Let's ignore here the shared and buffers.
+So the line Mem will show you the total memory that you have,
+25 megabytes, 3 megabytes are used, 22 megabytes is the free memory,
+and if we use free minus k (free -k), you would have the same numbers, more precise
+because they are in kilobyte here.
+And, of course, free minus b (free -b) would be in bytes.
+The second option to see how many bytes are used is by using top.
+Let's go to the help of the top command, and here you
+can see that you can hit some keys to show the memory, so that would be the S key
+or to show and to sort by memory usage here by hitting the M key.
+Let's try that.
+Let's try to go to top.
+First at the very top of the top command,
+you have a little bit of statistics here.
+You can see that 3,256 kilobytes of memory
+is used, and here is the number that is free,
+and here we have a lot of programs running on the system,
+and we can sort them by memory.
+But here you cannot see the column that says memory.
+Yes, we can see percent of CPU, but where is present memory doesn't exist.
+Well, here it is VSZ that stands for Virtual Size,
+and the Virtual Size is indeed the virtual memory
+for each program running on the system.
+We won't go into the details of why it is called virtual memory, but sometimes
+on some versions of the top that are installed on some Linux,
+you will have VIRT instead of the VSZ like this.
+So let's try to push and M key.
+Type the M key, and here it just started all the programs,
+all the commands running, by VSZ.
+From top to bottom, you can see that the first one is using
+1,512 kilobytes of memory, and so forth.
+So that is sorted by memory, and now if we hit the S key,
+we go into a special visualization of the top command that
+is only showing the memory.
+And indeed we have only one program running here,
+one user program that is named top, that is the actual program running.
+And we can see that it is using 1,496 kilobytes of memory,
+and this is the same column as VSZ.
+All right, let's quit stop by hitting Q, and the last thing I want to show you
+is how to see the memory consumption using htop.
+So it's a visual representation of top, a little bit more advanced as you know.
+Here you have little visualization of the memory.
+We can see that we are using 2 out of 25 megabytes,
+so here are the used megabytes, and here the free ones.
+And here we can see that it is sorted by CPU percent,
+but we can change that by pressing F6, which means sort by, as you
+can see in the menu at the bottom.
+So on my keyboard, I have to hit the function activate
+button key, which is fn.
+And then F6, and here you have a menu on the left : Sort by,
+with the up and down arrows, you can select an option here,
+and we want to select M_SIZE, which stands for memory size.
+I select that and I press the Enter key, and indeed, you
+can see that now it is ordered by the VIRT column.
+Virtual memory, which is indeed the quantity of memory that
+is used by each command.
+So the first line here is using 1,512 kilobytes
+and htop, as you can see here, is using 1,496 kilobytes of memory.
+That's it, so you know how to use free, top,
+and htop to see how much memory is used by your program.
+And indeed, to control if a program is using too much memory on the system
+and putting too much pressure, maybe you can kill it if it is too big in memory.
+So here is how to manage the memory on the Linux system.

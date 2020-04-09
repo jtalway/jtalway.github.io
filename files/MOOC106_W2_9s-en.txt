@@ -1,0 +1,94 @@
+REMI: How do you get back to the prompts,
+even if you are really stuck inside a program?
+I will show you how.
+So first we will show the basic ways of getting out of a program
+that we already know.
+So of course, you know that if I am in the rain program for example--
+that's a simple program--
+I can get out by--
+the usual way is control C. And usually control C works.
+But in some cases, in some situations it doesn't work.
+Remember that vim, for example.
+So if I go into vim and then type the i key and try to type some text,
+then I am stuck because, if I do Control C, it won't get out.
+And it will even say type :quit enter to exit vim.
+But anyway, so the way is indeed to type escape
+and then :q! enter, and then
+I'm going back to the prompt.
+Remember also, if you are in a situation where you typed a special character
+and you are in a different kind of prompt,
+here it doesn't do anything because it is inputting some text.
+It's the beginning of a name or of an input.
+So you have to finish that input by closing the single quote like this,
+the same for double quotes.
+Here you are stuck in input mode.
+So you have to close the double quotes.
+Or if you are in this kind of situation, you
+can try also Control D. Control D sometimes work with only one type.
+Control D sometimes needs to be pressed twice.
+For example, here, if I type some text, Control D, then I
+have to retype Control D. Oh, no, it doesn't work.
+So you have to have a new line and then press Control D.
+Also when you cat to a file, if you want to create a file,
+cat>file.txt, for example like this.
+So you are in input mode also.
+And then you just also type Control D to get out and get the prompt back.
+What else ?
+Well, the worst case is you are completely stuck in a program.
+Let's simulate that.
+So I opened the program Rain for example.
+That's a simple program just with raining drops.
+And let's imagine that I don't know how to get out of this program
+and that the Control C doesn't work and that the Q key doesn't work.
+I try many things and Control D doesn't work.
+Even if for this program it works, I want
+to show you how to kill this program and get back to the prompt.
+For that, we need to open a second terminal.
+And to do that, there is an arrow that you have to click.
+And this arrow will get you to the second terminal.
+So this is the second terminal.
+And if you click back this arrow, you have the first terminal.
+So we still have the rain program running.
+So let's go back to the second terminal.
+And here what we will use is htop.
+So htop will give you all the commands, all the programs
+that are running for the user.
+And here you can see that rain is raining and has a special number, 56.
+And that number is important.
+It's the PID, Process Identifier, and we could use this one to kill the process.
+But within htop we can kill the process.
+I want to show you how.
+So with this arrow, up and down arrow, I can select the program Rain just
+like this.
+And if I push the function nine button, F9, F9 key,
+then we have a list of some signals on the left.
+And with the arrows, I can select the number I want,
+and the number you would use to kill for sure a program is the number 9.
+It's called the sig kill.
+It will really kill the program if you are really stuck in that program.
+So let's select number 9 and enter send.
+So it does send the kill signal.
+And as you can see, in the list now, we don't
+have the rain program running anymore.
+And if I click to go back for the first terminal,
+you can see that it was killed, killed just here.
+And indeed the rain is not running anymore,
+and you have the prompt back again.
+But here there is a special bug in webLinux.
+So we have the prompt.
+But I cannot write anything.
+If you try yourself, I am completely stuck.
+So in the worst case, that would be also the same thing on Linux.
+If you are able to kill but then you are unable to have the prompt back working
+correctly, then you would have to have another terminal and kill that terminal
+or you have to reboot in the very worst case.
+But usually on Linux, you never have to reboot the computer.
+You can do anything with a terminal and kill everything that is stuck
+or that has a bug.
+Anyway, here we are very stuck.
+And the simple way to reboot Linux is just to reload the page.
+And if you reload the page, that is the very worst case
+and you have Linux booting again.
+And you will have the new Linux, but all the files will be still here.
+So you know how to kill a process if you are really stuck inside.
+And in the worst case, you know how to reboot webLinux by reloading the page.

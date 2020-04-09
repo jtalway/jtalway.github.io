@@ -1,0 +1,102 @@
+REMI : Let's see how to compile and execute
+a program using only the terminal the manual way, the very old way.
+So here we have a simple program.c that is open here, a Hello World
+program written in C. And we want to compile first, and then
+execute this program.
+So we will use GCC--
+that stands for GNU C Compiler--
+to compile this program without any options first to see what is happening.
+So let's see what happens when a GCC program.c
+and this is the simplest way to compile a program.
+Let's type Enter, so it will create a binary from the C source.
+So if I list here, I have, indeed, a binary.
+And as you can see, the name of that binary is a.out.
+So if I do file a.out to see the type of this file,
+it is, indeed, an executable for the openRISK
+processor that is running WebLinux.
+It's a 32-bit processor.
+What if I want to have a binary -
+no, first, what if I want to execute that binary?
+Well, it's as easy as ./, and then the name of the binary, ./ why?
+because it is in the current directory.
+a.out, Enter, and, indeed, it is executed,
+and you have the output that is here, the execution of the printed statement.
+What if I want to have a different name for the output?
+Well, you still have to use gcc with program.c, and at the end,
+you have to use minus o for the name of the output.
+And you can put the name that you want-- for example, program.
+Let's type Enter, and when the compilation is done,
+and you have the prompt back, you have, indeed, an executable binary
+that is called program now.
+Let's try to verify that with the file command,
+and, indeed, it is the executable.
+How to execute it ? Well, ./program
+And indeed, we have the same result. As you can see here in the build command,
+I added a few options by default. Let's try to write these options
+and see, very vaguely, what they mean.
+So gcc is the name of the compiler.
+So minus std equals c11 (-std=c11)
+That means that the standard to be used to compile is the C version 2011,
+so it was standardized in 2011.
+You'll have different type of versions of standardization,
+but we prefer here to use the one from 2011.
+And also, minus uppercase W all. (-Wall)
+It means that we don't want to have all of the warnings,
+so possible warnings are possible mistakes that you made in the program,
+and we want to have all of them printed.
+Also, -fmax-error=10 without any space
+between fmax and error.
+Oh, I forgot the s. Errors, like this.
+And that means that you will have a maximum of 10 errors
+at the output of GCC, because sometimes you have more than 10,
+and you don't want to be overflowed by other errors.
+And then minus uppercase W extra (-Wextra), and here you will have extra warnings.
+So sometimes you have basic warnings, and then you
+have bonus warnings like more advanced small mistakes
+that you could have done on your C program.
+And we want to have them also.
+And then you have the name of the C source that you want to compile,
+and then minus o, and then the name of the executable here, program,
+so that I will override the one that is existing just here.
+Let's try that.
+And we didn't have any warning.
+We didn't have any extra warning and no errors.
+Let's try to forget the return 0, for example.
+So if I change the code here in the code editor,
+never forget to save it by clicking the Save It button.
+And when the Save OK is appeared on the screen, then you can compile it again.
+Otherwise, you will have the old version if you forget to save it.
+So let's try that without a return to see if something happens.
+No, we don't have any errors, meaning that the return is not mandatory.
+What else can I miss?
+I don't know.
+Mm, maybe let's try to forget the pound include.
+Save it, and then the GCC.
+And indeed, you can see that we have some errors here :
+implicit declaration of the function, printf,
+because we forgot to include the standard input-output stdio.h.
+Here, we have a simple button that I just added
+to include the headers automatically.
+So if you click that button, it will include automatically
+what is missing here :
+stdio.h.
+I save it, and I compile it again.
+And of course, it works now.
+So you know how to compile and how to execute a program.
+Last thing here : if you move the program into a folder,
+let's create a folder.
+mkdir folder.
+And let's move the program into that folder.
+So what I can do is I can execute the program from the current directory,
+meaning that I am in /home/user by doing ./folder/program, and it works.
+I can also go into the folder, and then do ./program
+And I can also use the absolute path of the program.
+So let's go back to my Home folder.
+I am in /home/user, and I can use the absolute path,
+which is /home/user/folder/program
+Remember that the absolute path is always
+starting with a slash, not a dot.
+And indeed, it is working.
+So these are the ways to execute the programs, your programs once you
+have compiled them.
+Try it by yourself now.

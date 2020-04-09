@@ -1,0 +1,102 @@
+REMI : In this video, I'm going to show you
+the source code of a program that is interactive in the terminal, that is
+asking for three inputs from the user.
+As you can see here, what is your family name?
+What is your first name?
+And what is your age?
+And it is putting the answers in three variables.
+The first one is an array of characters, familyName.
+Second one, firstName, an array of characters.
+And the third one is the age, an integer.
+And it is asking those questions with a printf
+and waiting for the user input with a scanf with the %s
+because it's a string for the familyName.
+The same for the firstName.
+And %d for the age because
+it's an integer.
+And then, we have a final printf that will print %s, %s, %d
+with the familyName, the firstName, and the age.
+So let's try to run that program and see what's happening.
+So it will compile first.
+And then, right, run the program.
+So what is a family name?
+sharrock
+And then I press Enter.
+What is your first name?
+remi
+Enter.
+What is your age?
+18 and Enter.
+And we have the final printf that will print : "sharrock remi 18"
+Now, as you can see, at the end of each printf, we have a backslash n.
+That means that it will put a newline at the end of the question.
+That's why we have a newline and we answer at the beginning of a newline.
+And I want to show you something very specific
+here to the C programming language and the interactivity with the terminal.
+It's here.
+If I forget to put that new line for the questions at the end,
+and I run the program again, something very strange is happening.
+I only missed the backslash n, so we don't have any new lines
+at the end of the questions.
+So here, we don't have anything that is printed.
+But if I answer the questions, sharrock press Enter, remi press Enter, and then
+18 press Enter.
+Then, I have all the questions in one line.
+What is your family name?
+What is your first name?
+What is your age?
+And then the answer at the end, sharrock remi 18.
+So why that ?
+Because printf is buffered.
+It means that there is a buffer.
+What is a buffer?
+It's a quantity of memory.
+And the buffer ends when there is a newline backslash n in the printf.
+Because here, we don't have any newline on any of the printf,
+it will only print all the printf at the end of the program.
+But what we can do in the C programming language
+is to force to print the buffer even if there is no backslash n.
+And to do that, we have to modify the source code.
+And we have to do just after each printf, a new instruction
+to flush the buffer.
+It means to force the buffer to print on the screen.
+And to do that, it's fflush.
+And we want to flush the standard upwards.
+So it will be stdout.
+All right.
+Let's do that after each printf : fflush(stdout)
+And the last one fflush(stdout)
+I don't need any flush for the last printf
+because the last instruction is just after.
+And it will exit the program and force the flushing of all the buffers.
+So it will indeed print the last printf.
+Let's try that ; we hit the run button.
+And indeed now it is working.
+But look at that.
+We don't have any newline.
+So the answer will be on the same line.
+So, what is your family name?
+Without any newline I will answer, sharrock
+Enter.
+What is your first name?
+remi
+Enter.
+And my age?
+18
+and enter.
+And then we have the last printf here.
+So remember, if you are a C programmer and you ask for user input,
+be aware that you have to use a newline or you have to flush stdout
+with fflush like this, so that the user can see what's happening before you
+ask for an input from the user.
+Also I would like to mention that some systems, some Linux systems,
+don't have the same behavior.
+And they will print even if there is no backslash n, even if there
+is no newline at the end of a printf.
+So it really depends on which version of the Linux system you have installed
+and on which version of the C programming library you are using.
+But in webLinux and on many other Linux systems, you will have this behavior.
+And you have to be very careful because your program, if you
+are using this kind of interaction, has to take
+into account systems that don't flush automatically
+the printf without newlines.

@@ -1,0 +1,188 @@
+PETRA: Let's work a little bit more on reading from files.
+In this video, I'll show you how to get rid of this annoying feature
+that our files have to have that they needed to list as a first element
+how many numbers are stored in a file.
+Here I'm showing you, again, the file will be read from before,
+and the first entry was the number of numbers
+that we could subsequently read from this file.
+So we now want to create a new file that doesn't have that 9 in there initially.
+So I'm going to copy these numbers and create a new file.
+I'll create this by going over here to the right
+and writing touch my_third_file.txt
+And I'm going to edit that file next  my_third_file
+and just paste in the numbers without that 9 on top.
+I'm going to save this, and now we'll write a program
+that rates those nine numbers and automatically
+figures out that there are nine numbers in the file.
+And I have prepared a program, the skeleton of a program.
+It has are typically pounds(#) and include stdio.h line in it
+then my int main void.
+We will need a file pointer, and I'll call it ifile again just as before.
+And as before, we're going to open the file,
+but this time it's my_third_file.txt, for reading with a "r" right here.
+Now that we don't know how many numbers are stored in the file,
+we can't really use a for loop because a for loop
+assumes you know how many times you want to run through the loop.
+So a while loop will be better at this.
+So we'll write a while loop, and we want to keep running through this loop
+while we're not done.
+Let's just call it a condition like that.
+So while we're not done, we want to read from the file,
+and done is going to be an integer.
+And we need to initialize that integer, so initially, hopefully, we're
+not done.
+So done is 0.
+done will indicate with a 0 that we're not yet done,
+so there are still numbers to read from the file
+and with a number that's not 0 that we are done.
+So how do we know this?
+We want to perform an fscanf inside this loop.
+And we want to read from the ifile, and we want to read an integer
+and store that in some variable number that we need to still declare.
+So let's declare our variable number.
+But we don't know how many times this loop is supposed to perform.
+It turns out the fscanf function actually returns a value.
+And that's the value that will tell us whether we're still reading
+or whether we're done.
+So we can collect the value that fscanf returns
+and write that, for example, into a variable named message.
+That's again going to be an integer type variable.
+And I'll put it right here.
+Now, it turns out this variable will contain how many entries
+were read from the file.
+But if we have reached the end of the file,
+then message will contain the constant EOF
+as an end of file that is declared in the C distribution.
+So if message has the value EOF, I made a double equal here
+because we're testing whether those two are equal to each other.
+And EOF is declared in stdio.h
+It's a constant.
+So if message has this value EOF, then I want to indicate to my loop
+that I'm actually done.
+So done is equal to 1.
+So otherwise we can print out that we actually read something.
+So I read %d from file.
+And that's the number num that we just read.
+And if we wanted to know how many numbers we read altogether,
+we're responsible for counting now because no one is telling us
+how many we're reading.
+So we'll need a variable.
+I'll call it N, and we can initialize it as 0 because initially we
+have no numbers that were right.
+And then each time we read a number, we increase N by 1.
+So when we're all done here, we can print out
+"There are %d numbers in the file".
+And that's our N.
+So let's try this out.
+Let's save it.
+And our execution command here is compiling program.c
+with an output of program, and we're executing program.
+So let's run this.
+I write 56.
+I write 3, see it reads all of the numbers, and in the end even tells
+us there are 9 numbers in the file.
+So this worked out perfectly.
+Now let's suppose we actually wanted to do something with those numbers.
+Suppose we wanted to find the average of all those numbers.
+How do we do that?
+We need to add them up.
+And the best way to do that is to do that right in this loop.
+So we need yet another variable, maybe sum in which we add up these numbers.
+And then again, we need to initialize this sum as 0.
+And then in here, we have to add the numbers altogether,
+so we add num, the number we just read to our sum.
+Then we can print out "The sum of the numbers read is %d.\n"
+And finally to find the average printout, "The average is"--
+and the average is going to be a float--
+a double so: %.2lf.
+And what is that-- how do we find that?
+We need to first convert that to a double sum, for example,
+and then divide that by N.
+It's enough to cast one of these two integers to a double
+because then C automatically performs a floating point division.
+If I omit this (double) then C performs an integer type division
+because both sum and N are integers and your result will be incorrect.
+So let's save this and run it.
+And indeed "the average is 16.22", the sum of the numbers.
+I misspelled that.
+Let's correct that.
+And actually it's put a backslash n here after this last line
+so that it looks a little bit nicer.
+But let me also demonstrate to you what happens when I omit this double.
+So I don't do the casting right there.
+So now C will perform an integer division.
+It's actually warning me that that's not a good idea.
+So I had got a compilation error.
+"The average is 0.0", so that's completely nonsensical.
+And so let's quickly put our cast back in there.
+And let's run this again.
+Compilation error is gone.
+And now the average is back to being 16.22.
+I want to show you one last thing.
+This while loop is kind of long.
+To have this extra variable done to keep track of whether we have reached
+in the final or not in this variable message here,
+one can actually combine all of those things into one step.
+And let me show you how to do that.
+We can put the fscanf command directly into the while condition.
+And if you're not comfortable with that, that's perfectly fine,
+you can stick to this long while loop.
+But maybe eventually you'll transition to being comfortable with what
+I'm about to show you.
+So this is kind of extra material.
+So you can put the fscanf command directly here.
+So while fscanf(ifile, "%d"...
+So that's exactly the scene that we normally do and then want
+to store other result in num.
+So while that does not return EOF--
+while that is the case, I want to all of these things here.
+But I don't need the message thing, the done thing.
+I just need this.
+I want to print out.
+I write %d from the file.
+I want to increase N and add num to my sum.
+So I claim this performs exactly the same as my previous loop.
+To prove that to you, let me quickly run this program.
+I actually get a warning that I'm not using some variables.
+But the output is exactly the same as before.
+So let me get rid of the variables I no longer need.
+That was "done" and "message" so that I can get rid of this compiler error
+and run this again without any errors now.
+Now I'm-- of course need to also remove the lines where I initialize these
+variables.
+So that can go.
+I think now I got it, N and num.
+Let's do that one more time.
+So now it performs just fine.
+So why does this work?
+So again the fscanf function right here, it tries to read from the file
+and store the %d, the number, the integer that read in num.
+It returns a value also, so that's not going to be stored in num,
+but that's the return value of the fscanf function.
+That return value is typically a number 3, 2 and depends
+on what's been read-- how much has been read from the file.
+But if nothing was read from the file because the end of the file
+has been breached, then the return value of fscanf will be EOF.
+So we're testing here.
+We're doing several things in one step.
+We're reading a number from the file and testing at the same time
+whether the return value is EOF.
+If the return value is EOF, then we know actually nothing was read.
+We're already at the end of the file, then
+there's no point in entering this loop.
+So this loop can only be entered if the return value is not EOF.
+That's why you see this exclamation mark here for it.
+We're testing whether the return value is not equal to EOF.
+In that case, I did read a number.
+I want to add it to my sum.
+I want to increase my counter by 1 and so forth.
+So this loop will exit when this return value is EOF.
+And it's very important if you use this method here
+to not put a second fscanf inside the while loop.
+That's one of the most common mistakes that I see.
+Because I'm already reading right here while I'm testing this condition and do
+no longer need a second fscanf inside the while loop.
+But as I said, if you prefer the other method, that's perfectly fine.
+It performs just as well, and you can use whichever method
+you are most comfortable with.
+The most important thing now is go play.

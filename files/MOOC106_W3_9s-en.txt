@@ -1,0 +1,57 @@
+REMI: I'm going to show you how to inject an input to program using
+pipe, and using file redirection.
+You already know some ways to redirect an output to another command,
+or an output to a file.
+Remember that if you echo, "hello," you can redirect the output --
+that will be "hello" in that case --
+to a file using the greater sign >, file.txt,
+or to another command using the pipe, like this: |
+And for example, less.
+If I hit Enter, then the less gets the input "hello,"
+and you have to quit the less command.
+Let's do the same with a program that is written in C on the left.
+So let's run this program first to see what's happening.
+So it is asking for my family name, sharrock; then my first name, remi;
+then my age, 18.
+And then we have a final result--
+family name, sharrock; first name, remi; age, 18.
+So what I can do is using the same technique
+to inject the input to the program, actually.
+So the first technique is to use a file.
+So we will create a file that is called responses or answers.
+answers with all the answers of the questions.
+So in the answers I will put sharrock first,
+and then a new line, then remi, then a new line, then 18, then a new line.
+And here I hit the Control D. And if I look at the content of the file answers
+and I print it using cat, like this, of course I have the three answers.
+So how do I inject these to my program?
+Well, I can still use cat answers.
+So it will output sharrock, then new line, remi, then new line, then, 18,
+and new line.
+And I redirect this output with a pipe to my program.
+So here I put ./program
+And when I hit Enter, then it will ask the three questions,
+and it will inject the input of what was outputted by cat answers,
+which means sharrock, remi, and 18.
+So at the end, we have indeed family name, sharrock; first name, remi;
+and age, 18.
+The second way to do that is to invoke the program like this, but instead
+of redirecting the output of this program to a file --
+you already know how to do that like this --
+we will take a file on the right, and put it as an input in the program.
+For that we won't use the greater-than sign: >.
+By the contrary, we will use the less-than sign: <
+and here, the input as a text file.
+So the name is answers, just like this.
+And here it will get as an input the content of the file answers.
+Let's try that.
+And indeed it worked, because I have at the end - family name, sharrock;
+first name, remi ; age, 18.
+So both ways you can redirect the output of a command inside the input
+of a program using the pipe, like this.
+Or you can redirect the content of a file to the input of a program,
+like this, from right to left.
+So now that you know how to redirect files' content
+into the input of a program, or the output of a program
+inside the input of another program using pipes like this,
+you can try it by yourself.

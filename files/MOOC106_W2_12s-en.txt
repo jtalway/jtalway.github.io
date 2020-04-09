@@ -1,0 +1,60 @@
+REMI : I'm going to show you how to copy files and directories.
+It's pretty easy with the cp command.
+Let's try first to create a file with cat.
+So cat, and I redirect to f1.
+So I am in input mode.
+And I put hello, for example, and then enter Control D. And so if I cat f1,
+I have hello inside.
+Good.
+And to copy a file to another one, well, you just use cp, so cp f1 to f2, Enter.
+And if I cat f2, indeed I have hello.
+Remember that we also used another technique with cat.
+So if you cat f2, for example, you will have the output of the content of f2.
+And if you redirect that output to f3, then it's the same as copying the file.
+So if you cat f3, you also have hello, because cat f2 will put the
+output the content of f2, and you redirect the output to the file f3.
+So let's try now those with directories.
+So let's create directory d1.
+All right.
+Let's move the file f1 to d1.
+And now let's try to copy d1 to d2.
+Enter.
+And here you have an error:
+omitting directory d1.
+Why that?
+Because as for removing folders, you have to do it recursively.
+So you have to add an option cp minus r for recursive, and then it will work.
+So d1 into d2, Enter.
+And then you have--
+you see the file browser.
+We have d1 and d2, and we have also the file f1 that
+was inside d1 that was copied also.
+Now we can try to copy again d1 into d2.
+Look at that.
+If I do again cp minus r d1 into d2, what will happen here?
+Let's try that.
+And indeed, because d2 the first time was not created,
+it created the d2 directory.
+But here, because d2 is existing, it will copy the content of the directory 1
+inside d2 that is existing.
+And you can see in the file browser that we have d2 containing d1 containing f1.
+Let's try that a third time, the same one.
+It will be minus r d1 into d2.
+So it has overwritten all the files that were already in d1 existing in d2.
+So you have to be very careful.
+Let's look at the help of cp with --help.
+And as you can see, we can prompt before overwrite using -i,
+or you can force the overwrite with -f.
+So let's try again this cp, but this time, let's add i just after the r.
+And here you see you have the question, do you want to override d2 d1 f1 ?
+That's because d2 d1 f1 is already existing,
+and you are trying to copy d1 inside of d2.
+So let's say no.
+All right.
+And that's how you detect if you are overwriting inside a directory that
+is already existing.
+So you know how to copy files and directories.
+And to make sure that you are not overwriting
+directories that are already existing, you just
+add the option i, just like here.
+So try it by yourself.

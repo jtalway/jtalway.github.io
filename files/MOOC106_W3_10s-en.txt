@@ -1,0 +1,37 @@
+REMI : In this video, I'm going to show you that scanif is sometimes dangerous,
+both for programmers and users.
+Here is an example with a program that asks for my family name,
+then first, name then age.
+And when I run it, if I put spaces, it will split the string with the spaces.
+Look at that.
+What is your family name?
+Sharrock
+And then Space, and I will put my first name, Remi, and then
+Space, and then my age, 18.
+And when I will hit Enter, it will feed the two other questions
+with Remi and 18.
+It means that scanif split the first input with those two spaces.
+So Sharrock is the answer of family name, Remi the answer of first name,
+and 18 of age.
+So it means that scanf is splitting both on new lines
+and also on space lines.
+So if you don't want to have this behavior and by the way.
+It's quite dangerous to do that.
+To use scanf with a user interaction to get a string is very dangerous.
+So you should use other ways to do that, and you should learn
+how to program C with other courses.
+But here, I will get you some hints.
+Instead of scanf before a string, you should use both f get s.
+But then you will have all the spaces and also
+the new line character at the end.
+So you will get all the characters, even the newline characters.
+So you will have to get rid of that character if you don't want it.
+Also, you can use getline.
+And getline is a function that is compatible on POSIX systems,
+so not all of the systems.
+And also, you can use on Linux the gnureadline,
+but it's only compatible on Linux operating systems.
+So if you want to know more about those functions,
+you can search on the internet.
+And if you want to know more how to program in C,
+I invite you to take other courses on how to program in C.

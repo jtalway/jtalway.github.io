@@ -1,0 +1,71 @@
+REMI: In this video, I'm going to show you
+how to pass arguments to your program that you just wrote in C.
+So what does it mean to pass arguments to a program?
+Well, you already know how to do that on the command line.
+For example, when you type ls and you give arguments
+like options like -l, well, this is one argument, -l,
+and it will do something different.
+So the program, depending on what type of arguments they have,
+what is written as arguments, will have different behavior.
+Well, you could do the same with your program.
+Here, we have a program and to execute that program, we use ./program
+What if I want to add some options like -e, for example?
+Here, -e. Well, let me show you how to do that.
+First thing, we have to modify what we used to write for the main,
+and we have to add int space argc and then comma, and then char star argv,
+and then the square brackets just like this.
+We could have written also char star star argv without the square brackets,
+and we could also have written char argv brackets brackets, just like this.
+Why?
+Because argv is a matrix.
+It's an array containing pointers to an array of character.
+So it's a matrix like this.
+So let's write it with double star, for example.
+char **
+It means that argv contains an address to an array,
+and this array will contain, in each cell, a pointer to an array of character.
+All right.
+And after that, I'm going to print all the arguments using that notation.
+So first, I use argc, and I will print:
+"I have %d  arguments from the command line",
+and I will replace %d by argc.
+So argc will be the number of arguments you put here.
+Here we have only one, -e, but we could have two of them, for example,
+-e and -t, I don't know, so that would make two arguments.
+But the thing is argc will always have plus one.
+Why that?
+Because the name of the program will be always counted
+is in the number of arguments.
+So it is like having three arguments here, the name of the program,
+and then the options.
+So here, we will use a for loop that will loop through all the arguments,
+so from zero to argc, which is the number of arguments,
+and it will print the arguments using %d and %s.
+%d will be the i, so the index, so the number of the argument and %s
+will be actually the string, for example, here -e or -t.
+So I use the bracket notation like an array, argv[, just like this.
+All right, let's try it just now by clicking the Run it button.
+As you can see, I added -e and -t. So what happens?
+When the program is executed, you will see that the command line contains
+a ./program, and then space -e space -t.
+And indeed, we have three arguments because we
+count the name of the program.
+And the first argument is the number zero: ./program,
+the second one is number 1: -e, and a third one
+is number 2: -t. Now let's write something
+else like first, second, third, just like this, and let's run it.
+And here it is.
+We have this time four arguments from the command line,
+and we can see that argument one is first, second is second,
+third is third.
+That's right.
+So the first one number zero is always the name of the program.
+So you see that it looks a little bit like these commands for the gcc,
+we have gcc, that would be the first argument,
+and then -std=c11, the second one, and then -Wall,
+and then -fmax-errors=10, et cetera, et cetera.
+So all of them in total we will have 1, 2, 3, 4, 5, 6, 7, 8 arguments
+even containing the name of the program.
+And here, we have 1, 2, 3, 4 of them.
+So you know how to get the argument from the command line.
+Let's try it by yourself!

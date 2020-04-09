@@ -1,0 +1,97 @@
+REMI : In this video, we are going to see how to get the type of a file,
+how to get the path of command of a program that
+is installed on the system, and also what is the real path of the file
+or directory.
+So we are in the home directory.
+Let's list.
+And we have the basic program.c
+So how do I get the type of this file?
+Well, I use the file command, file, and then name : program.c,
+the name of the file.
+Enter.
+And so the first time you execute file, it will be a little bit longer,
+but because it will download the binary of the file program.
+So, anyway, program that's here is a C source, indeed.
+It's written in ASCII text, which is a way to encode characters.
+And it is encoded in ASCII.
+All right.
+Let's create a new file using nano.
+nano is the editor, a file editor, a very basic one.
+So nano f. So I will call the file f. So if I do that, it will create a file,
+a file called f. Open it, and we can edit it in a GNU nano.
+Now, let's try to write something:
+hello !, and that's it.
+How do I save?
+So if I go to the menu down, I can see right out which means save.
+So it's Control O, File Name to Write: f. Mm-hm, sounds good.
+So I Enter.
+All right, and then I just exit, control X. All right, sounds good.
+So what do I have now?
+If I ls, I have f and program.
+And indeed, in the file browser here, I have program.c and f.
+And if I double-click on f, it will open it in the code editor, as you can see.
+Let's try to see the type of the file f.
+So file f, and that type is just ASCII text, indeed.
+And now I'm going to show you a common way to see the path of a file.
+And it is realpath.
+So what is the real path of f?
+And it is the absolute path.
+So the absolute path is /home/user/f, indeed.
+Let's go now to explore a little bit of the system.
+So let's go to cd / : the root directory ; ls.
+So I have a bunch of directory folders here.
+And let's try to get the type of bin, so file bin.
+bin is a directory, indeed.
+So I can go inside, cd bin.
+Let's ls again.
+So I have another type of file here.
+Let's try to get the type of cat, so file cat.
+Hm,  interesting cat.
+What is cat?
+cat is a symbolic link to /bin/busybox.
+All right, so we won't go into the details of symbolic link just now,
+but we can see that some of the files are links to other files.
+But it's great to see the type of busybox then.
+File busy box.
+So it's ELF 32-bit executable.
+So it's a binary that is executable.
+For OpenRISC processor, well, you have a bunch of other properties
+that are more advanced properties.
+Sometimes the developers would use these properties,
+but the more important one is executable, and also 32 bits.
+And the name of the processor, OpenRISC, that is able to execute this file.
+Let's go now to see the real path of cat.
+What is the real path of cat ?
+Ah, it's /bin/busybox
+Indeed, because cat, as you remember, was a symbolic link to /bin/busybox.
+Let's go somewhere else.
+Let's go to /sys/kernel
+Kernel, which is the kernel of the system.
+So we are very deep into the system.
+Let's list what's inside.
+We have a bunch of files here.
+So let's try file notes.
+What is it?
+Oh, it's an X11 SNF font data
+MSB first.
+Oh, quite advanced, I would say.
+Let's try another one : file fscaps
+Oh, this one is more simple.
+It's just ASCII text.
+All right, so we just found some different files, and folders,
+and found with the file command the type of those files.
+And now I'm going to show you how to get the path of binaries
+that are installed on the system.
+So we just used realpath, for example.
+And to know where is installed realpath, I use which:
+which realpath-- and it gets me the path of the real path binary.
+And realpath is installed in /usr/bin/realpath
+Let's try which cat.
+cat is, indeed, installed in /bin/cat.
+Let's try which which, because which is, indeed, a binary.
+And it's installed, indeed, in /usr/bin/which
+And let's try which file
+It's in /usr/bin/file
+And the last one, which ls, it's in /bin/ls
+All right, so you know how to get a type of a file
+and how to locate a binary that is installed on the system.

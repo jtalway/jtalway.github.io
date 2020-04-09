@@ -1,0 +1,133 @@
+PETRA: I will now show you a program that
+allows you to recover arguments of different types passed in your
+main function from the command line.
+For example, you can see here my execution line is ./program
+And then there are three parameters: -e, 43, and 27.88
+Those are all of different types.
+At least, that's what I intend for them to be.
+-e is a string.
+43 looks like an integer.
+And 27.88 looks like a decimal.
+But if you recollect from our previous video, what's
+passed to the main function are arrays of characters or strings.
+And so it's going to be our job to convert
+the string that contains the number 4 and the number 3
+as characters into the actual number 43, and the string that
+contains the characters 2, 7, dot, 8, 8 into that number 27.88
+So let me show you how this can be done.
+Look at this program.
+My first line is my int main line that receives the number of arguments passed
+to the main function as well as an array of strings,
+which contains all the parameters being passed to my main function.
+As before, I'm printing out here how many arguments
+I have received from the command line, and I also
+print out what those arguments are.
+This is directly taken from our previous program.
+What's new here is the following.
+First, I check whether I have indeed received four arguments.
+Remember, the ./program already counts as one argument,
+so one.  -e is two.
+43 is three.
+And 27.88 that's four.
+So if indeed there are four arguments, then I enter this if statement.
+What happens next?
+I want to make sure that the first argument is indeed a "-e"
+and not something else.
+And so I use a function named string compare--
+s-t-r-c-m-p.
+It stands for string compare.
+And I compare the argument that's stored in location
+1 of my array of arguments--
+remember location 0 contains ./program.
+Location 1 contains -e
+I compare that with the string -e.
+This function string compare, you haven't seen before,
+it is defined in the string library
+string.h, therefore, is included here.
+We previously wrote a function for this purpose ourselves.
+But now that we're working in Linux, we can actually use the string library
+for this purpose.
+So the strcmp function compares two strings with each other.
+And it returns a value of zero--
+to compare has the value is zero--
+if indeed both of these strings are indeed the same.
+So if they're indeed the same-- so if compare equals zero--
+we're going to print out argv[1] equals -e.
+And otherwise, we're going to print out argv[1] does not equal -e.
+Next, I'm going to tackle this next string here.
+So this is stored in argv[2] ;
+argv[2] is a string.
+It contains the two characters 4 and 3.
+And I need to convert that into an integer.
+And to do that, there's actually a function that does that.
+It's called atoi, ASCII to integer.
+And that function is defined in the standard library.
+That's why I'm including the standard library, that h header file up here.
+ASCII to integer I passed with the string argv[2].
+And it converts that to an integer, which I had
+in store in the integer whole number.
+And I can then print that out.
+So if you print the number out as a %s, as a string,
+so argv[2] is the string that I printed out with a %s
+But I can also print that it as a converted integer with a %d
+So whole number is an integer and I can then print that out.
+And then there's a very similar method to convert this decimal number
+27.88 into a double.
+And the function is called atof, as an ASCII to float.
+And I can store that in a float or in double.
+I pass to it argv[3], which is the 2, 7, 8, 8 string, and out
+comes an actual decimal number, which I store in decimal number, which
+I declared as a double.
+And again, I print out the string first that stores the characters 2, 7, dot,
+8, 8.
+And then I print it out as a double with a %lf and I print out the decimal
+number here.
+So in order to compile this program, I actually
+don't need to include the string library or the standard library,
+because they're such standard libraries that they are automatically
+being included for us.
+So we don't have to do that.
+So all we have to do is save and then run our program.
+And here it goes.
+And it says I have four arguments from the command line.
+Argument 0 is ./program
+Argument 1 is -e
+Argument 2 is 43
+And argument 3 is 27.88
+Remember that these are all printed out as strings so far because they come
+from that first for loop where the arguments are printed out as %s,
+as strings, because that's how they're stored and handed to us.
+Next comes our conversion.
+So argument 1 equals -e.
+Indeed, we figured that out.
+And 43, that's printed as a 4 and a 3 as a string.
+As an integer it's 43.
+But the advantage of having it as an integer
+is that we could now do math with it.
+When 43 is stored as a string, as a sequence of characters,
+we couldn't use that to add something to it or subtract something from it
+or multiply or do whatever we want in a math problem.
+But this number 43, as an integer, we can use that mathematically.
+And the same was true for the 27.88, which
+is here first printed as a string, but then printed as a double.
+And notice that by default, a double prints with six decimal places.
+And that's why those zeros got added in there.
+And we could specify the number of decimal places if we wanted to.
+All right, let me just try one more thing.
+Let me pass in a different argument, let's say, -x down here.
+We haven't modified the program, so we don't have to recompile.
+We can just run it.
+And this time notice that it says argv[1]
+does not equal -e because we passed in a different argument,
+namely -x.
+So now you know how to recover arguments passed to your main function
+from the command line and how to perform tests on these arguments
+by using functions such as string compare, right here,
+or ASCII to integers to make them into integers,
+or ASCII to float to make them into floats
+or doubles so that you can actually perform mathematical operations.
+Now, this was a pretty dense recording and a pretty dense video.
+So the best way for you to practice and really figure out what's going on
+is to start playing around.
+So take this program, change the parameters,
+and play and see how you can write your own code.

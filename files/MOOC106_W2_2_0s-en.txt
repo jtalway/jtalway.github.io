@@ -1,0 +1,220 @@
+REMI : In this video, we are going to navigate
+through the file system using Linux commands in the Linux command line,
+of course.
+So the first command you will learn is pwd.
+It means print working directory.
+It is the directory in which you are working just now.
+So if you press Enter, well, you see /home/user
+and that's usually your home directory.
+Remember that, whoami. I am user.
+So that's the username.
+So usually, when you type pwd when you first log into a Linux system,
+you will have /home/ and then you're log in.
+If it is remi, it would be /home/remi.
+But we are user because I configured WebLinux by default with a user : user.
+So anyway, pwd is to print the working directory.
+Let's try now to list the files and folders, directories inside the working
+directory.
+To do that, it's ls for list.
+I have only one file that is program.c
+And this file is open in the editor just in the left.
+And by the way, if you go to the left, you have a File Browser tab.
+If you click on it, you will see all the files and directories
+in your home directory.
+So home here stands for /home/user.
+And you see indeed, there only one program: program.c
+And if you double-click on it, it will open it in the editor just here.
+So let's go back to the file browser.
+And indeed, it corresponds to what's happening when
+I list the files in my home directory.
+Now, let's try to navigate the file system.
+So I have to change the directory.
+To do that, I will use the cd command; cd stands for change directory.
+So let's go to the root directory-- cd and then space
+and then the root directory is the root of everything.
+It's called  slash : see /
+And here, you can see in the command prompt that I have now / $
+And indeed, if I print the working directory pwd, now I am in /
+So if I list what is in / oh, I have a lot of things.
+I have folders, bin, etc, lib, proc, sbin, temp, var, dev, home.
+I have something more blue
+linuxrc,
+root, sys and user.
+Let's try to go to home, for example.
+So cd /home
+And now, I am in /home
+And if I print the working directory, it's indeed /home
+And if I list, what do I have in home?
+I have the folder user.
+So let's go to user :
+cd user
+Oh, and by the way, you can use relative path and absolute path.
+We are going to see that in a few seconds.
+So let's go to user anyway : cd user
+And now, it's tilde because tilde stands for the home directory.
+And indeed, if I pwd, I am in /home/user
+And it's indeed the home directory.
+And it's represented in the prompt by ~
+So anyway, let's go back to the root directory :
+/
+And then I list :
+ls.
+And then, let's go to bin, for example.
+So cd /bin
+All right, and let's try to list what's in the /bin directory.
+Oh, I have a lot of files.
+And I can see that I have indeed in the binary ls, that we are using just now.
+Do we have cd ?
+No, I cannot see it.
+Do we have pwd ?
+Yes, indeed.
+We have it just here.
+So we find some of the standard Linux commands in the /bin directory.
+All right, let's go back to the root.
+And this time, let's go to list first.
+All right, and I'm going to go inside the sys directory :  cd /sys.
+All right, let's try to list :
+ls
+And oh, we have other directories : block, class, devices, et cetera,
+et cetera.
+fs : that stands for file system.
+And this time, if I print the working directory,
+you can see that I'm still in the /sys.
+So a way to go back to the home directory is to type cd
+just alone like that, and enter.
+And it will go anyway to the home directory : the tilde just here.
+So if I pwd, it's indeed /home/user.
+So if you use cd without anything, it goes back to your home directory.
+So let's talk now about relative path and absolute path.
+So as you can see here, if I list with ls the files I have in my home
+directory, I only have program.c
+But this is indeed, a simplified view.
+To have a more advanced view and to see the hidden files,
+you will add an option to ls :
+ls -a.
+And this will list the files and also the hidden files.
+Oh, and you see we have lots of hidden files.
+And the names of the hidden files are starting with a dot.
+So we have files and folders also.
+And also, you can see here that we have something called dot
+and here : dot dot
+And this is the way to explain relative path.
+Because dot
+is the current directory and dot dot
+is the parent directory.
+So if I type cd .. then it will go to the parent directory of my home
+directory, which is /home, indeed as you can see here.
+And if I go back again to cd .. then we are back to the root directory,
+which is the parent of /home, indeed.
+Let's go back to the home directory.
+And this time, I can do something like this with the relative paths
+../..
+And it means the parent of the parent of this directory.
+And it will go to the root directory, indeed.
+If I pwd, it's the root directory.
+All right, let's go now to a directory, for example, sys.
+Here, I can use the relative path, like this : so cd
+from the current directory, so ./
+I want to go to sys, and indeed it goes to sys.
+Let's go back to the parent cd..
+I go back to the root.
+And I can also write something like cd sys without  ./
+because it's in the same directory.
+And indeed, we go also to the sys directory.
+And let's go back to the root with cd ..
+And let's try also cd /sys
+And you see that it works also.
+But this time, the last one is an absolute path.
+Absolute path always start with the root with /
+As you can see here, we have ./ so it's a relative path.
+Here, we have .. so it's relative.
+And here, we don't have any /
+We have only the name of the directory, so it's also relative.
+The only absolute paths are starting always with the root /
+So if I want to go back to /home/user, and I am in /sys,
+I can use relative paths like this : cd ..
+I go to the parent, so it will be /
+And then in the parent, I know that I have  home and I have in home user.
+So here, I used a relative path to go back to the home folder.
+And did it work?
+It worked because I am in /home/user.
+Let's go back to /sys
+All right, and this time, let's try to write directly the absolute path.
+Because it is absolute, you only have to start from the /
+and to know the path from the beginning.
+And you know that it is /home/user
+All right, and from anywhere in the system,
+you could reach /home/user using the absolute path because it starts from
+the root.
+So from the root, you will always have /home/user accessible.
+But here, because I used .. it will go to the parent directory.
+So you have to be sure that the parent directory is the root because /home is
+indeed in the root.
+So you have to be careful when you use relative path or absolute path.
+Let's try something else.
+Let's try to go to /
+And we'll list and go to sys again, using relative path.
+And let's go deeper.
+Let's go to... so I list what is in sys.
+And I have all the folders here.
+Let's go to module.
+All right, now I am in the /sys/module
+Let's list.
+Oh, I have a lot of folders here.
+Let's go to drm, for example : cd drm.
+And then, I list.
+OK, I have another folder, parameters... cd parameters
+All right.
+And let's list.
+All right, and I have a few files here within the system.
+So let's now try to use the relative path to go back three folders behind.
+So cd ../../..
+So it will go to the parent of the parent
+of the parent of the current directory.
+So parent of parameter is drm, parent is module, and parent is sys.
+So we should go back to sys.
+Let's try.
+And indeed, I went back to the sys directory.
+This time, let's go back to module/drm/parameters.
+And you see here that I use a relative path relative to sys
+because it doesn't start with a slash.
+And it worked.
+And let's go back to the home user using relative path.
+Oh, it will be quite difficult. So the parent
+of the parent of the parent, that would be, I guess, sys.
+So I go back to the parent again.
+And inside, it should be home and user.
+Let's try.
+Oh, and it didn't work.
+So you see here the relative path, relative to this directory parameters.
+You have to go back to the parent, and then the parent,
+and then the parent, and the parent.
+And then you are in the root, so you can go to home, and then user.
+Lets try again, but without a mistake.
+/sys/module/drm/parameters, and let's try : cd ../../..
+and I miss one : /home/user
+Can't cd too.
+So I have an error because this directory doesn't exist.
+So that's why it's quite difficult to use relative paths sometimes.
+And you have to be very careful.
+And to program usually, you would use absolute path
+because it's always sure to start from the root directory /
+All right, what else can I explain?
+If I go back to the home directory and I list the hidden files,
+so you can see that the blue ones are folders just here
+and the white ones are files.
+Let's try to cd to a file.
+It shouldn't work. cd program.c
+And it says I can't cd to program.c because it's a file.
+And I want to show you a last thing.
+It's ls with an a option.
+And I will add another option just after a, which is l.
+And it will list all the files and folders in more detail to you.
+So you can see here, it's a list.
+And you can see that the first letter of the line is a d if it is a directory.
+So we have one, two, three, four, and then the ..
+and the . that are special directories.
+And when you have a dash, it's a file.
+All right, so now, you know how to navigate through the file system.
+You know how to navigate using absolute path and relative path.
+So let's try yourself to navigate through the file system.

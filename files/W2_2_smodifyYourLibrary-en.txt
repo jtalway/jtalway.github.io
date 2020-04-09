@@ -1,0 +1,141 @@
+PETRA: I will show you how to modify an existing library,
+for example, the library, weather.so that we wrote previously.
+And you will see that all of the necessary steps to do so
+can get a bit tedious.
+And so this will motivate us to learn all about so-called Makefiles
+that can automate all of the steps we're learning about here.
+So to modify the weather library, let's add
+a new function which prints the average 7-day temperature.
+Here you can see the program that we wrote previously.
+It includes weather.h, which is the header file that
+contains the function that we've written so far,
+namely the function averageTemp.
+But now what we would like to do instead of having this printf statement
+right here, we would like to simply call a function that
+prints the average temperature, so something
+like printAverageTemp, to which we pass the array of temperatures
+and the size of the array, of course.
+And so ideally, we just don't want to have to compute the average temperature
+or do the printing here at all.
+We just want to get rid of those two lines
+and simply be able to call this function printAverageTemp
+Now, where will this function be defined?
+This function needs to be added to our library to be part of our library
+so that we can call it whenever we include the library in our program.
+So now, I'll show you all of the necessary steps
+to modify our existing library.
+First of all, I'm going to save this code.
+And now, remember our library consists of the header file with the extension
+.h, and the source file with the extension .c, which we then compiled
+or translate that into machine language and then has the extension .so
+So let's start by modifying the header file.
+We need in the header file, we need a prototype for the function
+that we're about to write.
+So what does that function do?
+It prints the average temperature, so it doesn't return anything.
+So the return type will be void.
+We call that printAverageTemp.
+And it receives as input the temperature array,
+which is an array of integers, so int *temps
+Oh sorry, they're doubles, just like in the previous function, double star
+temperatures, and also the number of temperatures stored in this array.
+So that's all we have to do in the header.
+So this is now the header of our function.
+I'm going to save this.
+And I'm now going to go to weather.c, which is our weather library that
+contains the actual function, the actual code that will get executed
+when our function is called.
+And therefore, that's where we need to at the source code for the function
+printAverageTemp
+We start with our header for the function.
+The function is of return type void printAverageTemp.
+And we pass into it the array of temperatures.
+I'll call it temps again, as well as the number
+of temperatures stored in the array (numOfTemps)
+And then what should this function do?
+First it should compute the average 7-day temperature
+and then print it up.
+So basically, it should do exactly what those two lines in our main function
+used to do that we took out.
+So I'll paste those two lines in here, and we
+need to modify them ever so slightly.
+The first line computes the average by calling the function average
+temperature (averageTemp), which is declared up here.
+And it stores the result in a variable average of type double.
+You have to be slightly careful, because you need to pass into this function
+the array of temperatures, but I call that array temps right here.
+And so I need to modify this and call this temps.
+And instead of actually referring to the actual seven,
+I might just as well use this variable numOfTemps.
+This will make our function more flexible
+if you ever wanted to compute the 8-day average
+or the 10-day average.
+Then this average would still be computed correctly.
+And next, we print out the average 7-day temperature with this line
+right here.
+And again, you could be fancy and replace that number seven
+with a %d, and put in the number of temperatures (numOfTemps),
+but we're just not going to go there right now.
+Now, since this is a library, it doesn't have a main function.
+Therefore, it cannot be made into an executable program,
+because it just wants to be added on to other programs that have main
+functions.
+Therefore, we need to tell the compiler that we're just dealing with a library
+here.
+And so I'm going to get rid of this program.c and -o
+program in our build content, and instead add the -c option.
+The -c option tells the compiler I only want to compile.
+So translate into machine language, but not build an executable program,
+which is a separate step.
+So -c tells it to only do that.
+So now, I need to tell him which file to work with is weather.c,
+and the output is called weather.so.
+That's what be called our output library.
+And we don't want to start anything afterwards,
+because we're not creating an executable program.
+So let's try this out.
+We have error messages and warnings.
+What happened?
+In function printAverageTemp, implicit declaration of function,
+printf
+What does that mean?
+printf is implicitly declared.
+Well, printf is from the standard input output library,
+but we didn't include the header file.
+So because we're using a printf statement here, we
+need to #include <stdio.h>
+We don't need to include this library down in our build command,
+because the standard library automatically included,
+but we do need to include the header file,
+so that the compiler knows what to expect of the printf function.
+So let's try this again.
+And now, everything works just fine, and our library
+has been translated into machine language.
+So let's go back to our main function now program.c
+And we are ready to compile this into an executable program.
+So we need to go back and change the compiler directives down here.
+We want to now translate program.c, and the output
+is supposed to be called program.
+And then we want to actually execute that program.
+So let's see what happens.
+Save, and let's run this.
+We got an error message.
+What happened?
+Well, the error message says in function main undefined reference
+to printAverageTemp
+So we can't find printAverageTemp.
+So why is that?
+Ah.
+When we built our program, we forgot to link in the library.
+So here, we need to actually tell the compiler that we're
+using this new library, weather.so
+So I need to add this library, weather.so to my build command.
+So now let's try this again.
+And it works.
+And it says the average 7-day temperature is 6.49
+So that's pretty cool.
+That's in Celsius.
+So now you know all of the steps to create and modify your own libraries.
+But it was a little bit tedious to have to modify all these individual files
+and then change the compile command for each file.
+So we'll learn next how to automate all of these steps.

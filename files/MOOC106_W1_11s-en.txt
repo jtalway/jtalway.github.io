@@ -1,0 +1,168 @@
+REMI : In this video, we are going to see some commands,
+that, when they are executed, don't go back to the prompt immediately.
+Remember that the prompt is what is prompting for a command.
+Here it's a tilde, a space, a dollar, a space, and a blinking cursor,
+waiting for a command to be written and to enter  press
+key so that we execute the command.
+So when we execute some of the commands, they launch a program.
+And this program will be interacting with the user-- with you--
+until you quit this program and go back to the prompt.
+So I'm going to show you some of these commands of these programs
+that don't go back directly to the command prompt.
+And we will have to find a way to quit--
+to exit these programs--
+to go back to the command line prompt.
+So the first command will be top.
+Let's first try to see the help and see what this command is doing.
+So --help
+and it provides a view of process activity in real time.
+It displays a screen full of them.
+And here you can see some keys.
+And here, the most important one would be Q
+that is exit , and also something here,
+carrot C or the circumflex accent with a C.
+It means that you have to press the Control key.
+So the carrot is control key,
+and at the same time, the C key.
+So Control-C means that if you push these two buttons,
+these two keys, then you will go back to the command prompt
+and it will exit the command.
+Let's try to do that.
+Let's try to execute top.
+And as you can see, the program is running.
+And at the bottom left, you have this blinking cursor.
+But you don't have the command prompt.
+If I type something here, it doesn't do anything.
+I just type S and it did something with the program anyway.
+So let's try to type the Q key.
+All right.
+And now I have the command line prompt back again.
+Let's try to go back to the top program.
+And let's try to type Control C. Yeah, it works.
+So both ways to exit the program and then go back to the command prompt.
+Anyway, let's go back to top and see what's happening here.
+We have some memory usage here, CPU usage, 0%
+and the load average.
+We'll see that later.
+And we have a lot of programs running here,
+a list of the programs.
+And you will see here that the program top is running, with a PID at 56, 49 00:03:08,050 --> 00:03:10,410 a process identifier.
+We'll see that later.
+So anyway, it's a simple program to see what's happening in the system,
+and to see for each program how much CPU it is using.
+The percentage of the CPU used by top is 0.4%.
+And so anyway, I wanted to show you how to get out of this application.
+So type the Q or Control-C
+Let's try another program--
+htop.
+Usually, it's not installed and you have to install it on a real Linux system.
+So it's a top, but with a little bit more
+designed interface even if it is textual, because you can see here
+the CPU consumption in a more graphical way, and also the memory consumption.
+Here, it's the memory that is used, and here, the memory that is free.
+So we will use 2 megabytes out of 25 megabytes total.
+The swap memory-- we won't use that.
+And here, you see the command htop that is running with a process
+identifier 57 and a CPU percentage. Oh, a little bit higher than top.
+It's 3.9%.
+And also the memory percentage,
+3.7%,  and the time, how much CPU time it is using.
+All right.
+How do I quit this program?
+Oh, you can see at the very bottom, that you have F1 and F2, et cetera,
+up until F10 to quit.
+So here, it's pretty obvious that we have
+that we have to push the F10 key to get out of the program.
+On some of the keyboards, you will have to find the F10 key,
+and sometimes you have to press a special key to activate the function
+keys, like F10.
+So on my computer, I have to push a button that is called function-- fn--
+and at the same time push the F10 key.
+Is it working if I do that?
+Yeah.
+I just went back to the prompt as you can see.
+So F10 worked.
+Let's try to run again htop.
+And let's try the Control C keys.
+And it works indeed.
+If I press the Enter key again, yeah, you
+can see that I have the command line prompt again.
+And let's try again htop and let's try this time the Q key.
+And indeed it works also.
+So this command htop you can get out, you
+can exit the program with Q, Control C and the F10 keys.
+Let's try another one :
+nano.
+nano is a file editor, a very basic one.
+If I enter this program, you will see a kind of text editor.
+And at the very bottom, you have a kind of menu.
+It's a key menu.
+And you can see here, we have always a carrot or the circumflex accent with G
+to get help or carrot X to exit, or carrot O to write out
+or to read a file, et cetera.
+So here, I imagine that carrot X means that you
+have to push the Control and the X keys to exit the program.
+So let's try Control X, and indeed, we just exited nano.
+Let's go back to nano, and let's try Control C, if it works.
+Oh, it did something because you have something that is written here,
+but he didn't exit the program.
+So Control C is doing something, and indeed here,
+you can see in the menu that Control-C and those,
+I don't know, it's written curve pose, but I don't know what it means.
+Maybe if I can get help.
+So let's right Control J--
+Control G, sorry.
+Oh main nano help text, nice.
+So here, you have a lot of explanation here.
+If I use the arrows keys, I can scroll through all the help.
+So anyway, let's try to exit again this program:
+Control X and Control X. All right, and I went back to the command prompt.
+Let's try to see another text editor that is very famous.
+It's called vim,
+v-i-m. This one is sometimes quite difficult to get out of.
+Here, the first page explains how to exit the program.
+Look here-- type-- colon Q and then Enter to exit.
+Let's try that :Q Enter.
+all right.
+And I went back to the command prompt.
+But vim is quite,
+indeed sometimes, quite tricky to get out.
+Let's try again.
+If I type the i key, it goes to insert mode.
+So I can type some text.
+So first, I typed the i key.
+It goes to insert mode and now I don't have the menu anymore,
+and I'm kind of lost in the program.
+The program is still running.
+And if I try Q, well, anyway,  it doesn't work.
+If I try Control C, it doesn't do anything.
+And I cannot type any more.
+Oh, I just typed some random key and I don't know what's happening.
+So sometimes it's quite tricky to get out of vim.
+Let's try :q Enter.
+No write since last change,
+add exclamation mark to override.
+OK.
+:q! mark
+and I went back to the command prompt.
+Let's try again.
+vim,  let's try to type
+i and then some text, and then...
+ha, I'm quite blocked here, because if I type :q and Enter,
+well it just enters the text.
+So I have to go back to this kind of vim menu,
+and to do that I have to push the Escape key.
+Let's try it.
+All right.
+And then let's try again :q. All right,  the same message here,
+so :q!  and indeed I went back to the command
+prompt.
+So vim is a quite difficult program to get out sometimes.
+So anyway, in a vast majority of the cases,
+you can use the Control and C keys.
+So sometimes it's written carrot or the circumflex accent.
+And it means control.
+So Control-c is a good way to get out of a program,
+but sometimes it doesn't work and you have to find another way.
+You have to look through the help of the program
+or get smart to get out and have the command prompt again.

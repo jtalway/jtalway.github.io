@@ -1,0 +1,160 @@
+REMI : I want to show you how to create and delete folders' directories.
+Let's go to the file browser right here to see what's happening.
+So first, we will create a folder in the home directory.
+So the command to do that is mkdir, to make directory: mkdir.
+Let's name it folder.
+All right.
+You can see here that we have a folder in the file browser.
+And if I ls, indeed, I have also a folder here.
+ls -l.
+I have a folder because the first letter is d, so it's a directory.
+Let's get inside folder, and let's create two files.
+touch file 1
+touch file 2
+And then, I will create a subfolder.
+mkdir, so make directory subfolder.
+Let's ls
+And we have, indeed, f1, f2 subfolder in the folder, folder.
+And what can I do?
+I can go inside subfolder, and I can print working directory.
+But we already know that we are in
+/home/user/folder/subfolder
+Let's create three files.
+touch f3.
+
+touch f4 and touch f5.
+So here in the file browser, if I open the subfolder,
+you can see f3, f4, and f5 are in subfolder.
+All right.
+Let's go back to the home directory with cd, just cd
+So we are back in the home directory.
+So now, how do I remove the folder?
+So let's write rm folder
+And it doesn't work.
+It says folder is a directory.
+Indeed.
+So how do I do that?
+Well, I have to recursively delete the folder and the subfolders,
+so I have to do rm minus r to say recursively.
+And then, the name of the folder: folder.
+And it worked.
+I have, indeed, deleted folder and all the content.
+So you have to be very careful because it's very powerful,
+and you can get rid of a whole folder without any notice.
+Let's try to recreate that folder.
+mkdir folder.
+I go inside.
+I create a file, f1, another one, f2.
+All right.
+I go back to the home directory.
+And this time, I will add an option, that is i, so rm minus r and then i.
+So I have double options.
+And this i will ask me-- so I will delete folder--
+will ask me each time it does something that is--
+each time it does something that is dangerous.
+For example, descend into directory folder.
+Yes.
+I have to answer yes with a y.
+Remove folder slash f3?
+Yes.
+Remove folder slash f1?
+Yes.
+Remove directory folder?
+Yes.
+So you see here, I have to each time confirm
+that I want to remove or go inside a specific folder
+and remove what's inside.
+So I have to answer yes, yes, yes, yes, all the time.
+And a very, very funny way to do that, I will show you how to do that.
+mkdir folder.
+Let's go inside.
+Let's create f1 and f2.
+Let's go back to the home directory.
+And one funny way to answer yes all the time is to use the yes program.
+So if you just try the yes command, like this, and press Enter.
+It will just display yes, yes, yes, yes, yes all the time.
+So it will just output yes all the time.
+And to quit this program, you have to hit Control C.
+And then you have back the command prompt.
+So yes is used to push the y key multiple times.
+So I can use that as an output.
+So I use yes.
+And the output of yes, which is I type the y key many times,
+I redirect it with a pipe command like this.
+I redirect it to the command that I just wrote before.
+So it was rm -ri, and it was asking me--
+and also folder.
+And it was asking me many times if I want to do this, or this, or this.
+And here, because I redirect the output of yes into the input of this command,
+it will answer yes all the time.
+So let's try that.
+And let's try to
+hit Enter.
+And you can see all the questions that were answered by yes.
+That was quite funny, a funny way to do that.
+All right.
+So the last thing I want to show you is how
+to create many directories in one command.
+So mkdir d1 d2 d3.
+And, indeed, I have three directories.
+But what if I want to have d2 inside d1 and d3 inside d2?
+So first, let's delete d1.
+Let's delete d2.
+And let's delete d3.
+And now, what if I want to have like d1 and inside d2 and inside d3,
+inside d4, inside d5, et cetera.
+Let's write mkdir, d1 slash--
+with a big D. It's faster.
+D1/D2/D3/D4/D5
+Enter.
+And it doesn't work because we cannot create a directory with slash
+in the name.
+And that would be the name of the directory, D1 slash D2 et cetera,
+and it's not, of course, possible to have
+a slash in the name of a directory.
+So anyway, to create this--
+all these subfolders, you have to use the option minus p.
+So mkdir -p and then D1/D2/D3/D4/D5 .
+Enter.
+And here, I have D1 and inside D2 and inside D3 and inside D4 and inside D5.
+And, indeed, if I go to D1, I can see that there is D2.
+And if I go inside D2, I have D3, et cetera.
+Let's go back to the home directory, and let's do rm -ri D1.
+Do you want to descend into directory D1?
+Yes.
+Into D1, D2?
+Yes.
+In D1, D2, D3?
+Yes.
+D4?
+Yes.
+D5?
+Yes.
+Do you want to remove this one?
+Yes.
+To remove this one?
+Yes.
+This one?
+Yes.
+This one?
+Yes.
+And this one?
+Yes.
+All right.
+And the last thing just for fun, let's try to do again this one.
+And then, I will use the yes command and redirect it into rm -ri.
+And delete D1.
+And here, you have all the questions with all the answers--
+yes, yes, yes, all the time.
+All right.
+So you know how to create and delete folders and recursively delete folders.
+So be careful.
+You have to use the i option of the remove command.
+So if you go to the help, you will have a little bit
+of help for the remove command.
+And here you see that you can always prompt before removing with an i.
+And you can never prompt with an f also.
+This is very dangerous.
+And, of course, you have to use the recurse option to remove folders.
+You know how to use the remove all folders now.
+Try it yourself!

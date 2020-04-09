@@ -1,0 +1,198 @@
+REMI: We are going to see how to use the math library in the C
+programming language and Linux.
+Here we have this program that takes a double
+and calculates the square of this double using a function
+that we define within this file that is called square.
+So at the top of the file you can see--
+remember that this is the prototype of the function.
+And we have synonyms for prototype.
+We also say that it's the declaration.
+We also say that it is the header.
+And we also say that it is the signature of the function.
+So the prototype is the type that is returned by the function,
+the name of the function, and the type of the parameters for this function.
+Here we only have one parameter that is a double.
+At the bottom, we have the definition of the function,
+meaning that we have the body of the function within braces.
+The body is pretty simple here for the square function.
+It is return x * x;
+So I would like to show you how to use the math library, meaning
+that we will use a library that contains the definitions of all the basic math
+functions that were written by very skilled developers.
+And they were compiled.
+And we have some binaries installed in the system.
+We have to find those binaries and use those binaries and kind of link
+them to our program so that we use their definition.
+So we have many things to do.
+First, we won't use the square function but we
+will use instead a function that is called pow, p-o-w.
+And this is a function that is already in the math library.
+It calculates x that is raised to the power of y.
+So it takes two arguments:
+a and then y.
+So x is raised to the power of y.
+So here I want to raise a to the power of 2.
+And that will be the equivalent of square within the pow function.
+So if I write the prototype of this function--
+I know it because I already used it many times--
+the return type is double.
+The name is pow.
+And it takes a double and another double.
+And what is the definition?
+Well, I don't want to use the definition.
+I don't want to write it.
+I want to use the definition that was written by a developer.
+And I want to use the binary that was compiled from this definition.
+So let's save my work here.
+And let's try to find where is the definition of all those math libraries.
+Well, I'm going to tell you where it is installed in the system.
+Usually it is in a folder called /usr/lib for libraries.
+So let's go to that folder.
+I am in that folder.
+And I will list all the files.
+If I do ls, you can see that we have many, many, many libraries.
+So because we have many of them, let's try
+to put the outputs into the less command.
+And let's try to find something here with the arrow keys.
+So if I go down, you can see that many libraries are defined here.
+And usually the name of the library starts with lib, l-i-b, and then
+some kind of name.
+So I'm going down but we have a lot of libraries here.
+But here is one of interest.
+In the middle of nowhere, we have libm.a
+And this is the math library for the C programming language.
+So we have found the binary that contains the definition of pow.
+And we want to use it in the program.
+So how do we do that?
+Let's get out of the list with typing q. Because we know it's in /usr/lib ,
+and the name is libm.a, well, we have to add a specific option
+and arguments to the gcc build command here.
+Just here.
+And we will add it just before the -o, the dash o for the output.
+And we will just put the absolute path of the library that
+contains the definition compiled of the pow function.
+So here, let's do that.
+We'll write the absolute path of the library,
+so /usr/lib/libm.a
+So sometimes the library is called differently.
+But it's always called libm. But sometimes
+you will have something else as an extension,
+maybe not .a. But maybe .so, as you can see here,
+we have many libraries with a different extension here--
+.so,.so.8 et cetera.
+So here, because it's .a, should work.
+So I can try and run the program now.
+So we have one error.
+Ah, program.
+Let's see, no such file or directory.
+Of course.
+Because I am not in the home directory.
+So let's go back to the home directory with cd.
+Here we have program.c, so run it.
+And indeed it worked.
+We have 2.5 squared that is equal to 6.25.
+And we have used the pow function that is defined in this library just here,
+the math library.
+And I know that the prototype is this one.
+So now I'm going to show you that there is a specific folder that
+contains all the headers of all the libraries
+that are installed on the system.
+And that folder is /usr/includes with an s.
+So let's go to that folder.
+Whoops.
+Sorry.
+/usr/include without an s. Yeah.
+So then let's list all the files of that folder.
+So we have a lot of them.
+So let's list and put the results in the list command.
+And let's try to find the math library somewhere.
+Here it is.
+We have math.h  And you can see that all the files are
+ending with .h What does it mean?
+Well, it means header.
+So those files contain all the signature, the prototypes,
+the declarations, the headers of all the functions of all the libraries.
+So we have the link library, the limits, the libgen, the malloc, the math.
+And this is the library that we would like to use.
+So in this file, we will try to copy it and to see what's inside.
+So let's quit the list command.
+And let's copy with cp math.h. Let's copy it in our home directory,
+/home/user so that we have it in the file browser here.
+I just copied it here, math.h
+Let's open it.
+And here you can see what's inside math.h . It's quite complicated.
+But if we go down and if we try to find pow, maybe we will try to find it.
+So let's go down.
+And we'll see very interesting functions like cos, like exponential,
+like logarithm.
+And pow, here it is.
+So here is the line, line 295.
+We have the pow prototype.
+You see it is exactly what I have written, double then
+the name of the function pow and then double and double as arguments,
+the types of the arguments.
+So this line here is exactly what I have written on the top of my program.
+So now I go back to my program and what I
+will do is I will replace that prototype with all the prototypes
+that are in the math.h file.
+And to do that, well, it's as simple as writing (pound)
+#include and then math.h like this.
+And the consequence of writing that is that the compiler will first
+copy the content of math.h that is in /usr/include
+because this is the default folder for all the headers.
+And it will copy the content of this file
+to that very specific place location in my program.
+And after doing that, it will compile my program.
+That means that at the top of the program
+I will have the prototype of the pow function because it was copied.
+So it should work just like this without writing the prototype
+like I did before.
+So let's save it.
+And let's try it right now.
+Oh, I first have to go to my home folder, of course, and type the
+Run it button.
+And indeed, it is working and we don't have any problem.
+So you know that all the headers are in /usr/include
+And you have all the .h files here with all the prototypes.
+And you know that the definitions are in /usr/lib
+If I list, and here you have all the definitions
+that were already compiled for the specific environment and processor.
+Here, for example, if I do file libm.a
+because I remember that this is the math library; look at that.
+It's a current r archive.
+Oh, it doesn't mean anything.
+But anyway, it's a library that can be used
+to get the definition, the code that was compiled for the math library.
+So remember that to get to the definition,
+you have to add here before the -o the absolute path of the library.
+So now I'm going to show you how to get the library in the gcc command line
+more or less automatically by using relative path.
+So it is simply an option that is called -l for libraries.
+And you will have to replace the whole path here
+by deleting /usr/lib/
+And you will have to delete the three first letters, l-i-b.
+And you will have only to get the characters after lib.
+So for the math library, it's only one character.
+It's m. And you will have to get rid of the extensions, so .a
+And you will have to get rid of any space between the l correcter here.
+So basically, what is staying is -lm
+without any space in between the - and the l and the m.
+If I would like to use another library like libxkbfile.so, for example,
+I would replace m by skbfile.
+This is a longer name.
+But because the math library is only one character, libm,
+I only need one character here.
+And this is how you put the link to the library
+to the definition of all the functions of the library, just like this.
+Let's try it.
+I am in the home folder.
+Hit the run it.
+And indeed, it is still working.
+So you know how to search, how to add a library by using #include
+and the name of the file that contains all the headers.
+You know that you have to link the definition with a specific option here.
+Either you use the absolute path of the library
+or you use -l and then only the name
+without lib and without the extension.
+And that is how you use an external library that contains the function
+definitions of another developer.

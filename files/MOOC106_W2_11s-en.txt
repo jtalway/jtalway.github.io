@@ -1,0 +1,121 @@
+REMI : Let's see now how to move, and rename files and directories.
+I will use the file browser on left to see
+what's happening for all the files and folders I will create.
+So let's create a file.
+Touch f1 in the home directory.
+Let's create a directory.
+mkdir d1.
+And then let's move the file f1 to d1.
+So to move, we will use the command mv for move.
+mv, f1 into d1, and indeed in the file browser, we have f1 inside d1.
+Now let's create another folder: mkdir  bigdir
+All right, and let's move d1 inside this directory.
+So move, mv, d1 into bigdir
+And here we have bigdir, and inside d1 and inside f1.
+And now let's go inside it : bigdirr/d1.
+
+We have the file f1, right?
+So let's move f1 to the home directory, so move f1.
+Let's use a relative path, so : dot, dot, slash, dot, dot (or : ../..)
+So because we are in bigdir d1, the parent of the parent
+is the home directory.
+Let's try that, and indeed, you can see that f1
+was moved to the home directory.
+Also, we will create some directories using that technique of relative paths
+just for fun, and to see how to use their relative path.
+So let's create a directory dot, dot, slash, dot, dot, slash,
+otherdir,  for example, like this.
+And we have another directory in the home directory,
+and let's try to move f1 into otherdir from bigdir d1.
+So move, and using relative path, move dot, dot, slash, dot, dot, slash, f1.
+Where?
+Inside dot, dot slash, dot, dot, slash, otherdir
+All right, so I just moved f1 inside otherdir using relative path
+as you can see here.
+Because I was inside d1.
+Let's try now to move the current directory in the home folder,
+so dot, dot, slash, dot, dot.
+So move dot inside dot, dot, slash, dot, dot.
+We have an error, because we cannot move a folder in which we are working
+currently.
+Indeed, if I pwd, I am inside bigdir d1.
+And when I do move dot, it's the current directory.
+So it won't work.
+Also, let's go back to the home directory,
+and I will show you how to rename the bigdir to smalldir.
+So to rename, we won't  use a command that is called rename,
+because it doesn't exist.
+Indeed, to rename, we will use the move command.
+It's the same, mv, and let's try that.
+If I move, mv, bigdir to smalldir, you
+see that we have now the smalldir that contains the same thing as a bigdir.
+So it indeed renamed bigdir to smalldir, so there is no rename command.
+You have to use the mv command to rename.
+Let's try something else :  moving and renaming at the same time.
+So let me show you how.
+Let's try to rename and move f1 that is in otherdir into the home directory.
+And rename it to f2.
+How to do that?
+Well, move otherdir/f1
+And I want to move it in the home directory, and rename it to f2.
+So I just put f2 here, because I am in the current directory, the home
+directory.
+I tap enter, and indeed,
+it moved f1 from otherdir to the home directory, and renamed it to f2.
+Also, I can move and rename, for example, d1 into d2 inside otherdir.
+Let's try that, so I move smalldirr/d1
+And I want to put it in otherdir/d2
+So I move and rename at the same time.
+And you can see that it was indeed moved and renamed at the same time.
+All right, now I will--
+All right, now I'm going to show you a dangerous situation.
+We will create two files, and it will move
+the first file inside the second file.
+It's not a directory.
+You file inside a file, and you will see that we will lose the second file.
+So let's create the first file with a cat for example, so I will create f5
+Enter, so this is f5.
+And then enter, and then Control D to end the cat.
+So even if I do cat f5, I will have the content.
+This is f5.
+Now let's create f6 the same way.
+This is f6, enter, control D. All right, so cat f6.
+So I have f5 containing.
+This is f5.
+I have f6 containing.
+This is f6, and what I want to try with you is to rename f6 to f5.
+So move f6 to f5.
+And what's happening here?
+We just lost f5.
+And if I cat f5, this is f6, so it was the content of f6.
+So it means that this command here was quite dangerous, because f5 was lost.
+It was containing.
+this is F5, but because we renamed f6 to f5, we just lost it.
+So it is very dangerous.
+You have to be very careful when you use move, because it renames.
+And it moves, and it replaces existing files.
+So if you look at the help, so mv --help, you can see that you can have some
+options.
+Like minus i for : interactive prompts before overwrite, or also,
+n for : don't overwrite an existing file.
+So you would use preferably move -i  to be sure
+that you will be prompted before you overwrite
+before you erase an existing file.
+So let's do that again.
+Let's create f6.
+This is f6, Control D. Let's create f5.
+This is f5, Control D.
+Let's cat f5.
+OK, let's cat f6.
+All right, and now let's move with the option minus i. Let's move f6 inside f5
+for example.
+And here you have the question.
+Are you sure you want to overwrite f5?
+No, I don't.
+It's a mistake, so be careful when you use move.
+Because it is very powerful.
+It can rename, move, and erase or overwrite existing files.
+So be very careful, and try to use it with special options
+to protect you from overwriting files that you don't want to be overwritten.
+And this is your turn now.
+You can try it by yourself.

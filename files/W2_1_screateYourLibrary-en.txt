@@ -1,0 +1,202 @@
+PETRA: I will now show you so-called separate compilation.
+This means you have your source code spread out over several separate files,
+and you would like to assemble them into one final executable program.
+In fact, what we will be doing is create our own library.
+Here you can see an example.
+We have a program with a main function and one extra function
+called averageTemp.
+Let's look at the main function first.
+In the main function, we have an array of doubles,
+and it's called temperatures.
+We store in it seven temperatures.
+These are all in degrees Celsius so: 6.9, 12.3, 9.0, 5.3, 9.8, 1.8, and 0.3
+Then we have a variable named average also of type double.
+And we initialize it by calling the function averageTemp.
+And to this function, we pass the temperatures array as well as
+the number 7, which stands for the number of entries in this array.
+There are exactly seven numbers in the temperatures array.
+Finally, we have a print command, which prints out
+Average 7-day temp: and then that value that's
+stored in the variable average with two decimal places.
+That's what the %.2 stands for.
+And we start a new line, and then my main function is done.
+So what does this function averageTemp do?
+Well, it, does what you think it would do.
+It computes the average of the temperatures stored in the array.
+So let's look at this function.
+It has a return type of double.
+That's the average temperature that it returns.
+And it receives as arguments the temperature array.
+So how does it receive that?
+Remember an array is really a bunch of doubles stored one after the other,
+and what we store really in the array variable
+is a pointer to the first element of the array.
+So what's passed into this function here is exactly such a pointer,
+a pointer named temps with a star here indicating
+that we're talking about a pointer.
+So we're passing in the address of a double, which
+is where the first element of the array is
+stored as well as the number of temperatures,
+numOfTemps, stored in the array.
+What does this function do?
+First, it adds up all these temperatures in order to then
+divide them by the number of temperatures to get the average value.
+So we have a variable result. That's going
+to hold the final result in the end, but at first we
+use it to sum up all the temperatures.
+We initialize it as 0.0 because we want to add on to it in a for loop.
+Here's a for loop.
+We'll be loop from 0 to the number of temperatures
+and add on to the variable result, the ith temperature : temps[i]
+Remember the array starts at temperatures of 0,
+so that's why i is initialized at 0.
+And once this for loop is done, result will contain sum of the temperatures.
+Then we only have to divide that by the number of temperatures.
+Just to be on the safe side, we cast the number
+of temperatures, which is an integer, to a double
+so that we can ensure that the floating point
+division will be performed in this result divided
+by number of temperatures.
+So the new result then is really the average,
+and that's what this function returns.
+Finally, we have our prototype for our function
+way at the top above the main function so
+that when the compiler goes through the main function
+and comes to the function call, it knows that the function definition is yet
+to come.
+So up here, we have double averageTemp( double * temps,
+int numOfTemps) with the semicolon
+behind, it just being the prototype of our function.
+Let me just demonstrate that this is a program that
+does exactly what it says it does.
+I can simply hit on the Save button first and then run this program
+and out comes the result. The program runs,
+and it says the average 7-day temperature is 6.49 degrees.
+Now we will separate the function into its own separate file, which
+will form the basis of our library.
+Altogether we will create three files, one file containing our main function,
+one file containing the averageTemp function, source code,
+and one file, which is going to be the header file,
+the .h file with a prototype of this function.
+We will then compile this averageTemp source code
+into our library that can then be included in our compile command
+down here when compiling the program itself.
+I will show all this to you.
+Let's start by creating the header file, the .h
+file, which is to contain the prototype of the average temperature function.
+If I type ls over here in the command prompt,
+I see that I have two files currently in my own personal directory.
+I have a file program.c, and I have a file program,
+which is the executable program.
+We now want to create some additional files.
+The first file I want to create is my weather library header file.
+So I type touch to create the file.
+And I want it to be named weather.h
+So now when I type ls, I see weather.h has been created.
+Since I would like this file weather.h to become the header file,
+I need to put the prototype of the average temperature function in it
+and therefore copy this from here, from the current program,
+and erase it from the current program and save the program without it
+and then open the weather.h file and paste in the prototype that
+is supposed to go there.
+Next, I save this file, and now we need to create the weather.c file, with
+just the function definition.
+So I go back to program.c and first of all
+create the file weather.c by using the touch command again.
+Next, I take the function definition from my previous program,
+copy it, delete it from where it is right now,
+save my new program.c, and now open weather.c,
+the source code, and  the function definition in my function
+right there.
+I save this file, and now when I type ls at my command prompt,
+I have three files.
+I have program.c, which contains my main function.
+I have weather.c, which contains the average temperature function
+and weather.h, which contains the prototype.
+So how do I create a binary library from this?
+I have opened my file weather.c, and I
+need to compile that, translate it into machine language,
+but I can't make it into an executable program
+because there's no main function attached to it.
+So all I want to do is translate it into machine language
+but not make it into an executable program.
+So in my build command, first of all, I need
+to remove program.c because the file I'm talking about now is weather.c
+And I would like the output of this to be my library so weather.so --
+"so" is a typical extension for libraries.
+And in addition, I need to tell the compiler
+that I don't intend to make this into an executable program
+because there's no main function.
+And to do so, I add an extra option just before the weather.c,
+which is the option -c
+It tells the compiler I only wanted to compile.
+I don't actually want to build into an executable program.
+Finally, I also don't want to execute anything once the translation
+process is complete.
+So I remove the execution command.
+Now I can hit the Run it button in order to execute the build command.
+We received no error messages, so let's type
+ls again to find out what happened.
+You now see my new file here weather.so
+It's a binary file.
+We can't really look at it.
+We can't open it in an edit.
+We could open it in editor but we couldn't read it
+because it is a binary file.
+So how do we use this in a program now?
+Well, let's go back to our program.c and see what we need to do.
+The first thing we need to do is we need to tell the program that we're
+using this library.
+Just like we needed to include the header file for the standard input
+output library with the # and include stdio.h command,
+we need to do the same thing for the weather.h header file
+by typing # and include and then weather.h
+However, the angular brackets that you see around stdio.h
+indicates to the compiler that the library header file is
+located in /usr/include
+That is not where our header file is located.
+Our header file is located exactly where program.c is located.
+And therefore we first of all use quotation marks,
+and we don't have to give a path because the file weather.h is located
+in the same directory as our program.
+However, we could give the full, absolute path if we wanted to.
+So we could have written here /home/usr/weather.h
+which is the absolute path to the file weather.h
+
+But because they're both in the same directory,
+we actually don't need this for here.
+Now to compile our program into an executable,
+we need to modify the build command again.
+First of all, instead of weather.c again, we're compiling program.c,
+and we want the output file to be called program
+But in addition to that, we also need to include the library.
+The library can go right after program.c and before the -o command.
+And the library's called weather.so
+So we need to tell the compiler and linker that weather.so
+is to be included as well.
+Finally, remember we had added this -c
+option here to tell the compiler we only want
+to translate into machine language, but we don't
+want to actually build the program.
+This time we want to build the program, an executable program,
+and so we need to get rid of this -c option.
+And then we do want to execute the final result. So I put this back in here.
+We want to execute program after it's been created.
+So we save all this and then build the program.
+And there it is.
+It's so running.
+Average 7-day temperature is 6.49 degrees.
+Down here in the build command where we had
+weather.so included in the build, we could have also again given
+the absolute path to the weather library had it not been
+in the same directory as our program.
+So we could have written /home/usr/weather.so
+But because both our program and the library are in our same directory,
+we don't need to do that.
+So now you know how to create a separate source file for library functions,
+create a header file for their prototypes,
+and you know how to compile such library files into a binary library.
+You also know how to link such a library to a program with a main function
+to create an executable that uses the library functions.
+It's your turn now to try out all of these steps in webLinux
+to see whether you can create your own libraries.

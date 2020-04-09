@@ -1,0 +1,95 @@
+PETRA: I will now show you a program that uses several external libraries
+and therefore needs to pound (#) and include several header files
+with the definitions and prototypes for all these libraries.
+We'll also have to link the object files of these libraries to our program code.
+The object files contain the code for the functionality of the functions
+in the libraries already compiled.
+And I'll show you how to do all of these things.
+I'll demonstrate this all on a little program, and here it is.
+It looks kind of complicated, but it really isn't not all that complicated.
+We're not going to understand the details of this program.
+Basically, it prints a menu to the screen,
+lets the user choose menu options.
+But in order to use some of the functions in this code,
+we need some libraries.
+And so, let's remember where to find all the libraries on our system.
+And remember what we did before.
+We listed all of the header files, and they are in /usr/include
+And let's put them using the greater than sign to a file named
+headers.txt so we can easily look at this.
+And let's do the same thing with the object files there, in /usr/lib
+And let's put those into libraries.txt
+And now, we can actually look in our file browser to headers.txt.
+Here are all the header files, and the two that we're especially interested in
+for this program is the one called curses.h
+It actually allows the user to use a cursor in the terminal window, which
+we normally can't use, and has colors and all kinds of things.
+That h file, the header file, just contains
+prototypes for all the functions.
+And the other one we're interested in for this particular program
+is one called menu.h, and it allows the creation
+of a menu from which you as the user then can pick.
+Now, let's also look at our libraries themselves.
+So here, you can see a listing of all libraries,
+and we're interested in the library called curses,
+and you see that right here--
+so its name is libcurses.so--
+and also the one with a menu in it.
+So the menu one is right here: libmenu.so
+So those are the two libraries that contain
+the actual code for the functions that we want to use, but already
+compiled in translated form
+so in machine language we couldn't look at these.
+All right.
+Let's go back to our program.
+Here it is.
+And we need to include the header files for the functions
+we're using in this program.
+So we need to pound sign (#) include <curses.h> as well as
+#include <menu.h>
+And that includes the header files.
+These are the function prototypes, but not the actual code for our functions.
+So in order to get the actual code for those functions also included,
+we need to go down here on the build line at the bottom of the screen
+and add in these libraries.
+And one way to do so is simply to add the exact path to the library,
+which was /usr/lib/libcurses.so, as well as /usr/lib/libmenu.so
+And once we do that, we can now almost run this program,
+except that we use a function called calloc down here,
+which is a memory allocation function which itself is defined in the library
+stdlib, in the standard library.
+And because the standard library is such a standard library,
+it is automatically linked with our program,
+and so we don't have to include it down here where we include the other two
+libraries.
+So we can now run this.
+And indeed... oh, there were errors or warnings during execution.
+Let's see what went wrong.
+stdlib:  I forgot the .h
+Look at that: stdlib.h
+All right.
+Let's try this again.
+Save and Run.
+There it is.
+And here, you can see our menu.
+And I'm using the cursor keys to actually move up and down in this menu,
+and that's what this menu allows us to do along with the cursor functionality.
+And I can even hit q to quit, which you see at the very bottom of the screen
+here.
+So q to quit, and that quits this program.
+I do want to show you one other way to include
+these libraries in the linking process of our program building.
+Instead of including the actual path, we learned in a previous lecture that we
+can easily also just say -l and then the name of the library:
+curses.
+And then, the computer automatically finds
+what the correct extension is and puts the lib in front and finds the data--
+whatever it is on your system for afterwards.
+So we can also write -lmenu right here.
+Let me just demonstrate that, that works as well and run this.
+And it runs just as well.
+There it is.
+So there is our menu.
+And again, we can move up and down this menu and hit q to quit.
+So now, you know how to include several libraries in your program,
+and we'll go and practice that now.

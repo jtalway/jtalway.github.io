@@ -1,0 +1,160 @@
+PETRA: Now that you know how to read input from files,
+it is easy to learn how to write output to files.
+Suppose we wanted the user to enter student grades from the keyboard
+and then store these grades in a file.
+Let's begin by remembering how we read a number from a file.
+This is the program that we started with when
+we learned how to read from a file.
+We declare a file pointer.
+We named the file pointer ifile, because that reminds us of input
+as an i. And then we use this file pointer
+as a return variable for the fopen function
+to which we pass the name of the file as well as the instruction
+to open the file for reading.
+Then we used fscanf, which is just like scanf,
+except we also passed in the file pointer
+to read the number from the file.
+And then we printed that number out.
+In the end, we closed the file.
+So now, we want to open a file for writing.
+Let's rename the file pointer to ofile, as in output file.
+Again, you don't have to do that.
+ofile is just a variable name here.
+You could use any other name.
+But the star is important.
+We're working with a pointer.
+So I need to change my i to an o here.
+We want to open a file for writing, so we need to give it a name.
+How about we call it my_first_output_file.txt
+And now, we're going to need to tell the computer we want to write to this file
+by putting a "w" in there.
+So we're opening this file for writing now.
+Instead of fscanf, we're going to write to the file,
+so the command there is fprintf.
+And fprintf works just like printf, except we also
+pass in the file pointer.
+And let's say we wanted to write a number to this file,
+so %d is my format string here.
+And I don't need the ampersand, because I'm not reading.
+So let's give N =
+Let's suppose we wanted to write the number 10 to the file.
+So we're writing a first number to the file.
+And then this extra fprintf statement doesn't make a whole lot of sense.
+We'll get rid of that.
+And in the end, we need to close the file with the fclose command.
+And I need to just change the name of my file pointer.
+Let's save this.
+And let me show you that previously really the file does not exist.
+I currently have my first file, my second file, program and program.c,
+but there is no my_first_output_file.txt in my directory.
+Let's run this program.
+Oops.
+There's an error.
+Oh, I forgot to change this one last ifile to an ofile.
+Let's try this again.
+OK, program execution seems to be complete.
+Let's find out if my output file now exists.
+And indeed, there it is.
+my_first_output_file.txt, let's take a look what's in this file.
+I can open it in the file browser, and there's that 10.
+Let's see what happens when we run this program again,
+but this time with a different number.
+Let's say this time, we put 20 in there.
+Let's run that.
+Program execution is complete.
+Let's take a look at my first output file.
+There's that 20, but the 10 is gone.
+So what happens every time you open a file for writing,
+if the file already existed, it'll be overwritten.
+You will lose anything that is in there.
+If the file did not exist previously, it will be created.
+We will learn shortly how to add onto a file.
+So if you don't want to lose content of an existing file,
+you just want to append to it, we will then open a file for appending.
+But for now, we will just use the open for writing and be OK with the fact
+that it gets overwritten every time we restart this program.
+Our goal was to have the user enter grades.
+And so we need to write a loop for that.
+And how about a do while loop, because we want
+the user to enter at least one grade.
+So we should first give some instructions to the user.
+"Please enter a grade."
+And we also need to tell them how to exit this loop.
+So how about, Enter -1 to quit.
+Then we need to read from the user.
+So that's just a scanf not a fscanf.
+That's a scanf, %d. Now let's read the number that we
+would like to have the user enter.
+So we no longer need to initialize N as anything.
+Now if the user entered a negative one, that's not a grade.
+So we don't want to write that to the file.
+So only if the number N is not equal to negative one
+do we actually want to write it to the file.
+And we want to run this loop while this number N is not equal to -1.
+Once we exit the loop, we're done entering grades.
+We want to simply close the file.
+One last thing, just to make sure this screen
+if statement actually shows up right away,
+we'll put a \n there in the end of the line
+to force a flush of the line and so it will actually
+show up in the terminal window.
+So let's run this.
+And there's our program.
+"Please enter a grade."
+"Enter -1 to quit."
+Let's say this first student got a 100.
+And another grade, how about 99
+And the next one only got a 75.
+And how about 68
+And that's it.
+Let's put in negative one to quit, and let's find out
+what happened in our file.
+So there's your file.
+And what happened?
+We have 100, the 99, the 75, and the 68, but they all got smushed together.
+So I can't actually discern anymore what's what.
+If I tried to read from this file, I would read the whole thing in one
+fell swoop, and I wouldn't be able to tell that it was 100 and a 99
+or whether it was 1,009 and a 97.
+So I'm going to have to do something about that.
+Let's return to our program, and what we can do
+is we want to separate these numbers by spaces.
+So in my fprintf statement here, I need
+to put a space or some kind of separation between these numbers.
+It could be any kind of white space.
+Let's run this again.
+So let's enter our grades again.
+It was 100.
+And then we had a 99 and a 75.
+And I don't remember what the last one was.
+How about a 68
+And now let's enter a -1 to quit.
+Let's look at our file again.
+And that looks much better.
+My grades are now separated by spaces, which
+means I can actually read these grades in again with another program
+without any problems.
+One last thing, having the actual file name in the fopen statement
+is considered not ideal.
+A better way would be to have a variable of tagged string
+that holds the file name at the top of your program somewhere,
+and then you can use that variable throughout your code
+and don't have to retype the name if you happen
+to want to open the file multiple times, for example.
+So let me show you how to do that.
+We declare a variable named filename, for example,
+and it's going to be of type string.
+So it's an array of characters.
+And we initialize it with our file name, so my_first_output_file.txt.
+And from now on, we can simply use filename without quotation marks,
+because that's a variable name.
+Still the quotation marks are needed around the "w" though.
+Let's try this out.
+And it works just as well.
+Let's enter some different grades this time and -1 to quit.
+And let's take a look.
+And there are the new grades that I just entered.
+So now you know how to open a file for writing, how to write into the file,
+and how to close the file.
+Your turn.
+Go ahead and try this out.

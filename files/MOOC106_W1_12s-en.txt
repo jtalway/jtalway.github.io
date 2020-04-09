@@ -1,0 +1,80 @@
+REMI : Let's see some bonus commands,
+bonus programs that are installed on WebLinux that are usually not
+installed on Linux.
+These are usually games.
+So the first one that I just installed is the hello command.
+And it's a very simple one.
+Because when you type hello, it says, Hello world.
+So it's a very famous Hello world program.
+Then I have installed worm.
+worm like this.
+And it's a kind of simulation in text.
+Very basic ones with three worms going around like this.
+And to exit the program, I guess that the q key is working.
+So it stopped the simulation because you can see that you
+have the command prompt back again.
+Let's go back to worm.
+And let's try this time the Control-C. Control-C.
+And, indeed, if we go back to the command prompt, let's try to firework.
+firework.
+Ooh.
+And you have a beautiful simulation of fireworks going around with texts.
+This is very, very old school.
+But I like it a lot.
+Let's try Control-C to quit the program.
+Yep.
+It just stopped the simulation in the middle.
+And let's try rain.
+rain.
+And you can see some rain drops just here.
+Control-C to stop.
+So the same.
+Let's try again.
+hanoi.
+It's the Hanoi Tower game.
+So here you can try to play with this game.
+And as you can see, you have to read what you have to do.
+And if you don't know what is the Hanoi Tower game,
+then just try to find it on Wikipedia, and it will explain what to do.
+But here next move from, I can see I have three towers.
+One, two, three.
+So let's try from one to two.
+Enter.
+Oh.
+No.
+I did not have to type Enter.
+All right.
+So it moved the top of the first, the bottom of the two.
+Let's try to move one to three.
+Yeah.
+It worked.
+One to two.
+All right.
+Two to three.
+All right.
+So you understood that some moves are forbidden.
+But I will let you explore this Towers of Hanoi game
+and see if you are able to solve it by yourself.
+Q to quit.
+So Q.
+All right.
+And the last is knight.
+knight like this.
+So it's a logical Solitaire.
+And you have to read what's happening here.
+So it's a text game.
+And it says you can move around with the arrow keys.
+So, indeed, if I move with my keys, I can get
+through this board, some kind of board.
+And other commands allow you to undo moves or redraw.
+Your mouse may work, but not here, because it's WebLinux.
+And then you have X or Q to exit.
+And well, you have to press the question mark to go to the game explanation.
+Let's do that.
+And blah, blah, blah.
+So you have the explanation.
+So I will quit this program.
+Try again.
+OK.
+Q. And well, I will let you play if you want to try this game.
+And I just showed you some of the commands that I installed just for fun.

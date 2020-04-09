@@ -1,0 +1,68 @@
+PETRA: To finish our section on makefiles,
+I will now show you a little trick that allows you to execute
+a program with the help of a makefile.
+All we need to do is add a new target here in our makefile.
+So let's do that.
+Let's call it launch, because we want to launch a program.
+Then we do place a colon as before after each target.
+And next we're not producing launch.
+So we don't need to write down what's needed to produce launch,
+but rather we put here what is needed to launch our program.
+And what is needed is the binary program,
+so not program.c, but rather the binary executable version of program.
+On the next line, indented by a tab, we put down how we run the program.
+How do we do that?
+Well, we simply need dot slash program to be executed.
+And that's already it.
+So let me save this.
+So again, what we do?
+We created a new target called launch.
+We wrote down the dependency.
+What does launch depend on?
+program needs to exist.
+And what do we do actually launch the program?
+We call ./program
+So let me show you how this works now.
+On the command line we can simply type make.
+And rather than just typing make, which we already know builds the program,
+we type make launch.
+And what will happen is the computer will go and find the target launch,
+and then see OK it depends on program.
+And what am I supposed to do?
+I'm supposed to run ./program.
+So watch, and it just to executed our program, "Average 7-day
+temperature: 6.49" (degrees)
+Now watch what happens when I modify program.c
+Let's say we change temperatures and make the last one really hot,
+it's 33.3 degrees.
+Let's save that, and let's type make launch again.
+Let's see what happens.
+All of a sudden the computer noticed that program.c had been changed.
+And so let's look at our makefile.
+Since our launch depended on program, and program needed an update,
+it went here and updated program using this compile command,
+because the dependency had changed, program.c had changed.
+Also notice that our 7-day temperature indeed has been updated.
+It was 6.49 previously, and now that we made that last day so hot
+the average temperature has gone up quite a bit.
+Next, let's make a change to our weather library.
+So let's go to weather.c, and say we go back to printing simply average
+7-day temp.
+Let's save that and see what happens when we call make launch.
+And while this is all executing I'm going
+to open the makefile so we can follow along in what's going on.
+This time two compile commands were run.
+The computer first went to our launch target, and noticed it needs program.
+program depends on program.c and weather.so.
+And weather.so depends on weather.c and weather.h.
+The computer notices that weather.c had changed,
+and therefore, it recreated weather.so using this command gcc,
+weather.c and created weather.so
+And then used that new weather library to recreate our program with a gcc
+command that compiles program.c, and then links in the weather library.
+And only after all that has happened did it launch our program,
+and you see, indeed, did it update what's printed here,
+and so novel version was printed.
+So now you know how to write makefiles with multiple targets that
+describe dependencies, and allow you both to compile your code
+and execute with this new target we added.

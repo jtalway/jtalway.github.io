@@ -1,0 +1,252 @@
+REMI : In this video, we are going to see how to read files, write files,
+and how to get the output of a command and write it to a file,
+and also how to read very long outputs when
+it is more than the lines of the terminal that
+is operated by your program.
+So, first, let's try to write a file.
+So you know how to do that with nano-- for example, nano file.txt.
+And here I can write a file.
+So let's write "here is a text file"
+And then I go to a new line "with a second line"
+and I write, so Control O, Filename To Write : file.txt
+All right, Enter, and then exit, Control X.
+If I ls, I have file.txt
+And in the file browser, I can see it.
+And if I double click, indeed I have "here is a text file with a second line".
+All right, so it worked.
+Now to read a file in a fast manner you can use the cat command,
+cat space file.txt
+And it will just output the content of the file,
+as you can see here in the terminal.
+Another way to create a file very fast with content
+inside is to redirect the output of a command within a file.
+Let me explain that with an echo command.
+You already know the echo.
+echo "hello world" with the double quotes, then I close here.
+It will output "hello world".
+So this is the output of the command echo "hello world".
+And what I can do is I can redirect the output of a command inside a file
+instead of printing it in the screen.
+So to do that, I type the command, so echo "hello world".
+And at the end I add space and I add the sign > and then a name
+of a file.
+Let's try file2.txt
+I type Enter, and I don't have any output now,
+but I have a new file that was created.
+Indeed if I ls, I have file2
+And inside file2, if I open it here, I can
+see "hello world", which is the output of echo "hello world".
+It was redirected into a file using this greater than sign.
+And indeed if I cat file2.txt, you can see
+that we have "hello world", which is the output of this command just here.
+Now let's try to write the output of cat file2.txt into a file.
+What will it do, cat file2.txt?
+It will output the content of file2, but it
+will redirect the output to file3.txt
+And if I enter, what is funny here is that I just copied
+the content of the file2, more exactly the content of cat file2.txt, which
+is the output of the content of the file, and I redirected it into file3.
+So it's a kind of copy.
+And indeed if I cat file3.txt, I have indeed "hello world",
+which is the same as cat file2, "hello world" also.
+So I just found a way to copy the content of a file using cat like this
+and redirect the output into a file.
+Now I want to show you another way how to use cat to create a file.
+So I use cat but this time without a file as input, I could say,
+and I directly use the greater than sign.
+So if you compare it to how I used it before,
+I always had a file name just after cat, but here I have no filename
+but I have the redirect to a file greater than sign just here.
+And I will put a filename.
+Let's try anotherfile.txt
+And when I will push the Enter key, I go to, again, a special state
+where you have to write something.
+It is like if it is waiting for an input.
+So let's try to write "this is another file", Enter, "with a new second line".
+All right, now how do I say it's the end of the input?
+Well, that's where you have to use Control plus D. So
+let's type Control D twice, Control D a second time.
+All right, and I go back to the prompt, as you can see.
+Now if I ls, I have indeed another file that is created.
+And if I cat anotherfile, I have what I just wrote.
+"this is anotherfile with a new second line".
+All right, why did I have to push Control D twice?
+Well, let's try to do that again with anotherfile2.txt.
+Enter.
+Whoops, sorry, I forgot the greater than sign to create the file.
+All right, so "this is anotherfile2", Enter, "with another new line".
+And here if I enter a new line and just at the beginning I do Control D,
+then I go back directly to the command prompt with only one Control D.
+And if I cat, indeed, anotherfile2.txt, I have the content of the file
+that I just created.
+So sometimes you have to push Control D twice
+if you are at the end of the written line or if you put a new line
+and you have an empty line at the end and you hit Control D only once,
+you will get out of the cat and it will create the file.
+All right, let's go now to cat some big files and see the problem.
+For example, I know that /etc/services is a big file that is describing all
+the services of the operating system.
+So let's try to cat this file.
+As you can see, it's a very long file.
+So it goes all the way through the end of the file,
+but I can't see the beginning of the file because I am at the end.
+So how do I do so that I can scroll because I
+don't have any scrolling here?
+And sometimes when you are connected to a Linux system,
+you don't have the scroll activated like in web links.
+Well, this time you can redirect the output of cat /etc/services but not
+to a file.
+Well, this is an option.
+Let's try that.
+Let's try to output to a file, so listOfServices.
+So the output of cat /etc/services will be inside listOfServices.txt
+Enter, and indeed I have the file just here.
+I can double click, and it will be open in the code editor.
+And as I can see here, I have the scrolling,
+but it's a very long file, as you can see.
+But still I have the scrolling because it's a very advanced editor
+that I have here.
+But how do I do it in the terminal, all the way through the terminal?
+Well, I just cat /etc/services, but this time I won't redirect to a file,
+but I will redirect to another command.
+And I will show you two commands that are
+very useful if you have long outputs.
+The first one is more.
+And to redirect the output inside the input of another command,
+you have to use the pipe like this |
+So here it means the output of cat /etc/services, which is very long,
+let's take this output and let's put this output inside the input of another
+command.
+And the other command is more.
+And we will see that this command--
+let's try that-- will stop at the first page.
+And you can see now that we have more at the end.
+And if I hit the spacebar, it will display more.
+So it's the second page.
+And the spacebar again, third page.
+spacebar, fourth, fifth, 6, 7, 8, 9, 10, up to the end of the file.
+Ooh, it's a very long file, so I had to hit the spacebar many times.
+Because I am at the end of the file now, I just
+exited the cat and the more programs.
+Anyway, let's do that again.
+And if I hit it twice--
+and I want to quit the more command.
+I can hit the q. It works.
+And I can also hit Control C and it will go out of the more command.
+But more is a little bit deprecated.
+It's very simple.
+It's not deprecated, but it's very simple.
+I want to show you another command that is more advanced than more.
+So let's cat /etc/services, and this time I will redirect the output with
+a pipe inside less.
+And less is more because less is more than the more command.
+less is a more advanced program than the more command.
+So let's try that.
+So I am inside the less command, and it's indeed quite the same as more,
+but you don't have the more at the bottom.
+You have something called standard input.
+And I can scroll through the document using arrows,
+so down and up, which you can't do with the more command.
+But here you can scroll all the way with the arrows up and down.
+I can also use j to scroll one line at a time to down,
+and k one line up so it goes up.
+I can also use the spacebar to scroll page by page,
+and I can also go to the top of the document
+with uppercase G. Oh no, it's the end of the document,
+so uppercase G is the end of the command,
+and lowercase g is the beginning of the document.
+So that's how you scroll.
+You navigate through very long output using less.
+And I can quit the command using q, and I go back to the command prompt.
+So also I want to show you that I have many files here,
+and I can use more and less with files directly.
+If I use more anotherfile.txt, it will display the file
+without doing anything because the output is quite simple and very small.
+But if I do more listOfServices -- we know that this one is very long.
+Enter.
+It will do the same as we know.
+And we have a percentage here, so I have to hit
+Space many times to go to the end, or Control C or q
+to quit the more command.
+And less will do the same.
+anotherfile, it will display but in a different manner
+because you have in full screen.
+And to quit the less command, you have to push the q button--
+q key, sorry.
+Or let's try with the big one, less listOfServices,
+and you have the same navigation system with the arrows here
+or the j, k, and the spacebar, and the big G or small g
+to go to the beginning or the end.
+All right, let's quit with a q or a Control C,
+and let's try to search using less.
+So first I will ls /usr/bin to see what's in /usr/bin
+And ooh, so the output is very long.
+It goes more than what can be displayed in the terminal.
+So I will use the same technique here by using less.
+So ls /usr/bin, and I redirect the output to the less command just like
+this.
+All right, so I have a different view here,
+but I can scroll and see all the files in the /usr/bin using my arrows.
+So it's much more comfortable to scroll like this.
+And also I can search.
+So to do a forward search--
+so from here forward, I can use the slash.
+So if I hit slash and then I write some pattern to search,
+it will search within the file.
+So let's try to search, I don't know, cut, c-u-t, Enter.
+And as you can see at the top, I have indeed cut.
+And to go to the next match, it's the small n.
+I hit it and it doesn't do anything because there is no next match.
+Let's try to search something else.
+Let's try to search joe, j-o-e. And I have indeed joe.
+Let's try to see if there is another match by pressing n, small n,
+and there is another one, rjoe.
+Let's try to hit n again.
+No next match.
+To go back to the previous match, you can hit uppercase N
+and it goes to the previous match.
+Small n, next match, big N, previous match.
+All right, if you want to do a backward search,
+it's not the slash that you have to use.
+It's the question mark.
+So if I do ?joe like this, it
+will search backward from where you are.
+And you can do the same with a small n or big N to go back and forth,
+the next matches.
+All right, let's quit less.
+You know how to search with less, but I want to show you a little help.
+So less --help.
+And here you can see that we can add some options like -N,
+uppercase N, to prefix line number to each line and also big M,
+uppercase M to display the status line with line numbers and percentage
+through the file.
+So let's try this.
+Let's try ls /usr/bin, and let's try to redirect the output into less but this
+time with the options -N and M (-NM). So I use this one (N) to prefix,
+and this one (M) to see the percentage.
+Let's try to see that.
+Enter, and indeed we have some statistics at the end here.
+And if I scroll through, it will recalculate the stats.
+So here, I saw just an error here.
+Because each time I hit the row buttons, keys,
+it will recalculate the percentage of where I am in the file.
+I think it's a kind of error of less or it's
+a weird way of calculating the percentage because if I go
+to the end like this by pressing spaces, the space many times, and then
+I go back up, you can see that the percentage is going less and less
+until you go to the beginning of the file.
+And also you can see that each line has a number now.
+So that's how you use less with options to see the line numbering and also
+little statistics.
+Even if it is a little bit buggy, it works.
+If you go once to the end, then it will calculate correctly the percentage
+of where you are in the file.
+So to search, as always with less, you can do a forward search
+with slash or a backward search with question mark like this.
+And you already know how to use that.
+So I invite you now to try those commands: the cat, the nano,
+the redirect to a file, the less, the more.
+All these commands imprecated each other by redirecting the output of a command
+to another one to see what's happening.
+So try it by yourself.
+It's your turn!

@@ -1,0 +1,29 @@
+body {
+  color: #40514E;
+  margin: 0;
+  font-family: 'Merriweather', serif;
+}
+
+a {
+  color: #66BFBF;
+  font-family: 'Montserrat', sans-serif;
+  text-decoration: none;
+  line-height: 1.5;
+}
+
+a:hover {
+  color: #11999E;
+}
+
+.resources-header {
+  text-align: center;
+  padding: 20px;
+}
+
+.resources-header a {
+  padding-right: 50px;
+}
+
+.btn {
+  margin: 2px;
+}

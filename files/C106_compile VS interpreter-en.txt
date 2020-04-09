@@ -1,0 +1,66 @@
+
+PETRA : In this video, we will
+look at the difference between an interpreter and a compiler.
+By the way, in the C programming language, we use a compiler.
+REMI : To see more precisely what those differences are,
+watch this short animation.
+Enjoy!
+TV SPEAKER : When you land in the world of computers,
+with their strange, convoluted machine language,
+it's a bit like landing on another planet whose inhabitants speak
+an equally strange, convoluted alien language.
+Getting a mechanic on planet Gobbledygook to repair your spaceship
+would present the same sort of problem that you have when you
+want to get a computer to do something.
+Everything you say has to be translated.
+And you have a choice between two different sorts of translator.
+One of them is called an interpreter, and the other is called a compiler.
+Let's suppose that you have previously written out your list of instructions
+for the repair of your spaceship.
+And suppose that you choose the interpreter to do the translating.
+He reads your first instruction--
+open lid of rocket engine--
+translates this into gobbledygook, and immediately passes it
+on to the mechanic who executes the instruction.
+Then the interpreter reads your second instruction--
+remove spark plug-- translates this into gobbledygook,
+and passes it on to the mechanic who executes it.
+And so on and so forth.
+Now notice how the interpreter works.
+He stays with you all the time, and he translates each of your instructions
+immediately, one by one.
+This is a rather slow process, because the mechanic
+has to wait while each instruction is being translated.
+But on the other hand, it does give you a chance
+to correct your mistakes as you go along.
+If the mechanic removes the wrong spark plug,
+for instance, you'll see this happen right away,
+and you'll be able to change your instruction accordingly.
+Compare this with the way the second sort of translator --
+the compiler -- goes about his work.
+He takes your complete list of instructions, and without further ado,
+translates the whole lot straight into gobbledygook.
+He then hands them back to you and goes away, leaving you all on your own.
+All this has taken some time.
+But from now on, things will go very fast.
+You hand the complete list of gobbledygook to the mechanic,
+and he executes them all in one go, bang, bang, bang.
+There's no waiting about this time.
+But there's one disadvantage to this, of course.
+If there was a mistake in your instructions, it's too late now.
+This analogy comes very close to the way the interpreter and compiler translator
+programs actually work with computers.
+An interpreter runs slowly, starts right away,
+and let's you see how things are going.
+Whereas a compiler takes extra preparation time
+before your program can run, but then lets
+it run very quickly and efficiently.
+To help you remember the difference between an interpreter and a compiler,
+look at the words themselves.
+Inter means between.
+The interpreter is always between your program and the computer,
+and it translates line by line.
+To compile, on the other hand, means to pile together.
+A compiler piles together your entire program
+and translates the whole thing all at once.
+Which one you use on planet Gobbledygook is entirely up to you.

@@ -1,0 +1,119 @@
+REMI : Let's see how much memory is using C program.
+For example, this one, the C program "hello world", a very simple one.
+Even if you don't know how to write C code,
+you will be able to understand the next program I will show you.
+Here we have a printf "hello world" that will print "Hello world" on the screen
+and then return 0 that will exit the program.
+But to be able to see that program in memory,
+we want it to be persistent in memory.
+We don't want to exit the program as soon as the "Hello world" is
+printing on the screen.
+So what I will add to a program here is first
+a question or a sentence that says : "Please press a key to exit the program".
+Backslash n for a new line and then I will
+do a scanf to wait for the user to type a key on the keyboard.
+So it will ask for a character, so I will put %c like this.
+And I need a character at the beginning : char c.
+And here we have to put &c like this.
+So even if you've never --
+oh, it's scanf --
+scanf.
+So even if you've never programmed in C, you can learn.
+Some say it is very good to learn C.
+And here it you understand that it will print "Hello world".
+It will print "Please press the key to exit the program",
+and then it will wait until the user pressed a key.
+It will here get the key that is pressed with this instruction here.
+So let's run this program by clicking the Run It.
+So it is compiling the program.
+And indeed, you can see that the program is executed.
+You have "Hello world", "Please press a key to exit program".
+And here we are still waiting for the program to finish.
+So I don't want to kill that program.
+I want it to stay in memory.
+And I want to see how much memory it is using right now.
+So for that I'm going to go to the second terminal
+by clicking this little row here.
+And we have a second terminal on which we can use htop,
+htop to see, indeed, that the program is running.
+That is the line here.
+And we can see in the VIRT column that it is using 952 kilobytes of memory.
+Let's go back to the program by clicking this row again,
+and I will press the key and enter to exit the program.
+Ah, yeah, we have to press the Enter key also.
+What it will do now is I will try to modify that program
+so that it uses more memory.
+For example, what we can do to see what's
+happening when we use a lot of variables,
+it's creating a new array of characters and --
+a very big one --
+and try to see what happens in memory if I create a one-million character array.
+So 1, 2, 3, 4, 5, 6 zeros so there is one million character in an array.
+Well, let's try to run it and see what happens.
+So here, it will create an array.
+So we have an error because it's a warning that
+says you have an array with one million characters, but you never use it.
+So usually when you create such an amount of memory,
+when you reserve such an certain amount of memory, you should use it.
+So that's a warning.
+So we will still get this program in the background
+and go to the second terminal by clicking this row.
+And now look at that.
+We have a program with a lot more memory than before because now we have
+1,800 kilobytes of memory that is used.
+As you can see also, if you do that total of all
+of virtual memory of all the programs running here, so that column
+we have to add memory.
+It is not equal to the memory bar that you
+can see here because here it says we have 2 megabyte used out of 25 total.
+But the thing here is, as you can see in that program,
+we have reserved one million characters in the memory,
+but we never used them because we didn't do anything in the program with them.
+So that's why the system is quite smart, and it is
+using something called virtual memory.
+That's why it's the VIRT column.
+And the virtual memory is different from the physical memory
+that is actually used in the computer.
+So as soon as the virtual memory that is reserved is being used by the program,
+then it will be used by the physical memory.
+And it will be shown by the bar just here
+because this bar, 2 megabyte out of 25 total,
+is the physical usage of the memory.
+Let's try to put something else as a type here.
+So instead of characters, I will put integers.
+Integers, I run it.
+So we have the same problem that we don't use the array.
+Nice.
+And I go to the second terminal and look at that.
+The program is using a lot more now, 4,728 kilobytes of memory.
+Wow.
+That's a lot.
+That's 4 megabytes.
+But you can still see that the physical memory is always staying at 2 out of 45
+because we didn't use that array.
+Let's try something else.
+So I exit this one, and let's try another type that is double.
+So decimal numbers with a big precision.
+Let's run it.
+Let's see if doubles are using more memory than integers.
+Let's go to the second terminal.
+And indeed it is using twice the memory.
+Here we have 8,632 kilobytes of memory used, virtual memory as always.
+So you know that when you program, it will use more or less virtual memory,
+and you have to optimize a program so that indeed when
+you create big arrays or a lot of variables,
+they are used in the programming in an efficient way.
+And something else, if you allocate some memory --
+if you know how to program in C and allocates memory dynamically --
+don't forget to free the memory that was allocated
+so that you will have more memory available for the other program
+running on the system.
+But here remember also that the system, even
+if you forget to optimize the program and you
+have a big array of a certain type that is using a lot of memory,
+even in that situation, the system is optimizing the memory usage because it
+is virtual memory that is used and the physical memory is not impacted,
+unless the virtual memory is indeed being used by the program.
+Very smart for the Linux system.
+So now try it with your program, if you have some programs in C on the left,
+and see if you can see how much memory is used by the o program.

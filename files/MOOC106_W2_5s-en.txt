@@ -1,0 +1,132 @@
+REMI : I'm going to show you in this video
+how to create files and delete files.
+So to see what's happening in the file system,
+I'm going to open the file browser by clicking the tab File Browser here.
+Let's go back to the terminal, and we'll just
+see where we are in /home/user, so the home directory that
+is also displayed on the left.
+You already know how to create a file using nano.
+nano f, for example, will create that file when you write up out.
+So let's try to write something.
+write, and then Control O to write out.
+Control O, File Name to Write: f, Enter.
+And in the file browser in the left, you can see that f just appeared.
+And I can exit the program, Control X. And if I ls,
+I do have indeed the f file just here.
+Another simpler way to do that is to use touch.
+Le'ts try touch file and Enter.
+It will just create an empty file just here.
+If I double click file, it will open in the code editor
+without anything because it's an empty file.
+Right, let's go back to the file browser.
+How do I delete that file?
+Oh, first, let's try to list (ls).
+And indeed, we can see that we have the file also.
+So to delete the file is remove with rm, rm, and the name the file.
+rm file, OK.
+rm f, OK.
+And if I list, I don't have these files anymore.
+They are completely deleted.
+Let's try to create a file with a space in the name.
+touch my space file, Enter.
+Oh, and as you can see in the file browser, I have two files : the file my
+and file file.
+If I list here, I have the file file, the file my.
+So if I list with the option -l, I'm going to have a more detailed list.
+And you can see that, indeed, that we have two lines, one for the file file
+and one for the file my.
+So if you create a file with a name containing spaces,
+you have to be very careful because it creates two files.
+So let's remove file.
+Let's remove my.
+All right, and let's try to create that file with a space in it.
+To do that, I'm going to use the backslash.
+So touch my\  file
+And this will create, indeed, a file that is named my space file.
+And if I ls that, it's quite difficult to see
+that my and file are one single file.
+But if you list with ls minus l or dash l with a more detailed one,
+you can see only one line for my file.
+So indeed, it is a file with a space in it.
+And if I am to remove it, it's the same way.
+So remove rm
+And then I have to do my, my\ file.
+And it just deleted the file.
+All right, well, you can also use single quotes.
+So touch single quote my space file and close the single quote. touch 'my file'
+And it will create the my file file.
+And if you want to remove, you do the same, rm single quote
+my space file single quote.
+And it will remove the file.
+All right.
+Also, sometimes if you are trying to write something with a single quote,
+and you just type by mistake the Enter key, and here
+you have something happening.
+It looks like a command line prompt.
+But it's not because it starts with a greater than sign.
+And if you try to do something like ls, it won't do anything.
+If you try Control c, it won't do anything.
+quit, exit, q, and you are stuck inside.
+So sometimes you will have to find a way to get unstuck
+from this kind of situation.
+Here, the situation is that you started to write a name.
+And here, it is reading all the names.
+And even if you type the Enter key, it will be part of the name, actually.
+So here, the name of the file that you want to remove
+is a new line ls, a new line quit, new line exit, new line q, new line.
+And to finish the name, you have
+to close the single quote.
+So I close the single quote, type Enter, and, indeed,
+it will say I can't remove that very long file just here because there
+is no such file or directory, the file that I just named
+with all the new lines inside the name.
+So anyway, it works the same if you type the parentheses.
+So opening parentheses, and then Enter, and you are stuck in the same way
+like this.
+So you have to enter the closing parenthesis.
+Enter.
+And it will do the same with double quotes.
+If you open a double quote, then you will have the same thing happening.
+And you have to close the double quote, and also the brackets.
+So if I type bracket like this, curly bracket, well,
+I will have to close it like this.
+Also, I will show you another way to get unstuck from this situation.
+Let's try something, rm.
+I want to remove a file.
+And then I enter the enter key by mistake.
+And I want to get out of this situation.
+Well, you can find the character that is at the beginning of this situation,
+or you can type Control D. And Control D will
+say this is the end of the reading of the name of the input, something
+like that.
+Sometimes you will have to type twice the Control D. So
+let's try it, rm single quote, and then Control D. And then it works.
+Let's try double quote, Enter, Control D. It works.
+And let's try rm single quote, and then I typed something.
+And by mistake-- all right--
+I just enter the Enter key.
+So I try to type something else.
+And then Control D, it doesn't do anything
+because it has to be in a new line.
+So I have to push twice Control D if I just wrote something in this line.
+So a second time, Control D. It doesn't do anything.
+So type Enter Control D. All right, and this time it works.
+So sometimes Control D will work.
+But you have to push the Enter.
+You have to have a new line.
+So sometimes you have to also try control D twice
+and Control C won't work.
+So anyway, it's better not to use spaces in file names.
+So you can use, for example, the underscore.
+So my file would be my_file.
+And that way it's simpler because even with the ls,
+you will see that this is the name of one file.
+And indeed, if I list with ls -l, you can see only one file.
+And I can remove it using my_file, and Enter.
+All right, so you know how to create, and remove files, and get out
+of these situations when you try to enter a file name
+or something with quotes, double quotes, or parentheses, or braces,
+or any kind of special character.
+And how to get out of the situation and get back to the command prompt.
+You can try yourself now.
+It's your turn.

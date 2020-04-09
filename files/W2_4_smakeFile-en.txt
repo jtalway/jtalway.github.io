@@ -1,0 +1,176 @@
+PETRA: We will now see how to automate all of the compilation steps
+that are necessary in order to build a final executable program.
+We will start with our previous program that
+uses the weather library we wrote in order to compute and print
+an average temperature.
+So this program consisted of the C file program.c
+that you can see right here, in which we have
+our temperature, array of temperatures.
+And then we call the function printAverageTemp, which
+receives the temperatures array and the number of temperatures stored in it.
+In addition, we have weather.h, which is the header file
+and contains the prototypes for the functions that
+are part of the weather library, as well as weather.c,
+which contains the function definitions of the weather library.
+Nothing has been compiled so far.
+As you can see here in the file browser there is no executable.
+We only have the .c and the .h files.
+I will now show you how to use the program,
+make, to do multiple things for you all at once.
+It will compile a library to create the weather.so file,
+and it will also build the executable program
+from the library and program.c. This program, make, read
+instructions from a so-called Makefile, and we need to create this Makefile.
+To do so, I first type in the Linux command prompt touch
+Makefile to create the file, and I can then open it over you
+in the file browser in my WebLinux.
+And I will explain to you what to put into this Makefile.
+The name Makefile is fixed.
+You have to name it Makefile.
+The Makefile has a special structure.
+I will explain the generic structure to you first.
+First we need to put down a target, which is what you wish to produce.
+And I will explain what that means in a little bit.
+Then a colon, and what is needed to do so.
+Then you start a new line and hit the tab button.
+This is very important, it needs to be indented.
+So tab, and here you put how to produce what you want.
+So let me give you an example.
+Let me show you the build command for the executable program.
+So what we want to build is the program itself, colon.
+And what does that depend on?
+Well, we need program.c. And we also need our weather library to be there,
+so weather.so
+And how do we then build this program?
+Well, we have the execution commands.
+So tab, and I will copy the build command,
+and we will just have to add the weather library to that.
+So here's the build command for our program.
+But we also need to link in the weather library.
+So not only do we need program.c, but we also need weather.so
+And then the output is going to be programmed.
+So this was the build command we used by hand when we had already
+compiled the weather library.
+Now another target is this weather library.
+How should make build that weather library?
+So here the target is weather.so
+We need to tell make how to create weather.so
+Well, first of all, what does it depend on?
+It depends on weather.c, and weather.h, the header
+file that contains the prototype.
+If both of those exist, then we can compile the weather library
+into a binary file.
+So let's start by copying our previous build command,
+and we need to modify it, of course.
+So first of all, it's not program.c any more,
+but weather.c. We can get rid of weather.so,
+because we're creating that.
+So the output file is going to be weather.so,
+and that was one important extra step here.
+Since the weather library, weather.c does not contain a main function,
+we cannot make that into an executable program.
+And therefore, we were going to tell the compiler that we only
+want to translate into machine language, create a binary but not an executable.
+So this extra -c needed to be included.
+So now, we are explaining how to build program.
+It needs program.c and weather.so, and also
+how to build weather.so.
+It needs weather.c and weather.h, and has its own build command.
+So I'll now remove my introductory explanation and save this.
+This is my Makefile.
+You will next use the command make that will read from this Makefile.
+It will go through this Makefile line by line.
+It will see: OK I want to build program.
+How do I do that?
+I need program.c and weather.so
+Whoa, but there is no weather.so
+So let me see how to do that.
+It'll then go to weather.so, to this new target
+and see: oh OK, I need weather.c and weather.h
+Well I have both of those.
+So let me run this gcc command, which will then, as an output,
+produce weather.so
+Once weather.so has been created, it'll
+go back to the first line that says I want to create program.
+And it now depends on program.c and weather.so, both of which
+will exist at this point, and can run the compile command for program.
+make it's really smart.
+For example, if weather.so already exists because, we already ran this
+previously, it will not rebuild it.
+It won't waste any time, unless you have made a change to weather.c
+or weather.h. Similarly, if nothing has changed with program.c
+and weather.so, it won't re-run this gcc command.
+It'll just tell you everything is up to date.
+I will demonstrate all this to you.
+So let me now show you how to call make.
+We change our build command here in webLinux and simply type in make.
+We're going to watch the magic in the file browser
+and see how slowly all the files come into existence that we're building.
+weather.so will be built first, and then program will be built.
+So I'm going to hit the Run button.
+And then go back to the file browser.
+Watch in the file browser.
+There is weather.so, it just was created.
+And next program shows up, and then the program is executed.
+On the right hand side, we see the "Average 7-day
+temp is 6.49" degrees.
+So let's see what happens when I modify my weather library.
+Let's go to weather.c and make a small modification.
+How about instead of "Average 7-day temp:", we'll
+say "The average 7-day temperature is:", save this.
+And then just run the build command.
+We simply run make.
+And what we see is that both of our compile commands are being executed,
+and the output is now "The average 7 day temperature is: 6.49" degrees
+And it was only one click of a button that got me there.
+Both the weather library, weather.so had to be rebuilt,
+and afterwards our program had to be rebuilt to make all of this happen.
+Let's try something different.
+Let's make a small modification to our program.c,
+but keep the weather library unchanged.
+How about we change one of the temperatures and make it really high,
+as in let's say 40.5 degrees.
+It's going to be really hot.
+So we save this, and we simply run the make command again.
+This time, only one of the compile commands is executed.
+And, again, we get the updated message "The average 7-day temperature is:",
+and it has gone up quite a bit because I added that one really hot extra day.
+But as you saw, we didn't have to rebuild our library because I
+hadn't made any changes to our library.
+So make is a really smart program.
+It looks whether anything has changed has been
+modified since the last time it ran.
+And if not, then it won't run again and won't waste any time.
+You can also run make directly on the command line over in the Linux portion.
+I can simply type make and it will have the same effect as before.
+While this time my program was up to date,
+because I hadn't made any changes.
+So let's make some changes again.
+Let's go back to our weather library and let's change it
+back to when it was originally.
+So "Average 7-day temp:".
+Save that, and let's see what happens when I type make.
+It first rebuilds the weather library, and next rebuilds the program
+because both need to be updated.
+And now we need to actually run the program.
+And it says "Average 7-day temp: 11.51" degrees
+Now, let's make a change just in program.c. So
+let's change this temperature, I don't remember
+what the temperature was, but let's bring it
+back down to maybe 7.3 degrees.
+Save this, and let's run make again.
+This time, it only rebuilds the program because I haven't made any changes
+to the weather library itself.
+So only one gcc command got executed, as opposed to two gcc commands
+up here when i had made a change to the weather library itself.
+Just to show you that this really worked, I'm running the program.
+It says the "Average 7-day temp: 6.77" degrees, to it's
+gone down quite a bit yet again.
+So now we know about these very important Makefiles
+that allow the automation of the build process of executable programs.
+I strongly recommend that you try this out on your own now
+by creating your own Makefile for a project that
+involves a library you have created.
+And by simply putting make into the build command in WebLinux,
+you'll see that this will greatly simplify the creation of executables.
+Your turn now to play with your Makefile.

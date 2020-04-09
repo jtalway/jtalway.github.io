@@ -1,0 +1,231 @@
+REMI : So in this video, as you see, WebLinux is booting,
+we will see very basic commands that I will
+type in the command line interface.
+So on the right side, you have this blinking cursor
+just at the bottom of the black area.
+This is the command prompt.
+So the command prompt is exactly tilde, then a space, then a dollar and then
+a space, and then the blinking cursor.
+So it is asking for a command.
+It is a command prompt.
+It is prompting for a command.
+Here, you will type some commands.
+You will type the Enter key.
+And when you type the Enter key, it will interpret that command
+and display some things on the terminal.
+All right.
+So the first command I want to show you is whoami.
+So I type whoami.
+And this command is quite funny because it is exactly what it sounds like.
+whoami will display the username that is logged with this system.
+And on WebLinux, you don't have to type username and a password
+because I already configured WebLinux so that it is automatically
+logged in with a specific user.
+And we will see the name of this user when I type Enter.
+So who am I?
+user.
+So the username is user and there is actually no password to boot web Linux.
+Usually on a Linux system, you will have to log first
+with a username and password.
+And of course, Linux is multi-user so you
+can have different users with different passwords.
+And each user will have a home directory with different files, et cetera.
+So if you want to see a very little help of command before you try it,
+when you can add an option, for example, whoami.
+And then you add space.
+And then --help.
+And then you type Enter.
+And then you have little help here.
+First, you have usage.
+So how to use it.
+Well, you just type whoami.
+And then a little line here that explains what it does.
+Print the user name associated with a current effective user id.
+What is an id, actually?
+We can see our id by typing id, like this.
+And you see, when I type Enter, the user id, UID is 1000.
+The group id, gid is 1000 also.
+And the groups is 1000.
+Anyway, what's important here is to know that you have an id
+and the user id is 1000 for this user.
+But it doesn't matter so much.
+Just to see you how the commands are working on Linux.
+Let's try another command, logname.
+Let's try to see if there is help.
+So I put space, and --help.
+And logname, as you can see, is pretty much the same as whoami.
+It prints the name of the current user.
+Let's try logname.
+And I still have user.
+All right.
+A very basic command is something that prints something on the screen
+and then goes back to the prompt.
+As you can see, each time I type the Enter key after the command,
+then it displays something on the screen,
+and then you get back the prompt.
+You have the prompt asking for a new command.
+So another command very basic is echo.
+And it will just echo what you type after.
+For example, echo hello.
+And it will just print hello.
+Or a specific echo is echo $0.
+And this will not display $0.
+It will display the name of the interpreter of all the commands.
+So the name is here sh.
+And it stands for shell.
+And indeed, you have different shells.
+And the shell is what is interpreting the command on Linux.
+So it's an application.
+It's software that will get all the lines.
+When you type Enter, it will interpret them and do some stuff
+or ask the system to do something.
+So here we can see that the shell we are using is sh.
+And to know that, you have to type the command echo $0.
+So $0 is a specific thing that you have to type just
+to get the name of the shell interpreter that you are using for the system.
+The next command I want to show you is hostname.
+So hostname.
+Let's do the help first.
+Help and you can see that here, the help is a little bit longer.
+You have news usage with hostname, then options.
+So here the options are optional actually.
+That's why they are within brackets.
+And here, well, it's a difficult thing that you
+don't have to understand right now.
+And here, you have the options that are possible.
+-s, -i, -d, -f, -F.
+So let's try only hostname.
+What it does.
+Gets or set hostname or DNS domain name.
+I type Enter.
+And it will just display the name of the computer, the name of the computer that
+is registered in the system.
+And by default, on web Linux, that name is openrisk.
+So openrisk is the name of the computer that is running WebLinux.
+It is a specific name that is just specific to WebLinux.
+Usually when you use a computer in a company or you are at home,
+you will have the name of the computer.
+And you can set it up when you install Linux actually.
+All right, let's try uname.
+uname, let's see the help.
+It will print the system information.
+And then you have some options here.
+But we will try.
+So uname first.
+Oh, so the name of the system well, the system information, basic one,
+is the name of the system.
+And it's Linux.
+Let's try an option like this one.
+dash a or minus a (-a).
+It will print all the system information.
+Let's try that.
+uname space -a (minus a), and Enter.
+Oh, we have a little bit more explanation here.
+So we have Linux, which is the name of the system, openrisk, which
+is the name of the hostname of the computer.
+And then you have a bunch of numbers here.
+And this is the version of Linux that is running.
+And when it was built, I think, and also openrisk GNU Linux.
+Ooh so we are running some GNU under the hood.
+Right.
+Another very useful command is history.
+Just like this.
+And if I type Enter, I have all the history of the commands
+that I just typed.
+So I have 14 commands already that I typed.
+The two first ones are ones that are automatically
+done when web Linux is booting.
+So it's specific to webLinux.
+The other ones, it's just what I did.
+But to go back to an old command, you can use the up arrow.
+So if I hit the up arrow, just now, I will get to the last command.
+And again up arrow, uname -a, up arrow.
+And you go up like this, up to the number
+2, which is the first command that I just typed.
+If I want to go back down, then I just hit the down arrow,
+and I go down that list, just like this.
+So you can navigate through the history using the other arrows,
+up and down arrows like this.
+It's very, very useful.
+All right, if I want to clear, well it's the command clear.
+Let's try another command, uptime.
+uptime will display how many minutes until the system was booted,
+so here we can see the hour.
+And then we can see that it is up for nine minutes now.
+And you can just see a bunch of other statistics
+like the load average, which is the load average of the CPU.
+But we will talk about this later.
+Also, I can show you the cal, which displays the calendar.
+So here, we are in September 2018.
+And I can see the help of the calendar just like this.
+So here, I can use an option, -j to use Julian dates.
+Ooh.
+What is that?
+Well, let's try.
+cal then space -j.
+And it will display the number of days since the 1st of January.
+So you have a Julian dates for this calendar.
+Let's try the command date.
+So date you have, well it's a simple date.
+Also, we can have a specific formatter for the date.
+Let's go to the help like this.
+date minus minus help.
+Oh.
+It's quite complicated.
+But here, you have the usage dates, some options, and the format,
+and maybe the time.
+Anyway, if you read and try to understand that thing here
+and recognize time formats--
+oh, it's quite complicated.
+But I made it.
+And I want to show you how to display a date in a different format.
+So, look at this example.
+date +"%T" Ooo.
+We have only the time that is displayed.
+And if I type date +"%A %d %B %Y" and then we close the quotes.
+Press Enter.
+Ooh.
+We have something very interesting here.
+We have a percent A that is Thursday, Percent d 13.
+Percent B, September.
+Percent Y, 2018.
+So usually you can use this command very directly in the command line interface
+and have a little help using the --help.
+But, on the real Linux system, you would use the man command.
+The man command is the manual of command.
+Of course, you can have a manual of cal by using man cal for example.
+But it won't work on WebLinux and it will display "no manual entry for cal".
+Why that?
+Because I decided to get rid of all the manuals that are very, very big files.
+And it would take forever to download all the files, all the manual files.
+So usually what I do, when I want is to have
+some details on a specific command, I actually search on the Internet.
+So I just search on the internet, man and then the name of the command,
+and then maybe I add Linux.
+And I have a bunch of websites with all the specific options
+and the details of the command.
+But usually, when you are on a real Linux
+and you just type man and then the name of the command,
+you will have the full manual of the command.
+And of course, you can also do man man, which
+is the manual of the man,   man command.
+All right.
+So when you are in the man, usually to get out of the manual
+you have to type the q key.
+And you will see that some of the commands that you type will get you
+in an application in the software and then you will
+won't have access to the prompt anymore.
+And you have to find in that specific software how to quit or how to exit
+and then how to go back to the prompt.
+So here, all the commands that you just saw, just displayed something
+in the screen and got back to the prompt.
+So you are not stuck in a software.
+But the next one that you will see, then you
+will have to find how to quit to go back to the prompt.
+So it's your turn, try those different commands that I just showed you.
+But be aware, be careful, because if you use another command that will get you
+into a specific software, you will have to find out how to quit the software.
+So try not to use other commands then the ones
+that I just showed in this tutorial.
+All right.
+It's your turn to try.

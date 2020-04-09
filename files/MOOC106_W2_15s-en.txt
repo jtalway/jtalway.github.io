@@ -1,0 +1,188 @@
+REMI : In this video, we are going to see how to search and find
+files and directories by name.
+In a real Linux environment operating system,
+you would use a command that is called locate
+but it's not installed on WebLinux.
+Why that?
+Because locate uses a big database, and I didn't want
+the WebLinux to have this big database.
+Otherwise, it would slow the system very much.
+And to let the system be very light and very fast, I disabled
+and I didn't install locate.
+But I will show you how to use locate.
+So you just use the locate command, and then the name of the file.
+But here, of course, if I do that on the WebLinux, it won't work.
+And also, if you want to update the database
+of all the files in the system, you would use updatedb for update database.
+On WebLinux, it doesn't exist, also.
+But on a real Linux system, most of them,
+you will have locate and update database.
+Be sure that you wait a little until you search files with locate,
+because to update the database could take
+a really long time if you have a lot of system files and personal files.
+So I'm going to show you a very simple way
+to find files in a current directory.
+Look at here.
+We have a file that is named program.c.
+And a very simple way to do a search is to use echo,
+and capability of the shell of the terminal to expand the star symbol.
+So if I do echo p star, it will expand all the files
+that are starting with the letter p.
+So echo p star, and then I get program.c.
+And I can do the same with other paths, like
+echo /usr/bin/a*  and it will print all the files starting
+with a in the pathusr/bin
+And also, you can use the question mark.
+So if I use echo /usr/bin/a??,
+then you will have only the files that have three letters,
+starting with a, and then two letters exactly.
+And there is only one file that is corresponding to this pattern.
+It is :  /usr/bin/awk
+Let's try with echo /usr/bin/??? , enter.
+And here you have all the files in /usr/bin
+that are three letters long.
+You already know cal, for example.
+So you see that the binary is indeed in /usr/bin, and in /cal.
+You also know man, to have the manual of command.
+You also know vim and you know yes, for example.
+So now I'm going to show you the find command.
+Let's try that within the /home/usr directory.
+So I just type find.
+And as you can see, find without nothing will print all the files
+within a directory.
+So if I list with ls minus i minus a for hidden files and l for a list.
+So we see in this list that we have the current directory, the parent
+directory, and we have indeed two files .ash_history and program.c
+Now if I do find slash and then enter,
+then it will list all the files within the slash, which
+is the root of the system and recursively in all the directories.
+So thing here, it will stop until we don't have any more memory
+to print all the results.
+So it just stopped in the bin directory just here.
+Let's do that in the current directory.
+So find dot, and it will do the same.
+It will list all the files in the current directory.
+So now, how to find a file within the current directory which
+has a certain name.
+So we just use find dot, for the command directory, and then
+the option space dash name.
+So minus name.
+And after that, you just put what you want to search in double quotes.
+So double quote program.c. I know that it exists.
+And we close the double quotes.
+And indeed, it just found programs.c in the current directory.
+So dot slash program.c
+Let's see if we can use a pattern.
+So we have the same find dot minus name.
+And here I will use a pattern with a star.
+So prog star, for example.
+And I close the double quotes.
+And it will indeed find all the files that
+are starting with prog and then as many characters as we want.
+So the star is for as many characters as we want.
+Never forget to use the double quotes.
+Otherwise, it would use the shell expanding.
+You won't have the result that you expect.
+Let's try now to find in the whole system.
+So find in slash, which is the root of all the file system, with minus name.
+And let's try to find a file that is called Hello, like this.
+I close the quotation.
+Press enter.
+And it is searching.
+And look here.
+We have a lot of permission denied.
+So indeed, the user doesn't have access to many different file systems like
+/proc/60/ns just here, as you can see.
+So these are error messages.
+And if I don't want to see those error messages,
+I have to show you how to get rid of them.
+So I'll type again, find slash minus name.
+Hello in quotation marks.
+And here, to redirect the error messages from command --
+and that is correct for all the commands,
+not only find but all the others --
+you have to use the greater than sign.
+But just before, you will put a 2.
+So 2 means that the second output, which is the error output, I redirect it.
+And I could redirect it to a file, like file.txt,
+with all the errors that would be written in this file.
+But instead of writing to this file, what I will do is I will write
+to a specific device file that is called slash dev slash null like this,
+N-U-L-L. And this is a specific file that is like a black hole.
+Anything you write inside slash dev slash null is lost forever.
+So it goes nowhere.
+It's a black hole.
+It will suck everything you put inside.
+So here, let's try that.
+We put all the permission denied error output in the slash dev slash null.
+And we get only the standard output without errors.
+And indeed, we see that we found two files that have hello as the name.
+One is /usr/lib/dillo/dpi/hello
+And the other one is /usr/bin/hello
+Let's try with some stars for a pattern.
+So let's try to find in the whole system something
+with the name that contains joe.
+So star J-O-E star, and closing the quotation mark.
+So here, because I put a star before and after J-O-E,
+it will search for any characters before and after joe.
+So it will print all the files that contains joe within the name.
+And we will do the same, redirect the error output to slash dev slash null.
+Let's try that.
+So it may take a few minutes, a few seconds
+to find all the files in the system.
+And we have a bunch of files indeed in /usr/bin/joe
+And also this one in share also in /etc
+So we have a bunch of files that are containing joe in the name.
+Just here, you can see that joe is contained in the middle here.
+And you have a letter before and two letters after.
+And what if I want to search ignoring the case,
+ignoring upper and lower case?
+Well, I have to add the i to the options.
+So it will be find slash minus iname.
+It means ignoring upper and lower case.
+Let's try to find the same star joe star.
+I close the quotation.
+And I redirect the error to slash dev slash null.
+And I search again.
+And well, we do have the same number because we
+don't have any files with upper or lower case in joe.
+Let's try now to find not only the files but also the directories.
+For that, we are going to search within path.
+So the whole path will be searched.
+And for that, you use find slash, and instead of a name you use path.
+But this time I want also to ignore the upper and lower case.
+So I put minus ipath to ignore the upper and lower case.
+And the path will search not only in the file name,
+but also in the whole directory path.
+So if you go through a directory that contains joe, it will be displayed.
+It will be found by find.
+The same here.
+We have to put what we want to search in quotation marks.
+So star joe star.
+And we have to redirect the error to slash dev slash null.
+Let's try that.
+And as you can see, we had a lot of results.
+And it is bigger than expected.
+So what do I do in that case?
+Well, I take the same command here, but you know how to do that.
+I pipe it to less.
+We say that.
+It means that to pipe something means that we take the output of this command
+and we put it in the input of less.
+Let's try that.
+So in the standard input of the less command,
+you will have all the files that are found
+and also the directories containing joe.
+So all the path are here listed.
+And you can go through all the results using the same less keys like down
+and up arrows or the space bar.
+And here you can search also using the search integrated
+into less with a backward search or forward search like slash joe
+for example, enter.
+And then you have everything that is containing joe that is highlighted.
+So that's how you use the find.
+And if you have a lot of results, you can pipe it
+like this with a pipe to the less command
+so that you can go through and search through the results.
+So try it by yourself.
+And try to find some files in the whole file system using this technique.

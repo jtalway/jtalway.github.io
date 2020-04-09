@@ -1,0 +1,150 @@
+PETRA: In this video, I'll show you how to add numbers
+on to a file that already exists.
+Here in my window, you see the program that we wrote previously.
+We declare a filename, my_first_output_file.txt,
+and we open it with the fopen command and with a "w", which
+means that a file will be created if it didn't exist before.
+And it will be overwritten if it did exist before.
+And then we integrate.
+And that's to show you that this file really exists.
+When I type ls here on the right on my Linux command prompt,
+you see my_first_output_file.txt.
+And I can look at the contents of that file using the cat as in catalog
+command, my first output file dot txt.
+And currently the grades 43, 76, 99, and 37 are stored in that file.
+Now if I run the program again, just the way it is right now with a "w",
+this file will be overwritten, and a new file will be created.
+I'll quickly demonstrate that for you.
+So let me enter some new grades.
+Let's see a 55 and a 99 and a 100, just those three grades and then
+a -1 to quit.
+Now if I look at the file, the 55, the 99, and the 100 are there,
+but the previous grades that I had in there, those are gone.
+So let's see how we can modify our program so that it adds on
+rather than create a new file.
+What we have to do is the only little change is this "w".
+Instead of opening the file for writing, we want to append to the file.
+And so I change this "w" to an "a", and that's all I have to do.
+So let's save this new program and run it.
+And so we're asked to enter more grades, and this time they
+will be added on to our file.
+So let's add a very low grade, maybe a 10 and then a 99 and maybe a 30
+and then a -1.
+So know what I look at my output file, it still
+has the numbers in there that were in there
+before the 55, the 99, and the 100 but also the new grades that I just
+put in in this round.
+So that's adding on or appending to a file.
+So that's great.
+What happens if the file actually doesn't exist,
+and I try to open it for appending?
+Well, thankfully C is smart enough and just opens a new file in that case.
+So I can actually--
+I could simply delete this file first_output_file.txt.
+So now it's gone.
+When I type ls, that file is now gone.
+And when I run this program again and I don't have to re-compile.
+I can simply just run it again.
+When I run it again and I enter some new grades--
+44, 66, and 77--
+then -1 to quit and then I type cat my first program.
+So there it is.
+That says a new file was created.
+It exists again and those numbers are in there.
+So that's all great.
+What if you wanted to be in control however?
+So what if you as the programmer wanted to be in control and ask the user.
+Well, this file exists.
+Do you want to create a new file, or do you want to add on to the old file?
+This method won't do that.
+I need to have a way to find out whether a file already exists
+and then make a decision whether I want to add on to it
+or overwrite the existing file.
+So how could we do that?
+Well, the trick here is to first try to open
+the file for reading even though we don't want to read from the file
+at all.
+But if there is a file, then we can open it for reading,
+and we don't get an error message.
+But if we open the file for reading that doesn't exist,
+we get a nice, not really error message, but a nice message
+from the system that we can catch and then make a decision based upon that.
+So let me show you how that works.
+So instead of opening the file for appending or for writing,
+I'm going to attempt to open it for reading right here.
+And if that actually went well, then ofile,
+my file pointer will contain some outers, and we can work with that.
+But if it didn't go well, then ofile would contain the null pointer.
+Contain the value, NULL.
+So as long as that didn't happen, I know a file exists.
+And if ofile is NULL, then I know the file doesn't exist.
+And I can just start a new file.
+But if a file does exists, I want to ask the user what their choice is
+how to proceed from here.
+So if the file exists and ofile's not the null pointer,
+I want to print out something like you already have a file named
+and let me call it %s.
+And that's filename.
+And in that case, we need to close that file that we just
+opened so that things don't go wrong.
+And so and now we might want to ask the user what to do.
+"Do you wish to (1) append to the file or (2) , overwrite it.
+Enter 1 or 2:"
+And then you do a scanf and read what the user enters, %d,
+and they enter a 1 or a 2.
+Let's called that selection.
+So clearly we need a variable named selection.
+I'll just add that on right here.
+And so maybe we should actually give selection of predefined value
+because we don't necessarily go into this if statement.
+So if ofile was equal to NULL the file didn't exist,
+then we want just to create a new file.
+And so let's just set selection equals a 1.
+It doesn't really matter what we selected,
+but we should give it a predefined value.
+So what do we do.
+If selection equals 1, well, that means that either the file existed
+and the user wants to open it for appending or the file didn't exist
+and it was just my pre-selection up here.
+But either way, if I open the file for appending, I'll be fine.
+Because if a file doesn't exist, it'll be created.
+So ofile = fopen(filename and I'll open it--
+filename-- I'll open it for appending.
+And otherwise I want to open it for overwriting.
+The user said 2 here, and that means they want to actually overwrite
+the existing files.
+ofile = fopen(filename)
+But this time I use a "w" here.
+Now this is not a fancy menu that I just wrote.
+I didn't really pay attention what the user enters a 3.
+It just automatically goes into this else case.
+You could make this way fancier, but it'll do for demonstration purposes.
+So now once I get to this point underneath the if statement,
+I know for sure that my file is open either for appending
+or for overwriting, depending on what the user chose.
+So now I can keep the rest of my program the way it was.
+So I'll save this.
+And let's try to run this.
+So currently we have a file that already exists.
+We just looked at it.
+And so we expect to see a message.
+You already have a file named my_first_output_file.txt
+"Do you wish to (1) append or (2) overwrite?"
+So let's start by appending.
+Let's demonstrate that that works.
+So please enter a grade.
+That's enter grades 88 and 99 and -1, and let's look at the file.
+And indeed the 88 and the 99 showed up behind the other numbers
+that I had entered before.
+Now that's run the program again, and I don't have to recompile it.
+So let's run it again, and this time let's
+say we want to overwrite the existing file so we can make sure we tell it
+apart from the previous--
+I'm just going to add 1, 2, 3, 4 for grades and then a -1 to quit.
+And when I look at my file, it has just the 1, 2, 3, 4 in it.
+It overwrote everything else that was there.
+So now you know all about file operations.
+You know how to open a file for writing, too.
+You know how to append a file.
+And you even know how to check whether a file exists.
+So again now it's up to you to start playing.

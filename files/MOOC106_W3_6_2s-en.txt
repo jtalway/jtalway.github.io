@@ -1,0 +1,24 @@
+REMI : Imagine that you have a program that
+is waiting for a user input and that, by mistake, you hit the Run It button,
+then you will be stuck on web Linux.
+Let me show you that.
+Here, you have a program that says : "please enter to exit".
+So I will run it.
+All right.
+And here it is waiting for the user input to enter something.
+But here, because we don't have the prompt, if you hit the Run It button,
+then webLinux will try to put some commands to execute the compiler,
+and to compile and to execute the program,
+but it doesn't do anything, because this is the input of the user that
+is waiting here.
+So the status is that webLinux is stuck,
+because it didn't start the compilation program,
+and the compiler is still compiling, because it is not doing anything.
+It is inputting the commands into the input of the program that
+is waiting for the user input.
+So, anyway, you are kind of stuck, and those buttons are disabled.
+So if you are in such a situation, you can still
+reboot webLinux by refreshing the browser, the page on which you are,
+on which you have webLinux, and it will reboot webLinux,
+and you will still get your program on which you were working.
+And it will enable again the Save It and Run It buttons.

@@ -1,0 +1,143 @@
+PETRA: We will now learn how to use libraries in C. An example of a library
+is the math library which contains all of the important math functions.
+But before we can really get into libraries,
+we need to make sure that we really understand
+the difference between a function declaration and a function definition.
+So let's look at an example.
+Here in my editor you see a simple program that declares a variable a
+and gives it the value 2.5, and another variable
+aSquared that's supposed to hold the square of this variable,
+and it's initialized by calling the function square(a).
+The function square is declared and defined up here, and what it does
+is it takes a double x and it returns its square.
+And then we simply print out the result. We print aSquared.
+So a goes in here.
+So 2.5 squared equals, and then that result which is stored in that variable
+aSquared.
+Let's give this a quick try.
+Indeed it prints out 2.50 squared = 6.25
+So that program worked.
+What exactly is a function declaration?
+A function declaration is simply the prototype
+of the function which includes telling the compiler what the return
+type of the function is and telling the compiler the name of the function
+as well as telling the compiler all of the types of the arguments
+that go into the function.
+The function definition, on the other hand,
+is the whole thing which includes the code that defines the function, what
+the function actually does.
+Now when a function is defined, as it is right here above where it is first
+used, everything is OK.
+What happens if I remove this function definition altogether, like that?
+Let's see what happens when I now try to run this program,
+and I get some error messages.
+There were errors and warnings during the compilation.
+And I see the editor here a little triangle.
+And when I hover over it, it says implicit declaration
+of function square.
+When I click below here where it says at the bottom compiler one
+error, one warning, I get some more-detailed information.
+It says in the function main I have a warning.
+It says implicit declaration of function square, double aSquared
+= square(a).
+So what we're doing here, we're calling this function square
+and implicitly declaring it because we haven't really declared it yet.
+Implicitly declaring it means that the compiler just assumes
+everything is an integer data type.
+So it implicitly assumes the return type of the function square is an integer,
+and it also assumes that the variable that goes into the function
+is of type integer.
+And so it's just warning us that it's doing that automatically.
+Next, there's an actual error.
+It says undefined reference to 'square'.
+So here, the program is trying to call the function square.
+And since we haven't defined it anywhere, it can't find the definition,
+and so that yields an undefined reference.
+So up here the warning's about not declaring the function,
+and then the second error is about the lack of a function definition.
+So what's really happening with this implicit declaration,
+the computer adds a line up here, basically, that says int square(int).
+So that's a function declaration, but it assumes it returns an integer
+and it takes an integer as an input argument.
+Of course that makes no sense because we then want to call the function square
+and pass to it double a, and we also expect to return a double.
+And so this will also be absolutely no good.
+Instead, what we really need, we need this
+to be a double and that to be a double.
+So now we have a perfectly fine function declaration.
+And so we would no longer get a warning that the function is not declared,
+but we would still not have a function definition.
+So we need to add a function definition.
+I'm going to put that down here.
+So a function definition has the return type, the name of the function,
+and then the data type of the argument.
+And we need a variable name here as well because we're actually
+declaring the variable x, this function declaration.
+And then we open our braces and simply write down
+that we want to return x * x;
+So this is a function definition down here,
+whereas we separated the function declaration and put it up here.
+The function declaration by itself, when up here,
+has simply a semicolon at its end.
+We were able to write down the data type of the input argument
+without actually naming the variable.
+Although it would be perfectly fine to name the variable right here,
+we don't have to do that.
+So let's see if this runs now.
+And we get no error messages and, again, have a 2.50 squared = 6.25.
+So what happens?
+The compiler sees this prototype up here, the double square(double)
+And when it gets to the line where square is called,
+even though it hasn't seen the definition of square yet,
+it knows that the function square expects a double as an input argument
+and returns a double, and it sees that it's being used properly in this line
+aSquared = square(a) because a double comes in
+and a double is expected as output.
+Now what would happen if I actually forgot
+to put in the function definition?
+So let's take that out and run this again.
+And we're back to having error messages.
+And let's look at what the error message is.
+Only one error, and the error says undefined reference to 'square'.
+So it's no problem with a declaration because we
+did declare the function at the top.
+The prototype exists, but we didn't define the function.
+This is actually the second error we had gotten previously.
+So we got rid of the first warning, but the second error
+is still there because we're not having a function definition here.
+So let's put the function definition back in.
+And let's get rid of the prototype and see what happens when we forget that.
+And again, we get an error message.
+We get an implicit declaration of the function square
+again because we forgot to declare the function.
+So we're calling the function square but haven't declared it,
+so implicitly the compiler assumes, OK, it's
+receiving an integer as an argument and returning an integer.
+So that's what this first warning is.
+And then begin an actual error message because in our function definition
+we have the correct data types, double and double,
+which do not agree with the integers that were implicitly assumed.
+And so we have conflicting data types here.
+So we're getting two error messages again.
+So let's put that prototype back in.
+So let's put that prototype back in and make sure everything is running fine
+again.
+And there it is, 2.5 squared = 6.25.
+So one last time, the function declaration up top
+is sufficient for the compiler to be able to translate the rest
+of the program into machine language.
+And we can then use the function square in the main program
+even though the definition comes somewhere else in the code.
+As long as the function declaration, the prototype,
+happens above the first use of the function, we're OK.
+So this is a possibility to separate the function declaration and the function
+definition rather than having everything at the top together.
+And this will become very handy when we have lots and lots of functions
+and it becomes confusing which function to put above which
+and which one to put below.
+We can then simply put all the prototypes at the top,
+and the function definitions can come after the main function in any order.
+It doesn't matter in which order they appear.
+So now we're ready to use the math library functions.
+It turns out all math functions are declared in one spot
+and are defined in another spot, and we'll see that next.
