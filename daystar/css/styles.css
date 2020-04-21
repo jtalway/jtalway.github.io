@@ -1,0 +1,73 @@
+body {
+  padding-top: 120px;
+  text-align: center;
+  font-family: "Arial";
+}
+
+nav {
+  text-align: center;
+  position: fixed !important;
+}
+
+/* Modify the backgorund color */ 
+.navbar-custom {
+    background-color: lightgreen;
+}
+
+.carouselTitle {
+	font-size: 24px;
+	font-weight: 100;
+	color: white;
+	text-shadow: 0 1px 2px #000;
+	position: absolute;
+	bottom: 29px;
+  left: 1px;
+}
+
+.carousel-indicators li {
+    border-radius: 12px;
+    width: 12px;
+    height: 12px;
+    background-color: #fff;
+    border-radius: 50%;
+}
+
+#sms {
+    font-size:30px;
+  }
+
+.header {
+    font-variant: small-caps;
+    font-size: 1.7rem;
+  }
+
+/* Footer Section */
+footer {
+  border-top: 2px solid #332e20;
+  color: #fff;
+}
+
+.ft-link a:link {
+  text-decoration: none;
+  color: #868e96;
+}
+
+.ft-link a:visited {
+  text-decoration: none;
+  color: #868e96;
+}
+
+.ft-link a:hover {
+  text-decoration: none;
+  color: #fff;
+}
+
+.ft-link a:focus {
+  text-decoration: none;
+  color: #fff;
+}
+
+.footer-copyright {
+  font-family: sans-serif;
+  font-size: 0.8rem;
+}
