@@ -9,9 +9,40 @@ nav {
   position: fixed !important;
 }
 
-/* Modify the backgorund color */ 
-.navbar-custom {
-    background-color: lightgreen;
+
+.icon-bar {
+  position: fixed;
+  top: 25%;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  -moz-transform: translateY(-50%);
+  -o-transform: translateY(-50%);
+  transform: translateY(-50%);
+  opacity: 0.8;
+  z-index: 9999;
+}
+
+.icon-bar a {
+  display: block;
+  text-align: center;
+  padding: 16px;
+  transition: all 0.3s ease;
+  color: white;
+  font-size: 20px;
+}
+
+.icon-bar a:hover {
+  background-color: #000;
+  color: #fff;
+}
+
+.icon-bar a:hover {
+  text-decoration: none;
+  color: #fff;
+}
+
+.side-icon {
+  background: #868e96;
 }
 
 .carouselTitle {
@@ -25,21 +56,16 @@ nav {
 }
 
 .carousel-indicators li {
-    border-radius: 12px;
     width: 12px;
     height: 12px;
     background-color: #fff;
     border-radius: 50%;
 }
 
-#sms {
-    font-size:30px;
-  }
-
 .header {
     font-variant: small-caps;
     font-size: 1.7rem;
-  }
+}
 
 /* Footer Section */
 footer {
