@@ -1,10 +1,7 @@
 {
-  "name": "Jason Alway",
   "short_name": "Jason",
+  "name": "Jason Alway",
   "description": "The personal website of Web Developer Jason Alway",
-  "start_url": "/?homescreen=1",
-  "background_color": "#66BFBF",
-  "theme_color": "#11999E",
   "icons":[
     {
       "src":"images/android-chrome-192x192.png",
@@ -17,5 +14,8 @@
       "type":"image/png"
     }
   ],
-  "display":"fullscreen"
+  "display":"standalone",
+  "start_url": "/?homescreen=1",
+  "background_color": "#66BFBF",
+  "theme_color": "#11999E",
 }
