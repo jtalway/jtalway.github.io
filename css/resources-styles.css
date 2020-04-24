@@ -4,15 +4,20 @@ body {
   font-family: 'Merriweather', serif;
 }
 
+ul {
+  margin-bottom: 0rem;
+  list-style-type: none;
+}
+
 a {
-  color: #66BFBF;
+  color: #11999E;
   font-family: 'Montserrat', sans-serif;
   text-decoration: none;
   line-height: 1.5;
 }
 
 a:hover {
-  color: #11999E;
+  color: black;
 }
 
 .resources-header {
@@ -21,7 +26,7 @@ a:hover {
 }
 
 .resources-header a {
-  padding-right: 50px;
+  padding-right: 30px;
 }
 
 .btn {
