@@ -1,3 +1,19 @@
+#top {
+  background-color: black;
+  position: relative;
+  padding-top: 100px;
+  margin-bottom: 0px;
+}
+
+.btn-hldr {
+    text-align: center;
+}
+
+#contact article {
+  max-width: 400px;
+  margin: 0 auto;
+}
+
 body {
   color: #40514E;
   margin: 0;
@@ -6,86 +22,94 @@ body {
 }
 
 a {
-  color: #11999E;
+  color: #757575;
   font-family: 'Montserrat', sans-serif;
   margin: 10px 20px;
   text-decoration: none;
 }
 
 a:hover {
-  color: #11999E;
-}
-a.footer-link:hover {
-  color: #E4F9F5;
+  color: #FFFFFF;
 }
 
 h1 {
-  color: #66BFBF;
+  color: #FFFFFF;
   font-family: 'Sacramento', sans-serif;
   font-size: 5.625rem;
   margin: 50px auto 0 auto;
 }
 
 h2 {
-  color: #66BFBF;
+  color: #7C4DFF;
   font-family: 'Montserrat', sans-serif;
   font-size: 2rem;
   padding-bottom: 10px;
 }
 
 h3 {
-  color: #11999E;
+  color: #3F51B5;
   font-family: 'Montserrat', sans-serif;
-}
-
-hr {
-  border: dotted #11999E 5px;
-  border-bottom: none;
-  width: 4%;
-  margin: 60px auto;
+  text-shadow: 0 0 5px white;
 }
 
 p {
-  line-height: 2;
+  line-height: 1.5;
+  color: #757575;
+  font-size: 1.2rem;
+  font-family: 'Arial', sans-serif;
+}
+
+.light-text {
+  color: #C5CAE9;
+}
+
+.dark-text {
+  color: #7C4DFF;
+}
+
+.line {
+  height: 2px;
+  width: 100%;
+  background-color: white;
+}
+
+#services {
+    background-image: url('../images/constellation-1280.jpg'), url('../images/night-640.jpg');
+    background-color: black;
+    background-repeat: no-repeat, no-repeat;
+    background-position: center top, center bottom;
+}
+
+#contact {
+    background-color: black;
+}
+
+#project {
+    background-image: url('../images/planet-640.jpg');
+    background-color: black;
+    background-repeat: no-repeat;
+    background-position: center top;
 }
 
 .links-container {
-  background-color: #E4F9F5;
-  padding: 30px 0 30px;
+  background-color: black;
+  padding-bottom: 50px;
 }
 
-.top-container {
-  background-color: #E4F9F5;
-  position: relative;
-  padding-top: 100px;
-}
 
 .middle-container {
   margin: 100px 0;
+  margin-bottom: 0px;
 }
 
 .bottom-container {
-  background-color: #66BFBF;
-  padding: 30px 0 10px;
-}
-
-.top-cloud {
-  position: absolute;
-  right: 300px;
-  top: 40px;
-}
-
-.bottom-cloud {
-  position: absolute;
-  left: 250px;
-  bottom: 300px;
+  background-color: black;
+  padding-top: 30px;
 }
 
 .copyright {
-  color: #EAF6F6;
-  font-family: sans-serif;
+  font-family: 'Verdana', sans-serif;
   font-size: 0.8rem;
-  padding: 5px 0;
 }
 
 .img-profile {
@@ -120,11 +144,6 @@ p {
   width: 20%;
   float: left;
   margin-right: 30px;
-}
-
-.intro {
-  width: 50%;
-  margin: auto;
 }
 
 .pro {
