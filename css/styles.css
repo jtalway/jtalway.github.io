@@ -3,55 +3,51 @@ body {
   color: #40514E;
   margin: 0;
   text-align: center;
-  font-family: 'Merriweather', serif;
+  font-family: 'Merriweather', serif
 }
 
 a {
   color: #757575;
   font-family: 'Montserrat', sans-serif;
   margin: 10px 20px;
-  text-decoration: none;
+  text-decoration: none
 }
 
-a:hover {
-  color: #FFFFFF;
-}
+a:hover {color: #FFFFFF}
 
 h1 {
   color: #FFFFFF;
   font-family: 'Sacramento', sans-serif;
   font-size: 5.625rem;
-  margin: 50px auto 0 auto;
+  margin: 50px auto 0 auto
 }
 
 h2 {
   color: #7C4DFF;
   font-family: 'Montserrat', sans-serif;
   font-size: 2rem;
-  padding-bottom: 10px;
+  padding-bottom: 10px
 }
 
 h3 {
   color: #3F51B5;
   font-family: 'Montserrat', sans-serif;
-  text-shadow: 0 0 5px white;
+  text-shadow: 0 0 5px #FFFFFF
 }
 
 p {
   line-height: 1.5;
   color: #757575;
   font-size: 1.2rem;
-  font-family: 'Arial', sans-serif;
+  font-family: 'Arial', sans-serif
 }
 
-.light-text {
-  color: #C5CAE9;
-}
+.light-text {color: #C5CAE9}
 
 .line {
   height: 2px;
   width: 100%;
-  background-color: white;
+  background-color: #FFFFFF
 }
 
 /* || HEADER */
@@ -61,16 +57,12 @@ p {
   position: relative;
   padding-top: 20px;
   margin-bottom: 0px;
-  height: 100vh;
+  height: 100vh
 }
 
-.pro {
-  text-decoration: underline;
-}
+.pro {text-decoration: underline}
 
-.img-profile {
-  border-radius: 100%;
-}
+.img-profile {border-radius: 100%}
 
 /* || NAV */
 
@@ -81,39 +73,37 @@ p {
     background-color: #000000;
     background-repeat: no-repeat;
     background-position: center top;
-    background-size: cover;
+    background-size: cover
 }
 
-#contact {
-    background-color: #000000;
-}
+#contact {background-color: #000000}
 
 #contact article {
   max-width: 400px;
-  margin: 0 auto;
+  margin: 0 auto
 }
 
 #project {
     background-image: url('../images/planet-640.jpg');
     background-color: #000000;
     background-repeat: no-repeat;
-    background-position: center top;
+    background-position: center top
 }
 
 #project a {
   font-family: 'Verdana', sans-serif;
   font-size: 0.9rem;
-  line-height: 2.5;
+  line-height: 2.5
 }
 
 /* || FOOTER */
 
 #footer {
   background-color: #000000;
-  padding-top: 30px;
+  padding-top: 30px
 }
 
 .copyright {
   font-family: 'Verdana', sans-serif;
-  font-size: 0.8rem;
+  font-size: 0.8rem
 }
