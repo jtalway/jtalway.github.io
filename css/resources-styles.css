@@ -1,12 +1,12 @@
 body {
   color: #40514E;
   margin: 0;
-  font-family: 'Merriweather', serif;
+  font-family: 'Merriweather', serif
 }
 
 ul {
   margin-bottom: 0rem;
-  list-style-type: none;
+  list-style-type: none
 }
 
 a {
@@ -16,19 +16,27 @@ a {
   line-height: 1.5;
 }
 
-a:hover {
-  color: black;
+p {
+  margin: 0;
+  margin-left: 15px;
+  padding: 0;
+  display: inline;
+  font-family: 'Montserrat', sans-serif;
+  line-height: 1.5;
+  color: gray;
 }
+
+.inline {display: inline}
+
+a:hover {color: black}
 
 .resources-header {
   text-align: center;
-  padding: 20px;
+  padding: 20px
 }
 
-.resources-header a {
-  padding-right: 30px;
-}
+.resources-header a {padding-right: 30px}
 
-.btn {
-  margin: 2px;
-}
+.btn {margin: 2px}
+
+#neverwinter-links p {text-decoration: underline}
