@@ -1,25 +1,4 @@
-#top {
-  background-color: black;
-  position: relative;
-  padding-top: 100px;
-  margin-bottom: 0px;
-}
-
-.btn-hldr {
-    text-align: center;
-}
-
-#contact article {
-  max-width: 400px;
-  margin: 0 auto;
-}
-
-#project a {
-  font-family: 'Verdana', sans-serif;
-  font-size: 0.9rem;
-  line-height: 2.5;
-}
-
+/* || GENERAL STYLES */
 body {
   color: #40514E;
   margin: 0;
@@ -75,39 +54,66 @@ p {
   background-color: white;
 }
 
-#services {
-    background-image: url('../images/constellation.webp');
-    background-color: black;
-    background-repeat: no-repeat;
-    background-position: center top;
-    background-size: cover;
+/* || HEADER */
+
+#top {
+  background-color: #000000;
+  position: relative;
+  padding-top: 20px;
+  margin-bottom: 0px;
+  height: 100vh;
 }
 
-#contact {
-    background-color: black;
-}
-
-#project {
-    background-image: url('../images/planet-640.jpg');
-    background-color: black;
-    background-repeat: no-repeat;
-    background-position: center top;
-}
-
-#footer {
-  background-color: black;
-  padding-top: 30px;
-}
-
-.copyright {
-  font-family: 'Verdana', sans-serif;
-  font-size: 0.8rem;
+.pro {
+  text-decoration: underline;
 }
 
 .img-profile {
   border-radius: 100%;
 }
 
-.pro {
-  text-decoration: underline;
+/* || NAV */
+
+/* || CONTENT */
+
+#services {
+    background-image: url('../images/constellation.webp');
+    background-color: #000000;
+    background-repeat: no-repeat;
+    background-position: center top;
+    background-size: cover;
+}
+
+#contact {
+    background-color: #000000;
+}
+
+#contact article {
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+#project {
+    background-image: url('../images/planet-640.jpg');
+    background-color: #000000;
+    background-repeat: no-repeat;
+    background-position: center top;
+}
+
+#project a {
+  font-family: 'Verdana', sans-serif;
+  font-size: 0.9rem;
+  line-height: 2.5;
+}
+
+/* || FOOTER */
+
+#footer {
+  background-color: #000000;
+  padding-top: 30px;
+}
+
+.copyright {
+  font-family: 'Verdana', sans-serif;
+  font-size: 0.8rem;
 }
