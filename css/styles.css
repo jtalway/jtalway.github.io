@@ -1,7 +1,7 @@
 #top {
   background-color: black;
   position: relative;
-  padding-top: 80px;
+  padding-top: 100px;
   margin-bottom: 0px;
 }
 
@@ -69,10 +69,6 @@ p {
   color: #C5CAE9;
 }
 
-.dark-text {
-  color: #7C4DFF;
-}
-
 .line {
   height: 2px;
   width: 100%;
@@ -80,7 +76,7 @@ p {
 }
 
 #services {
-    background-image: url('../images/constellation-1280.jpg');
+    background-image: url('../images/constellation.webp');
     background-color: black;
     background-repeat: no-repeat;
     background-position: center top;
