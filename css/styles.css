@@ -1,7 +1,7 @@
 #top {
   background-color: black;
   position: relative;
-  padding-top: 100px;
+  padding-top: 80px;
   margin-bottom: 0px;
 }
 
@@ -74,10 +74,11 @@ p {
 }
 
 #services {
-    background-image: url('../images/constellation-1280.jpg'), url('../images/night-640.jpg');
+    background-image: url('../images/constellation-1280.jpg');
     background-color: black;
-    background-repeat: no-repeat, no-repeat;
-    background-position: center top, center bottom;
+    background-repeat: no-repeat;
+    background-position: center top;
+    background-size: cover;
 }
 
 #contact {
@@ -91,18 +92,7 @@ p {
     background-position: center top;
 }
 
-.links-container {
-  background-color: black;
-  padding-bottom: 50px;
-}
-
-
-.middle-container {
-  margin: 100px 0;
-  margin-bottom: 0px;
-}
-
-.bottom-container {
+#footer {
   background-color: black;
   padding-top: 30px;
 }
@@ -116,42 +106,6 @@ p {
   border-radius: 100%;
 }
 
-.img-webdev {
-  width: 18%;
-  float: left;
-  margin-right: 30px;
-}
-
-.img-backend {
-  width: 18%;
-  float: right;
-  margin-left: 30px;
-}
-
-.img-fantasy {
-  width: 22%;
-  float: left;
-  margin-right: 30px;
-}
-
-.img-hacker {
-  width: 22%;
-  float: right;
-  margin-left:30px;
-}
-
-.img-terminal {
-  width: 20%;
-  float: left;
-  margin-right: 30px;
-}
-
 .pro {
   text-decoration: underline;
-}
-
-.skill-row {
-  margin: 60px auto 160px auto;
-  text-align: left;
-  width: 50%;
 }
