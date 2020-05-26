@@ -4,7 +4,20 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Resources used by Jason Alway</title>
+  <title>Resources | Jason Alway</title>
+  <meta name="description" content="Resources on programming web design web development API CLI Cloud DB FOSS Hacking VCS JavaScript Python Games Survival Server SQL NoSQL HTML CSS Next.js Node NPM React Python Diablo MtG NWN NFL RPG Android C"/>
+  <link rel="canonical" href="https://jtalway.github.io"/>
+  <meta property="og:title" content="Resources | Jason Alway"/>
+  <meta property="og:description" content="Resources on programming web design web development API CLI Cloud DB FOSS Hacking VCS JavaScript Python Games Survival Server SQL NoSQL HTML CSS Next.js Node NPM React Python Diablo MtG NWN NFL RPG Android C"/>
+  <meta property="og:type" content="website"/>
+  <meta property="og:url" content="https://jtalway.github.io/resources.html"/>
+  <meta property="og:site_name" content="Resources | Jason Alway"/>
+  <meta property="og:image" content="https://jtalway.github.io/images/me_pro_sm.jpg"/>
+  <meta property="og:image:secure_url" content="https://jtalway.github.io/images/me_pro_sm.jpg"/>
+  <meta property="og:image:width" content="120" />
+  <meta property="og:image:height" content="120" />
+  <meta property="og:image:alt" content="Jason Alway - Software Developer" />
+  <meta property="og:image:type" content="image/jpg"/>
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css?family=Montserrat:100,400,900|Ubuntu&display=swap" rel="stylesheet">
   <!-- CSS Stylesheets -->
@@ -43,7 +56,8 @@
   </a>
   <div class="collapse" id="portfolio-links">
     <div class="card card-body">
-      <span class="inline"><a href="http://www.alway.world">Social Network web application</a><p>MERN stack, Digital Ocean, Cloudflare CDN</p></span>
+      <span class="inline"><a href="https://voxeterna.com">Vox Eterna</a><p>Multi-User SEO Blogging platform using MERN + Next.js</p></span>
+      <span class="inline"><a href="https://alway.world">Social Network web application</a><p>MERN stack, Digital Ocean, Cloudflare CDN</p></span>
       <span class="inline"><a href="https://github.com/jtalway/mern-auth-client">MERN AUTH Boilerplate client code</a><p>MongoDB, Express, React, NodeJS</p></span>
       <span class="inline"><a href="https://github.com/jtalway/mern-auth-api">MERN AUTH Boilerplate API code</a><p>MongoDB, Express, React, NodeJS</p></span>
       <span class="inline"><a href="https://44s60.codesandbox.io/">Note Keeper</a><p>React</p></span>
@@ -70,9 +84,12 @@
   <i class="fab fa-google"></i> Google
   <i class="fab fa-chrome"></i> Chrome
   <i class="fab fa-battle-net"></i> Battle.net
-  <i class="fab fa-ubuntu"></i> Ubuntu -->
-  <!-- <i class="fab fa-facebook"></i> -->
+  <i class="fab fa-ubuntu"></i> Ubuntu
+  <i class="fab fa-facebook"></i> -->
+
   <!-- <span class="inline"><a href="address">LinkName</a><p>LinkDescription</p></span> -->
+
+
   <!-- START LIST OF LINKS -->
 
   <!-- API - APPLICATION PROGRAM INTERFACE -->
@@ -83,11 +100,12 @@
   <div class="collapse" id="api-links">
     <div class="card card-body">
       <span class="inline"><a href="https://any-api.com">AnyAPI</a><p>API collection/index</p></span>
-      <a href="https://curl.haxx.se">cURL</a>
+      <span class="inline"><a href="https://curl.haxx.se">cURL</a><p>CLI for transfering data with URLs</p></span>
       <a href="https://console.developers.google.com/apis/library"><i class="fab fa-google"></i> Google Developer API library</a>
       <a href="https://mailchimp.com/developer/"><i class="fab fa-mailchimp"></i> MailChimp</a>
       <span class="inline"><a href="https://www.getpostman.com"><i class="fab fa-dev"></i> Postman</a><p>API Development</p></span>
       <span class="inline"><a href="https://www.unixtimestamp.com">Unix Time Stamp</a><p>epoch converter</p></span>
+      <span class="inline"><a href="https://developer.mozilla.org/en-US/docs/Web/API">Web APIs</a><p>MDN web docs Web APIs list</p></span>
     </div>
   </div>
 
@@ -121,6 +139,33 @@
     <i class="fas fa-cloud"></i> Cloud
   </a>
   <div class="collapse" id="cloud-links">
+    
+    <a class="btn btn-outline-info" data-toggle="collapse" href="#server-links" role="button" aria-expanded="false" aria-controls="collapseExample">
+      Server
+    </a>
+    <div class="collapse" id="server-links">
+      <div class="card card-body">
+
+        <a href="https://pm2.keymetrics.io/">PM2</a>
+        <ul>
+          <li>
+            <span class="inline"><a href="https://pm2.keymetrics.io/docs/usage/startup/">PM2 Startup Script</a><p></p></span>
+          </li>
+        </ul>
+        <a href="http://nginx.org/">NGINX</a>
+        <ul>
+          <li>
+            <span class="inline"><a href="http://nginx.org/en/docs/">NGINX</a><p>documentation</p></span>
+          </li>
+          <li>
+            <span class="inline"><a href="https://www.nginx.com/resources/wiki/start/topics/examples/fullexample2/?highlight=client_max_body_size">nginx.conf</a><p>example</p></span>
+          </li>
+        </ul>
+        
+      </div>
+    </div>
+
+
     <div class="card card-body">
       <a href="https://aws.amazon.com"><i class="fab fa-aws"></i> Amazon Web Services</a>
       <a href="https://www.cloudflare.com/cdn/">Cloudflare CDN</a>
@@ -129,7 +174,14 @@
       </ul>
       <a href="https://www.digitalocean.com/"><i class="fab fa-digital-ocean"></i> Digital Ocean</a>
       <ul>
-        <li><a href="https://top5hosting.co.uk/blog/uk-hosting/361-connecting-a-godaddy-domain-with-digitalocean-droplet-step-by-step-guide-with-images"><i class="far fa-question-circle"></i> Connect GoDaddy domain with Digital Ocean droplet</a></li>
+        <li>
+          <a href="https://top5hosting.co.uk/blog/uk-hosting/361-connecting-a-godaddy-domain-with-digitalocean-droplet-step-by-step-guide-with-images"><i class="far fa-question-circle"></i> Connect GoDaddy domain with Digital Ocean droplet</a></li>
+        <li>
+          <span class="inline"><a href="https://www.digitalocean.com/community/tutorials/how-to-point-to-digitalocean-nameservers-from-common-domain-registrars"><i class="far fa-question-circle"></i> Nameservers</a><p>How to Point to DO Nameservers from Common Domain Registrar</p></span>
+        </li>
+        <li>
+          <a href="https://www.digitalocean.com/community/tutorials/how-to-set-up-apache-virtual-hosts-on-ubuntu-16-04"><i class="fab fa-ubuntu"></i> Digital Ocean - How to Set Up Apache Virtual Hosts on Ubuntu</a>
+        </li>
       </ul>
       <a href="https://console.cloud.google.com/"><i class="fab fa-google"></i> Google Cloud Console</a>
       <a href="https://devcenter.heroku.com">Heroku Dev Center</a>
@@ -163,6 +215,7 @@
     </a>
     <div class="collapse" id="sql-links">
       <div class="card card-body">
+        <span class="inline"><a href="https://websitesetup.org/sql-cheat-sheet/">SQL Cheat Sheet</a><p>Structured Query Language Guide</p></span>
         <a href="https://www.mysql.com">MySQL</a>
         <ul>
           <li>
@@ -269,6 +322,8 @@
       <span class="inline"><a href="https://www.gimp.org/">GIMP</a><p>Image Manipulation</p></span>
       <span class="inline"><a href="https://godotengine.org/">Godot</a><p>Game Engine</p></span>
       <span class="inline"><a href="https://www.libreoffice.org/">LibreOffice</a><p>Office/Documents</p></span>
+      <span class="inline"><a href="https://obsproject.com/">OBS Studio</a><p>Video Recording and Live Streaming</p></span>
+      
       <span class="inline"><a href="https://pinta-project.com/pintaproject/pinta/">Pinta</a><p>Drawing and Image Editing</p></span>
       <span class="inline"><a href="https://rufus.ie/">Rufus</a><p>create bootable USB drive</p></span>
       <span class="inline"><a href="https://www.7-zip.org/">7zip</a><p>Compression</p></span>
@@ -328,6 +383,8 @@
       <a href="https://drive.google.com/uc?export=download&id=18O19SefauXiJP4S9zRGsXX6I5hPmzrq-">Git Quick Reference</a>
       <a href="https://drive.google.com/uc?export=download&id=1QPRh5YmqQm4DFfitelPYlBTWC2I6tTTM">Git Visual Reference</a>
       <a href="https://www.qaautomation.co.in/2019/12/top-git-command-everyone-should-know.html">Git commands everyone should know</a>
+      <span class="inline"><a href="https://stackoverflow.com/questions/15376241/why-does-git-say-my-master-branch-is-already-up-to-date-even-though-it-is-not/15381342"><i class="far fa-question-circle"></i> Git Master Branch</a><p>What Git does and Why it does it</p></span>
+      
     </div>
   </div>
 
@@ -363,6 +420,8 @@
         <a href="https://www.w3schools.com/cssref/">CSS Properties</a>
         <a href="https://css-tricks.com/snippets/css/media-queries-for-standard-devices/">Media Queries for Standard Devices</a>
         <a href="https://gist.github.com/bartholomej/8415655">Media Queries Cheat Sheet</a>
+        <span class="inline"><a href="https://stackoverflow.com/questions/6370690/media-queries-how-to-target-desktop-tablet-and-mobile"><i class="far fa-question-circle"></i> Media Queries</a><p>How to target desktop, tablet and mobile</p></span>
+        
 
       </div>
     </div>
@@ -421,6 +480,7 @@
         <span class="inline"><a href="https://developers.google.com/web/tools/lighthouse"><i class="fab fa-google"></i> Lighthouse</a><p>performance tests</p></span>
         <a href="https://www.xml-sitemaps.com/">XML Sitemaps</a>
         
+        <span class="inline"><a href="https://www.photografica.com.au/image-size-resolution-and-resizing-images-for-the-web/">Web Images - PhotoGrafica</a><p>Resizing Images for the Web</p></span>
         <a href="https://developers.google.com/speed/pagespeed/insights/"><i class="fab fa-google"></i> PageSpeed Insights</a>
         <a href="https://www.webpagetest.org/">WebPageTest</a>
         <a href="https://tools.pingdom.com/">Pingdom Website Speed Test</a>
@@ -440,6 +500,8 @@
         <span class="inline"><a href="https://www.verexif.com/en/">View and remove EXIF</a><p>image metadata</p></span>
         <a href="https://stackoverflow.com/questions/985431/max-parallel-http-connections-in-a-browser">Max parallel http connections in a browser</a>
         <a href="https://www.udacity.com/course/website-performance-optimization--ud884"><i class="fab fa-google"></i> Website Performance Optimization by Google - The Critical Rendering Path free Udacity course</a>
+        <span class="inline"><a href="https://mobiforge.com/design-development/pwa-minimus-a-minimal-pwa-checklist">PWA Minimus</a><p>a minimal PWA checklist</p></span>
+        
         <a href="https://stackoverflow.com/questions/10808109/script-tag-async-defer">Script Tag - async & defer</a>
         <a href="https://css-tricks.com/prefetching-preloading-prebrowsing/">Prefetching, preloading, prebrowsing CSS</a>
         <a href="https://developers.google.com/web/fundamentals/performance/http2/"><i class="fab fa-google"></i> Intro to HTTP/2</a>
@@ -452,6 +514,7 @@
     <!-- WEB MISC -->
 
     <div class="card card-body">
+      <span class="inline"><a href="https://www.w3.org/WAI/fundamentals/accessibility-intro/">Accessibility</a><p>Introduction to Web Accessibility</p></span>
       <span class="inline"><a href="https://certbot.eff.org/lets-encrypt/ubuntubionic-nginx">CertBot</a><p>https</p></span>
       <span class="inline"><a href="https://www.appbrewery.co/p/web-development-course-resources/">Web Development Course Resources List</a><p>2020 Bootcamp</p></span>
       <a href="https://github.com/kamranahmedse/developer-roadmap">Web Developer RoadMap</a>
@@ -459,15 +522,18 @@
       <span class="inline"><a href="https://en.wikipedia.org/wiki/Cross-origin_resource_sharing">CORS</a><p>Cross-origin resource sharing</p></span>
       <a href="https://atom.io/"><i class="fab fa-dev"></i> <i class="fas fa-atom"></i> Atom</a>
       <span class="inline"><a href="https://www.codeply.com/"><i class="fab fa-dev"></i> CodePly</a><p>design playground</p></span>
+
+      <span class="inline"><a href="https://www.google.com/adsense/start/"><i class="fab fa-google"></i> AdSense</a><p>make money from your website</p></span>
+      <span class="inline"><a href="https://www.wikihow.com/Submit-to-Search-Engines"><i class="far fa-question-circle"></i> Search Engines</a><p>How to Submit to Search Engines</p></span>
       <a href="https://developer.mozilla.org/en-US/">MDN Web Docs</a>
       <a href="https://www.w3schools.com/">W3Schools Online Web Tutorials</a>
       <a href="https://jsbin.com/?html,output"><i class="fab fa-dev"></i> JS Bin</a>
-      <a href="https://codepen.io/pen/"><i class="fab fa-dev"></i> CodePen</a>
+      <span class="inline"><a href="https://codepen.io/pen/"><i class="fab fa-dev"></i> CodePen</a><p>social development environment</p></span>
       <span class="inline"><a href="https://addons.mozilla.org/en-US/firefox/addon/open-pesticide/"><i class="fab fa-firefox-browser"></i> Pesticide</a><p>mozilla plugin - visualize CSS layout</p></span>
       <span class="inline"><a href="https://www.frontendmentor.io/">Frontend Mentor</a><p>website making challenges</p></span>
       <a href="http://platowebdesign.com/articles/translating-client-speak-infographic/">Translating Client Speak</a>
       <span class="inline"><a href="https://chrome.google.com/webstore/detail/html-tree-generator/dlbbmhhaadfnbbdnjalilhdakfmiffeg"><i class="fab fa-chrome"></i> HTML Tree Generator plugin</a><p>Chrome</p></span>
-      <a href="https://www.digitalocean.com/community/tutorials/how-to-set-up-apache-virtual-hosts-on-ubuntu-16-04"><i class="fab fa-ubuntu"></i> Digital Ocean - How to Set Up Apache Virtual Hosts on Ubuntu</a>
+      
       <a href="https://zerotomastery.io/blog/?tag=WDM">Web Developer Monthly</a>
     </div>
   </div>
@@ -507,6 +573,8 @@
             <a href="https://nextjs.org/docs/advanced-features/custom-document">Custom `Document`</a>
           </li>
         </ul>
+        <span class="inline"><a href="https://kaloraat.com/articles/xml-sitemap-for-next-js">XML sitemap</a><p>Serve XML sitemap as static file</p></span>
+        <span class="inline"><a href="https://kaloraat.com/articles/fixed-next-js-pages-with-trailing-slash"><i class="far fa-question-circle"></i> 404 /</a><p>Next.js pages with trailing slash</p></span>
       </div>
     </div>
 
@@ -587,8 +655,10 @@
         <div class="card card-body">
           <span class="inline"><a href="https://www.npmjs.com/package/@material-ui/core">@material-ui/core</a><p>React components that implement Google's Material Design</p></span>
           <span class="inline"><a href="https://www.npmjs.com/package/@material-ui/icons">@material-ui/icons</a><p>Material Design Svg Icons converted to Material-UI React components</p></span>
-          <span class="inline"><a href="https://www.npmjs.com/package/react-google-login"><i class="fab fa-google"></i> react-google-login</a><p>A Google Login Component for React</p></span>
+          <span class="inline"><a href="https://www.npmjs.com/package/prop-types">prop-types</a><p>Runtime type checking for React props and similar objects</p></span>
           <span class="inline"><a href="https://www.npmjs.com/package/react-facebook-login"><i class="fab fa-facebook"></i> react-facebook-login</a><p>A Component React for Facebook Login</p></span>
+          <span class="inline"><a href="https://www.npmjs.com/package/react-google-login"><i class="fab fa-google"></i> react-google-login</a><p>A Google Login Component for React</p></span>        
+          <span class="inline"><a href="https://www.npmjs.com/package/react-mailchimp-subscribe"><i class="fab fa-mailchimp"></i>  react-mailchimp-subscribe</a><p>React subscribe from for Mailchimp</p></span> 
           <span class="inline"><a href="https://github.com/zenoamaro/react-quill">react-quill</a><p>a Quill component</p></span>
           <span class="inline"><a href="https://www.npmjs.com/package/react-render-html">react-render-html</a><p>render html as react element</p></span>
           <span class="inline"><a href="https://www.npmjs.com/package/reactstrap">reactstrap</a><p>Stateless React Components for Bootstrap 4</p></span>
@@ -626,8 +696,14 @@
         <span class="inline"><a href="https://www.npmjs.com/package/node-fetch">node-fetch</a><p>window.fetch</p></span>
         <span class="inline"><a href="https://www.npmjs.com/package/nodemon">nodemon</a><p>monitor script for node.js app development</p></span>
         <span class="inline"><a href="https://www.npmjs.com/package/nprogress">nprogress</a><p>progress bar</p></span>
+        <span class="inline"><a href="https://www.npmjs.com/package/query-string">query-string</a><p>parse and stringify URL query strings</p></span>        
         <span class="inline"><a href="https://www.npmjs.com/package/request">[Deprecated] request</a><p>http client</p></span>
         <span class="inline"><a href="https://www.npmjs.com/package/@sendgrid/mail">@sendgrid/mail</a><p>mail service</p></span>
+        <ul>
+          <li>
+            <span class="inline"><a href="https://github.com/sendgrid/sendgrid-nodejs/tree/master/packages/mail#quick-start-hello-email">sendgrid example</a><p>Quick Start, Hello Email</p></span>
+          </li>
+        </ul>
         <span class="inline"><a href="https://www.npmjs.com/package/uuid">uuid</a><p>create RFC4122 UUIDs</p></span>
       </div>
     </div>
@@ -644,16 +720,22 @@
         <span class="inline"><a href="https://github.com/facebook/create-react-app"><i class="fab fa-facebook"></i> Create React App</a><p>Facebook repo</p></span>
         <span class="inline"><a href="https://codesandbox.io/"><i class="fab fa-dev"></i> CodeSandbox</a><p>online code editor for React</p></span>
         <a href="https://github.com/airbnb/javascript/tree/master/react">Airbnb React/JSX Style Guide</a>
+        <span class="inline"><a href="https://github.com/kriasoft/react-starter-kit/blob/master/docs/recipes/how-to-integrate-disqus.md">Disqus</a><p>React Starter Kit</p></span>
         <a href="https://reactjs.org/community/support.html">React Support Page</a>
-        <a href="https://reactjs.org/docs/hooks-reference.html#usestate">useState Hooks</a>
-        <a href="https://reactjs.org/docs/forms.html#controlled-components">Controlled Components in HTML forms</a>
+        <ul>
+          <li><a href="https://reactjs.org/docs/create-a-new-react-app.html"><i class="far fa-question-circle"></i> Create a New React App</a></li>
+          <li><a href="https://reactjs.org/docs/hooks-reference.html#usestate">useState Hooks</a></li>
+          <li><a href="https://reactjs.org/docs/forms.html#controlled-components">Controlled Components in HTML forms</a></li>
+          <a href="https://reactjs.org/docs/conditional-rendering.html#inline-if-with-logical--operator"><i class="far fa-question-circle"></i> Using the logical && in React</a>
+        </ul>
+        
         <a href="https://reacttraining.com/react-router/web/example/auth-workflow">Redirects Auth</a>
         <a href="https://material-ui.com/components/icons/">Icon docs</a>
         <a href="https://material-ui.com/components/buttons/#floating-action-buttons">Button docs</a>
         <a href="https://material-ui.com/api/zoom/">Zoom</a>
-        <a href="https://reactjs.org/docs/create-a-new-react-app.html"><i class="far fa-question-circle"></i> Create a New React App</a>
+        
         <a href="https://hacks.mozilla.org/2015/06/es6-in-depth-arrow-functions/"><i class="far fa-question-circle"></i> Arrow functions</a>
-        <a href="https://reactjs.org/docs/conditional-rendering.html#inline-if-with-logical--operator"><i class="far fa-question-circle"></i> Using the logical && in React</a>
+        
         <a href="https://chrome.google.com/webstore/detail/react-developer-tools/fmkadmapgofadopljbjfkapdkoienihi?hl=en"><i class="fab fa-chrome"></i> React Developer Tools for Chrome Browser</a>
         <a href="https://hackernoon.com/react-js-a-better-introduction-to-the-most-powerful-ui-library-ever-created-ecd96e8f4621">React.js: a better introduction</a>
         <a href="https://hackernoon.com/how-to-combine-a-nodejs-back-end-with-a-reactjs-front-end-app-ea9b24715032"><i class="far fa-question-circle"></i> NodeJS backend + ReactJS frontend</a>
@@ -903,12 +985,15 @@
     </a>
     <div class="collapse" id="misc-links">
       <div class="card card-body">
-        <a href="https://goalkicker.com/">Programming Notes for Professionals books</a>
-        <a href="https://devdocs.io/">DevDocs</a>
-        <a href="https://github.com/mvillaloboz/open-source-cs-degree">Open Source Computer Science Degree</a>
-        <a href="https://codegolf.stackexchange.com/">Code Golf SE coding challenges</a>
-        <a href="https://projecteuler.net/">Project Euler</a>
-        <a href="https://producthunt.com">Product Hunt</a>
+        <span class="inline"><a href="https://codegolf.stackexchange.com/">Code Golf</a><p>Stack Exchange coding challenges</p></span>
+        <span class="inline"><a href="https://devdocs.io/">DevDocs</a><p>multi API docs</p></span>
+        <span class="inline"><a href="https://goalkicker.com/">GoalKicker</a><p>programming notes for professionals books</p></span>
+        <span class="inline"><a href="https://www.leedskalnin.com/LeedskalninsWritings.html">Magnetic Current Research</a><p>the complete writings of Edward Leedskalnin</p></span>
+        <span class="inline"><a href="https://github.com/mvillaloboz/open-source-cs-degree">Open Source Computer Science Degree</a><p></p></span>
+        <span class="inline"><a href="https://producthunt.com">Product Hunt</a><p>best new tech products</p></span>
+        <span class="inline"><a href="https://projecteuler.net/">Project Euler</a><p>math/programming challenges</p></span>
+        <span class="inline"><a href="https://www.tutorialspoint.com/sdlc/sdlc_overview.htm">SDLC</a><p>Software Development Life Cycle</p></span>
+        <span class="inline"><a href="https://github.com/zero-to-mastery">Zero to Mastery</a><p>getting started with Open Source projects</p></span>
       </div>
     </div>
 
