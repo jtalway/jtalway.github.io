@@ -1,0 +1,43 @@
+
+table {
+	width: 100%;
+	margin-left: auto;
+	margin-right: auto;
+	border-collapse: collapse;
+	background-color: #000000;
+	color: #FFFFFF;
+}
+
+tr {
+ 	border-bottom: thin solid #FFFFFF;
+}
+
+th {
+	background-color: #333333;
+	padding-top: 15px;
+	padding-bottom: 15px;
+}
+
+td {
+	font-family: Verdana, Arial, sans-serif;
+	text-align: center;
+	padding-top: 10px;
+	padding-bottom: 10px;
+}
+
+a:link {
+	color: #FFFFFF;
+	text-decoration: none;
+}
+
+a:visited {
+	color: #FFFFFF;
+}
+
+a:hover {
+	color: #928A70;
+}
+
+a:active {
+	text-decoration: underline;
+}
