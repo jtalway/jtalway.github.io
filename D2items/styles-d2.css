@@ -2,6 +2,9 @@ body {
 	background-color: #000000;
 }
 
+div {
+	text-align: center;
+}
 table {
 	width: 100%;
 	margin-left: auto;
@@ -12,35 +15,38 @@ table {
 }
 
 tr {
- 	border-bottom: thin solid #FFFFFF;
+ 	border-bottom: thin solid #565656;
 }
 
 th {
 	background-color: #333333;
-	font-family: Verdana, Arial, sans-serif;
+	font-family: Arial, Verdana, sans-serif;
 	text-align: center;
 	padding-top: 15px;
 	padding-bottom: 15px;
+	color: #FDFD00;
+	font-size: 1.8em;
 }
 
 td {
-	font-family: Verdana, Arial, sans-serif;
+	font-family: Arial, Verdana, sans-serif;
 	text-align: center;
 	padding-top: 10px;
 	padding-bottom: 10px;
+	font-size: 1.2em;
 }
 
 a:link {
-	color: #FFFFFF;
+	color: #928A70;
 	text-decoration: none;
 }
 
 a:visited {
-	color: #FFFFFF;
+	color: #928A70;
 }
 
 a:hover {
-	color: #928A70;
+	color: #00AC00;
 }
 
 a:active {
@@ -49,4 +55,13 @@ a:active {
 
 .inner {padding: 0; margin: 0;}
 
-.small a {font-size: .8em; color: #928A70;}
+.small {font-size: .8em;}
+
+/*
+* COLORS
+*/
+.magic {color: #454CB0}
+.rare {color: #FDFD00}
+.crafted {color: #EF9A00}
+.set {color: #00AC00}
+.unique {color: #928A70}
